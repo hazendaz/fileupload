@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE endpoints>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+    <endpoint name="HelloWorldWs" implementation="com.hazendaz.ws.HelloWorldImpl" url-pattern="/hello" />
+</endpoints>

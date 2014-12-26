@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"     xmlns:a4j="http://richfaces.org/a4j" xmlns:rich="http://richfaces.org/rich"
+    xml:lang="en" lang="en">
+<f:view>
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="imagetoolbar" content="no" />
+        <title>FileUpload Demonstration</title>
+        <h:outputStylesheet name="jquery.fancybox.css" library="css"
+            media="screen" />
+        <h:outputStylesheet name="normalize.css" library="css" media="screen" />
+        <h:outputStylesheet name="test.css" library="css" media="screen,print" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <fieldset>
+                <legend>Sorting Options</legend>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Multiple Sorting:" />
+                    <h:selectBooleanCheckbox value="#{carsSortingBean.multipleSorting}"
+                        valueChangeListener="#{carsSortingBean.modeChanged}">
+                        <a4j:ajax event="click" render="table @this" />
+                    </h:selectBooleanCheckbox>
+                </h:panelGrid>
+                <a4j:commandButton execute="@this" value="Reset Sorting"
+                    action="#{carsSortingBean.reset}" render="table" />
+            </fieldset>
+            <rich:extendedDataTable value="#{carsBean.allInventoryItems}"
+                var="car" id="table" frozenColumns="2"
+                sortPriority="#{carsSortingBean.sortPriorities}"
+                style="height:500px; width:700px;" selectionMode="none" rows="20">
+                <f:facet name="header">
+                    <h:outputText value="Cars marketplace" />
+                </f:facet>
+                <rich:column sortBy="#{car.vendor}"
+                    sortOrder="#{carsSortingBean.sortsOrders['vendor']}">
+                    <f:facet name="header">
+                        <h:panelGrid columns="2">
+                            <a4j:commandLink execute="@this" value="Vendor" render="table"
+                                action="#{carsSortingBean.sort}">
+                                <f:param name="sortProperty" value="vendor" />
+                            </a4j:commandLink>
+                            <h:graphicImage value="#{resource['img:icons/tables/down_icon.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['vendor']=='descending'}" />
+                            <h:graphicImage value="#{resource['img:icons/tables/up_icon.gif.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['vendor']=='ascending'}" />
+                        </h:panelGrid>
+                    </f:facet>
+                    <h:outputText value="#{car.vendor}" />
+                </rich:column>
+                <rich:column sortBy="#{car.model}"
+                    sortOrder="#{carsSortingBean.sortsOrders['model']}">
+                    <f:facet name="header">
+                        <h:panelGrid columns="2">
+                            <a4j:commandLink execute="@this" value="Model" render="table"
+                                action="#{carsSortingBean.sort}">
+                                <f:param name="sortProperty" value="model" />
+                            </a4j:commandLink>
+                            <h:graphicImage value="#{resource['img:icons/tables/down_icon.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['model']=='descending'}" />
+                            <h:graphicImage value="#{resource['img:icons/tables/up_icon.gif.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['model']=='ascending'}" />
+                        </h:panelGrid>
+                    </f:facet>
+                    <h:outputText value="#{car.model}" />
+                </rich:column>
+                <rich:column sortBy="#{car.price}"
+                    sortOrder="#{carsSortingBean.sortsOrders['price']}">
+                    <f:facet name="header">
+                        <h:panelGrid columns="2">
+                            <a4j:commandLink execute="@this" value="Price" render="table"
+                                action="#{carsSortingBean.sort}">
+                                <f:param name="sortProperty" value="price" />
+                            </a4j:commandLink>
+                            <h:graphicImage value="#{resource['img:icons/tables/down_icon.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['price']=='descending'}" />
+                            <h:graphicImage value="#{resource['img:icons/tables/up_icon.gif.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['price']=='ascending'}" />
+                        </h:panelGrid>
+                    </f:facet>
+                    <h:outputText value="#{car.price}" />
+                </rich:column>
+                <rich:column sortBy="#{car.mileage}"
+                    sortOrder="#{carsSortingBean.sortsOrders['mileage']}">
+                    <f:facet name="header">
+                        <h:panelGrid columns="2">
+                            <a4j:commandLink execute="@this" value="Mileage" render="table"
+                                action="#{carsSortingBean.sort}">
+                                <f:param name="sortProperty" value="mileage" />
+                            </a4j:commandLink>
+                            <h:graphicImage value="#{resource['img:icons/tables/down_icon.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['mileage']=='descending'}" />
+                            <h:graphicImage value="#{resource['img:icons/tables/up_icon.gif.gif']}"
+                                rendered="#{carsSortingBean.sortsOrders['mileage']=='ascending'}" />
+                        </h:panelGrid>
+                    </f:facet>
+                    <h:outputText value="#{car.mileage}" />
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="VIN Code" />
+                    </f:facet>
+                    <h:outputText value="#{car.vin}" />
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="Items stock" />
+                    </f:facet>
+                    <h:outputText value="#{car.stock}" />
+                </rich:column>
+                <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="Days Live" />
+                    </f:facet>
+                    <h:outputText value="#{car.daysLive}" />
+                </rich:column>
+                <f:facet name="footer">
+                    <rich:dataScroller id="scroller" />
+                </f:facet>
+            </rich:extendedDataTable>
+            <h:outputText value="List size is: #{carsBean.allInventoryItems.size()}" />
+        </h:form>
+    </h:body>
+</f:view>
+<!-- <h:outputScript name="jquery-1.10.2.min.js" library="js" /> -->
+<h:outputScript name="jquery-migrate-1.2.1.min.js" library="js" />
+<h:outputScript name="jquery.fancybox.js" library="js" />
+<h:outputScript name="jquery.fancybox.iframe.js" library="js" />
+<h:outputScript name="jquery.fancybox.events.js" library="js" />
+<h:outputScript name="jquery.fancybox.idleTimeout.js" library="js" />
+<h:outputScript name="jquery.hotkeys-0.9.js" library="js" />
+<h:outputScript name="jquery.hotkeys.functionkeys.js" library="js" />
+</html>

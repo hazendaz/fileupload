@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    <lifecycle>
+        <phase-listener>com.hazendaz.listeners.CheckLogon</phase-listener>
+    </lifecycle>
+    <application>
+        <message-bundle>Messages_en</message-bundle>
+        <message-bundle>resources.application</message-bundle>
+        <locale-config>
+        	<default-locale>en</default-locale>
+        </locale-config>
+    </application>
+</faces-config>
