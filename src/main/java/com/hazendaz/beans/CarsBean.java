@@ -62,8 +62,7 @@ public class CarsBean implements Serializable {
         ArrayList<InventoryItem> iiList = null;
 
         try {
-            final int arrayCount = count;
-            final InventoryItem[] demoInventoryItemArrays = new InventoryItem[arrayCount];
+            final InventoryItem[] demoInventoryItemArrays = new InventoryItem[count];
 
             for (int j = 0; j < demoInventoryItemArrays.length; j++) {
                 final InventoryItem ii = new InventoryItem();

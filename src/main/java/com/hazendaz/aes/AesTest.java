@@ -32,8 +32,7 @@ public class AesTest {
         final int length1 = cipher.processBytes(data, 0, data.length, outBuf, 0);
         final int length2 = cipher.doFinal(outBuf, length1);
         final int actualLength = length1 + length2;
-        final byte[] result = new byte[actualLength];
-        return result;
+        return new byte[actualLength];
     }
 
     private static byte[] decrypt(final byte[] cipher, final byte[] key, final byte[] iv) throws Exception {
