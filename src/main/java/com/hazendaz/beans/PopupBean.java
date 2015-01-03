@@ -18,11 +18,7 @@ public class PopupBean implements Serializable {
     private boolean           showDuplicate;
 
     public void duplicate() {
-        if (this.showDuplicate) {
-            this.showDuplicate = false;
-        } else {
-            this.showDuplicate = true;
-        }
+        this.showDuplicate = !this.showDuplicate;
     }
 
     public boolean isShowDuplicate() {

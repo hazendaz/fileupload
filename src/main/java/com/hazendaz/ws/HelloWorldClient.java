@@ -13,10 +13,7 @@ public class HelloWorldClient {
 
             @Override
             public boolean verify(final String hostname, final javax.net.ssl.SSLSession sslSession) {
-                if (hostname.equals("localhost")) {
-                    return true;
-                }
-                return false;
+                return hostname.equals("localhost");
             }
         });
     }

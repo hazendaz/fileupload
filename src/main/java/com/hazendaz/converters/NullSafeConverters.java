@@ -33,19 +33,12 @@ public class NullSafeConverters {
     }
 
     public <T> boolean isEmpty(final T value) {
-        if (value == null || value.equals("") || CharMatcher.WHITESPACE.matchesAllOf(value.toString())) {
-            return true;
-        }
-        return false;
+        return value == null || value.equals("") || CharMatcher.WHITESPACE.matchesAllOf(value.toString());
     }
 
     public <T extends Number> boolean isEmpty(final T value) {
-        if (value == null || value.equals(Integer.valueOf(0)) || value.equals(Long.valueOf(0L))
-                || value.equals(Double.valueOf(0.0))) {
-            return true;
-        }
-        return false;
-
+        return value == null || value.equals(Integer.valueOf(0)) || value.equals(Long.valueOf(0L))
+                || value.equals(Double.valueOf(0.0));
     }
 
     public <T> String toString(final T value) {
