@@ -64,7 +64,7 @@ public final class BeanProvider {
                 (AnnotatedType<Object>) beanManager.createAnnotatedType(instance.getClass()), true);
         try {
             final Iterator<?> iterator = ignoreMap.entrySet().iterator();
-            while (iterator.hasNext()) {
+            for (; iterator.hasNext();) {
                 final Map.Entry<String, Class<?>> pairs = (Map.Entry<String, Class<?>>) iterator.next();
                 builder.removeFromField(instance.getClass().getDeclaredField(pairs.getKey()),
                         (Class<? extends Annotation>) pairs.getValue());
