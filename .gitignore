@@ -1,5 +1,7 @@
 .classpath
 .factorypath
+.idea
+*.iml
 .project
 .settings
 target
