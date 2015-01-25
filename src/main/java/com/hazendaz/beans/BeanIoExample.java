@@ -36,5 +36,4 @@ public class BeanIoExample {
         }
         return rows.size();
     }
-
 }

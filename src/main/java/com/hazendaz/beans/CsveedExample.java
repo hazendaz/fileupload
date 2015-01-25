@@ -29,5 +29,4 @@ public class CsveedExample {
         this.logger.info("column 1: {}", rows.get(0).get(1));
         return rows.size();
     }
-
 }
