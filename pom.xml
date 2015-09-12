@@ -153,7 +153,7 @@
         <dependency>
             <groupId>org.jboss</groupId>
             <artifactId>jandex</artifactId>
-            <version>1.2.3.Final</version>
+            <version>1.2.4.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
