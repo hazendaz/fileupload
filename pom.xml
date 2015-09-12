@@ -18,6 +18,15 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <!-- mine -->
+        <dependency>
+            <groupId>com.github.hazendaz</groupId>
+            <artifactId>fileUploadResourcesLite</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- third parties -->
         <dependency>
             <groupId>com.googlecode.htmlcompressor</groupId>
             <artifactId>htmlcompressor</artifactId>
@@ -656,12 +665,6 @@
                     <groupId>org.glassfish.metro</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.hazendaz</groupId>
-            <artifactId>fileUploadResourcesLite</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.csveed</groupId>
