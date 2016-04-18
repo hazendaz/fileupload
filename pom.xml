@@ -539,7 +539,7 @@
         <dependency>
             <groupId>com.github.dblock.waffle</groupId>
             <artifactId>waffle-jna</artifactId>
-            <version>1.7.4</version>
+            <version>1.8.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
