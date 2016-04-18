@@ -600,6 +600,10 @@
                     <artifactId>javax.annotation-api</artifactId>
                     <groupId>javax.annotation</groupId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>osgi-resource-locator</artifactId>
+                    <groupId>org.glassfish.hk2</groupId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
