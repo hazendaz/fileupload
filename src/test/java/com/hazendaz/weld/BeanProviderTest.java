@@ -21,27 +21,27 @@ public class BeanProviderTest {
 
     @Test
     public void injectFields_empty_map() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<String, Class<?>>();
+        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         Assert.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
     public void injectFields_full_map() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<String, Class<?>>();
+        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         ignoreMap.put("context", Resource.class);
         Assert.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
     public void injectFields_missing_property() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<String, Class<?>>();
+        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         ignoreMap.put("string", String.class);
         Assert.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
     public void injectFields_null_instance() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<String, Class<?>>();
+        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         Assert.assertNull(BeanProvider.injectFields(null, ignoreMap));
     }
 

@@ -75,14 +75,16 @@ public class AesTest2 implements Serializable {
     }
 
     /**
-     * @param key is the parameter key to set.
+     * @param key
+     *            is the parameter key to set.
      */
     public void setKey(final byte[] key) {
         this.keyParameter = new KeyParameter(key);
     }
 
     /**
-     * @param cipherPadding is the chipher padding to set.
+     * @param cipherPadding
+     *            is the chipher padding to set.
      */
     public void setPadding(final BlockCipherPadding cipherPadding) {
         this.cipher = new PaddedBufferedBlockCipher(this.AESCipher, cipherPadding);

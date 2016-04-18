@@ -21,6 +21,13 @@
         <!-- mine -->
         <dependency>
             <groupId>com.github.hazendaz</groupId>
+            <artifactId>test-aggregator</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hazendaz</groupId>
             <artifactId>fileUploadResourcesLite</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>

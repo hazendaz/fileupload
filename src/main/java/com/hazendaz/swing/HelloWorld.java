@@ -18,8 +18,10 @@ public class HelloWorld {
     }
 
     /**
-     * @param event is the containerInitialized even being processed.
-     * @param parameters is the paramter list being initialized.
+     * @param event
+     *            is the containerInitialized even being processed.
+     * @param parameters
+     *            is the paramter list being initialized.
      */
     void printHello(@Observes final ContainerInitialized event, @Parameters final List<String> parameters) {
         System.out.println("Hello " + parameters.get(0));
