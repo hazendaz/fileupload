@@ -715,7 +715,7 @@
             <plugin>
                 <groupId>org.jboss.jandex</groupId>
                 <artifactId>jandex-maven-plugin</artifactId>
-                <version>1.0.2</version>
+                <version>1.0.3</version>
                 <executions>
                     <execution>
                         <id>make-index</id>
@@ -745,7 +745,7 @@
                                     <pluginExecutionFilter>
                                         <groupId>org.jboss.jandex</groupId>
                                         <artifactId>jandex-maven-plugin</artifactId>
-                                        <versionRange>[1.0.1,)</versionRange>
+                                        <versionRange>[1.0.3,)</versionRange>
                                         <goals>
                                             <goal>jandex</goal>
                                         </goals>
