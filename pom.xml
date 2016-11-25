@@ -72,7 +72,7 @@
         <dependency>
             <groupId>org.richfaces</groupId>
             <artifactId>richfaces</artifactId>
-            <version>4.5.10.Final</version>
+            <version>4.5.17.Final</version>
         </dependency>
         <!-- Added for future use -->
         <dependency>
