@@ -480,13 +480,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.12</version>
+            <version>1.7.21</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
-            <version>1.7.12</version>
+            <version>1.7.21</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -498,13 +498,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
+            <version>1.7.21</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-ext</artifactId>
-            <version>1.7.12</version>
+            <version>1.7.21</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
