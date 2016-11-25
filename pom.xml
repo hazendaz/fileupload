@@ -408,7 +408,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-cdi</artifactId>
-            <version>1.0.0-beta2</version>
+            <version>1.0.0-beta3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
