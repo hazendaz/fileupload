@@ -22,7 +22,7 @@ public class BeanIoExample {
         factory.define(builder);
 
         final BeanReader beanReader = factory.createReader("beanio", new File(
-                "C:/eclipse-workspace/hazendaz/fileupload/src/main/resources/beanio.txt"));
+                "C:/Users/Jeremy/Documents/GitHub/hazendaz/fileupload/src/main/resources/beanio.txt"));
 
         final List<BeanIo> rows = new ArrayList<BeanIo>();
 
