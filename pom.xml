@@ -756,7 +756,7 @@
                                     <pluginExecutionFilter>
                                         <groupId>org.jboss.jandex</groupId>
                                         <artifactId>jandex-maven-plugin</artifactId>
-                                        <versionRange>[1.0.3,)</versionRange>
+                                        <versionRange>[1.0.5,)</versionRange>
                                         <goals>
                                             <goal>jandex</goal>
                                         </goals>
