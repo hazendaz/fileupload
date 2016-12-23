@@ -105,9 +105,6 @@
     </welcome-file-list>
 
     <listener>
-        <listener-class>se.jiderhamn.classloader.leak.prevention.ClassLoaderLeakPreventor</listener-class>
-    </listener>
-    <listener>
         <listener-class>net.sf.ehcache.constructs.web.ShutdownListener</listener-class>
     </listener>
 
