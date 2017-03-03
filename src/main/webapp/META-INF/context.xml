@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Context>
 <Context>
-    <Resource name="BeanManager" auth="Container"
+  <Resource name="BeanManager" auth="Container"
         type="javax.enterprise.inject.spi.BeanManager" factory="org.jboss.weld.resources.ManagerObjectFactory" />
+  <JarScanner>
+    <JarScanFilter defaultPluggabilityScan="false"
+                   defaultTldScan="false"
+                   pluggabilityScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},fileupload*.jar,omnifaces-*.jar"
+                   pluggabilitySkip=""
+                   tldScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},jsf-impl*.jar"
+                   tldSkip="metrics-servlets-*.jar,swingx-common-*.jar,quartz-jobs-*.jar,deltaspike-cdictrl-weld-*.jar,swingx-core-*.jar,dropwizard-servlets-*.jar,weld-api-*.jar,jboss-classfilewriter-*.jar" />
+  </JarScanner>
 </Context>
