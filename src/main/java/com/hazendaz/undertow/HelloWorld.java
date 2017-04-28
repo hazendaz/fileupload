@@ -21,8 +21,7 @@ public class HelloWorld {
     public static void main(final String[] args) {
         try {
             DeploymentInfo servletBuilder = Servlets.deployment().setClassLoader(HelloWorld.class.getClassLoader())
-                    .setContextPath("/fileupload")
-                    .setDeploymentName("fileupload.war")
+                    .setContextPath("/fileupload").setDeploymentName("fileupload.war")
                     // Doesn't work, fails with missing /WEB-INF/sun-jaxws.xml
                     // .addListener(new ListenerInfo(WSServletContextListener.class))
                     .addWelcomePage("pages/logon.faces")

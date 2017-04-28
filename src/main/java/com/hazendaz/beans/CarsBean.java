@@ -79,18 +79,18 @@ public class CarsBean implements Serializable {
                 ii.setPriceMarket(new BigDecimal(RandomHelper.rand(15000, 55000)).setScale(CarsBean.DECIMALS,
                         CarsBean.ROUNDING_MODE));
                 ii.setDaysLive(RandomHelper.rand(1, 90));
-                ii.setChangeSearches(new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS,
-                        CarsBean.ROUNDING_MODE));
-                ii.setChangePrice(new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS,
-                        CarsBean.ROUNDING_MODE));
-                ii.setExposure(new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS,
-                        CarsBean.ROUNDING_MODE));
-                ii.setActivity(new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS,
-                        CarsBean.ROUNDING_MODE));
-                ii.setPrinted(new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS,
-                        CarsBean.ROUNDING_MODE));
-                ii.setInquiries(new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS,
-                        CarsBean.ROUNDING_MODE));
+                ii.setChangeSearches(
+                        new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS, CarsBean.ROUNDING_MODE));
+                ii.setChangePrice(
+                        new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS, CarsBean.ROUNDING_MODE));
+                ii.setExposure(
+                        new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS, CarsBean.ROUNDING_MODE));
+                ii.setActivity(
+                        new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS, CarsBean.ROUNDING_MODE));
+                ii.setPrinted(
+                        new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS, CarsBean.ROUNDING_MODE));
+                ii.setInquiries(
+                        new BigDecimal(RandomHelper.rand(0, 5)).setScale(CarsBean.DECIMALS, CarsBean.ROUNDING_MODE));
                 demoInventoryItemArrays[j] = ii;
             }
 

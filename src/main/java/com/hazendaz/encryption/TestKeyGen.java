@@ -92,8 +92,8 @@ public class TestKeyGen {
         // takes parameters that allow it to generate the self
         // signature.
         final PGPKeyRingGenerator keyRingGen = new PGPKeyRingGenerator(PGPSignature.POSITIVE_CERTIFICATION, rsakp_sign,
-                id, sha1Calc, signhashgen.generate(), null, new BcPGPContentSignerBuilder(rsakp_sign.getPublicKey()
-                        .getAlgorithm(), HashAlgorithmTags.SHA1), pske);
+                id, sha1Calc, signhashgen.generate(), null,
+                new BcPGPContentSignerBuilder(rsakp_sign.getPublicKey().getAlgorithm(), HashAlgorithmTags.SHA1), pske);
 
         // Add our encryption subkey, together with its signature.
         keyRingGen.addSubKey(rsakp_enc, enchashgen.generate(), null);
@@ -141,8 +141,8 @@ public class TestKeyGen {
 
             final PGPSignatureSubpacketGenerator hashedGen = new PGPSignatureSubpacketGenerator();
 
-            hashedGen.setKeyFlags(true, KeyFlags.CERTIFY_OTHER | KeyFlags.SIGN_DATA | KeyFlags.ENCRYPT_COMMS
-                    | KeyFlags.ENCRYPT_STORAGE);
+            hashedGen.setKeyFlags(true,
+                    KeyFlags.CERTIFY_OTHER | KeyFlags.SIGN_DATA | KeyFlags.ENCRYPT_COMMS | KeyFlags.ENCRYPT_STORAGE);
 
             hashedGen.setPreferredCompressionAlgorithms(false, new int[] { CompressionAlgorithmTags.ZIP });
 
@@ -153,8 +153,8 @@ public class TestKeyGen {
             final PGPKeyPair secretKey2 = new BcPGPKeyPair(PublicKeyAlgorithmTags.RSA_GENERAL, privKeyParams,
                     new Date());
 
-            final PGPKeyRingGenerator keyRingGen = TestKeyGen.generateKeyRingGenerator(email + "<" + email
-                    + "@homail.com>", password, 0xc0);
+            final PGPKeyRingGenerator keyRingGen = TestKeyGen
+                    .generateKeyRingGenerator(email + "<" + email + "@homail.com>", password, 0xc0);
 
             keyRingGen.addSubKey(secretKey2);
 
@@ -211,8 +211,8 @@ public class TestKeyGen {
 
             final PGPSignatureSubpacketGenerator hashedGen = new PGPSignatureSubpacketGenerator();
 
-            hashedGen.setKeyFlags(true, KeyFlags.CERTIFY_OTHER | KeyFlags.SIGN_DATA | KeyFlags.ENCRYPT_COMMS
-                    | KeyFlags.ENCRYPT_STORAGE);
+            hashedGen.setKeyFlags(true,
+                    KeyFlags.CERTIFY_OTHER | KeyFlags.SIGN_DATA | KeyFlags.ENCRYPT_COMMS | KeyFlags.ENCRYPT_STORAGE);
 
             hashedGen.setPreferredCompressionAlgorithms(false, new int[] { CompressionAlgorithmTags.ZIP });
 
@@ -223,8 +223,8 @@ public class TestKeyGen {
             final PGPKeyPair secretKey2 = new BcPGPKeyPair(PublicKeyAlgorithmTags.RSA_GENERAL, privKeyParams,
                     new Date());
 
-            final PGPKeyRingGenerator keyRingGen = TestKeyGen.generateKeyRingGenerator(email + "<" + email
-                    + "@homail.com>", password, 0xc0);
+            final PGPKeyRingGenerator keyRingGen = TestKeyGen
+                    .generateKeyRingGenerator(email + "<" + email + "@homail.com>", password, 0xc0);
 
             keyRingGen.addSubKey(secretKey2);
 

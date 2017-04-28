@@ -25,7 +25,8 @@ public class UppercaseConverter implements Converter {
     }
 
     @Override
-    public String getAsString(final FacesContext facesContext, final UIComponent uiComponent, final Object objectValue) {
+    public String getAsString(final FacesContext facesContext, final UIComponent uiComponent,
+            final Object objectValue) {
 
         if (objectValue == null) {
             return null;

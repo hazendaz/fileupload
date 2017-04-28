@@ -41,9 +41,8 @@ public class EagerExtension implements Extension {
             beanManager.getReference(bean, bean.getBeanClass(), beanManager.createCreationalContext(bean)).toString();
         }
         for (final Bean<?> bean : this.invalidEagerBeansList) {
-            this.logger.error("@Eager annotation not used with @ApplicationScoped in {}",
-                    beanManager.getReference(bean, bean.getBeanClass(), beanManager.createCreationalContext(bean))
-                            .toString());
+            this.logger.error("@Eager annotation not used with @ApplicationScoped in {}", beanManager
+                    .getReference(bean, bean.getBeanClass(), beanManager.createCreationalContext(bean)).toString());
         }
     }
 }

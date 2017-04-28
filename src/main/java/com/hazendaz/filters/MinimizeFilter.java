@@ -58,8 +58,8 @@ public class MinimizeFilter implements Filter {
             if (request instanceof HttpServletRequest) {
 
                 if ((((HttpServletRequest) request).getRequestURI().contains(".faces")
-                        || ((HttpServletRequest) request).getRequestURI().endsWith("/fileupload/") || ((HttpServletRequest) request)
-                        .getRequestURI().contains("/images/"))
+                        || ((HttpServletRequest) request).getRequestURI().endsWith("/fileupload/")
+                        || ((HttpServletRequest) request).getRequestURI().contains("/images/"))
                         && !((HttpServletRequest) request).getRequestURI().contains("js.faces")
                         && !((HttpServletRequest) request).getRequestURI().contains("css.faces")) {
                     chain.doFilter(request, response);

@@ -330,8 +330,8 @@ public class SingleSignOnTest {
         if (pgpSecKey == null) {
             return null;
         }
-        return pgpSecKey.extractPrivateKey(new BcPBESecretKeyDecryptorBuilder(new BcPGPDigestCalculatorProvider())
-                .build(pass));
+        return pgpSecKey
+                .extractPrivateKey(new BcPBESecretKeyDecryptorBuilder(new BcPGPDigestCalculatorProvider()).build(pass));
 
     }
 

@@ -90,8 +90,8 @@ public class AesTest2 implements Serializable {
         this.cipher = new PaddedBufferedBlockCipher(this.AESCipher, cipherPadding);
     }
 
-    private byte[] processing(final byte[] input, final boolean encrypt) throws DataLengthException,
-            InvalidCipherTextException {
+    private byte[] processing(final byte[] input, final boolean encrypt)
+            throws DataLengthException, InvalidCipherTextException {
         this.cipher.init(encrypt, this.keyParameter);
 
         final byte[] output = new byte[this.cipher.getOutputSize(input.length)];

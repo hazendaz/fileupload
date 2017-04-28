@@ -53,8 +53,8 @@ public class PGPEncryption {
 
             PGPEncryption.logger.info("Temp file created at ");
             PGPEncryption.logger.info(outputfile.getAbsolutePath());
-            PGPEncryption.logger
-                    .info("Reading the temp file to make sure that the bits were written\n----------------------------");
+            PGPEncryption.logger.info(
+                    "Reading the temp file to make sure that the bits were written\n----------------------------");
 
             final BufferedReader isr = new BufferedReader(new FileReader(outputfile));
             String line = "";
@@ -87,8 +87,8 @@ public class PGPEncryption {
             out.close();
 
             PGPEncryption.logger.info("Reading the encrypted file\n----------------------------");
-            final BufferedReader isr2 = new BufferedReader(new FileReader(new File(outputfile.getAbsolutePath()
-                    + ".asc")));
+            final BufferedReader isr2 = new BufferedReader(
+                    new FileReader(new File(outputfile.getAbsolutePath() + ".asc")));
             String line2 = "";
             while ((line2 = isr2.readLine()) != null) {
                 System.out.println(line2);

@@ -21,7 +21,8 @@ public class MoneyConverter implements Converter {
     }
 
     @Override
-    public String getAsString(final FacesContext facesContext, final UIComponent uiComponent, final Object objectValue) {
+    public String getAsString(final FacesContext facesContext, final UIComponent uiComponent,
+            final Object objectValue) {
         final DecimalFormat decimalFormat = new DecimalFormat("#.##");
         return decimalFormat.format(objectValue);
     }
