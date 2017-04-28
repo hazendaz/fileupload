@@ -443,7 +443,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-cdi</artifactId>
-            <version>1.0.0-beta6</version>
+            <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
