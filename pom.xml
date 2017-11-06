@@ -67,7 +67,7 @@
         <dependency>
             <groupId>io.undertow</groupId>
             <artifactId>undertow-servlet</artifactId>
-            <version>1.4.12.Final</version>
+            <version>1.4.21.Final</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
