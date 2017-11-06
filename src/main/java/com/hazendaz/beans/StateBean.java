@@ -68,7 +68,7 @@ public class StateBean implements Serializable {
     @PostConstruct
     public void init() {
         this.cache = CacheManager.getInstance().getCache("smallCache");
-        this.states = new ArrayList<String>();
+        this.states = new ArrayList<>();
         this.states.add("Ohio");
         this.states.add("Florida");
         this.cache.put(new Element("A", this.states));

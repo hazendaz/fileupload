@@ -13,7 +13,7 @@ public class InventoryVendorList implements Serializable {
     private List<InventoryVendorItem> vendorItems;
 
     public InventoryVendorList() {
-        this.vendorItems = new ArrayList<InventoryVendorItem>();
+        this.vendorItems = new ArrayList<>();
     }
 
     public long getCount() {

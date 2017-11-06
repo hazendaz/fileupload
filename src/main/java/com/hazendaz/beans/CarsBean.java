@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
@@ -94,9 +94,9 @@ public class CarsBean implements Serializable {
                 demoInventoryItemArrays[j] = ii;
             }
 
-            iiList = new ArrayList<InventoryItem>(Arrays.asList(demoInventoryItemArrays));
+            iiList = new ArrayList<>(Arrays.asList(demoInventoryItemArrays));
         } catch (final Exception e) {
-            e.printStackTrace();
+            this.logger.error("", e);
         }
 
         return iiList;
@@ -105,7 +105,7 @@ public class CarsBean implements Serializable {
     public List<InventoryItem> getAllInventoryItems() {
         synchronized (this) {
             if (this.allInventoryItems == null) {
-                this.allInventoryItems = new ArrayList<InventoryItem>();
+                this.allInventoryItems = new ArrayList<>();
 
                 this.logger.info("Started building car list");
                 for (int k = 0; k <= 18; k++) {
@@ -231,7 +231,7 @@ public class CarsBean implements Serializable {
                                 break;
                         }
                     } catch (final Exception e) {
-                        e.printStackTrace();
+                        logger.error("", e);
                     }
                 }
                 this.logger.info("Ended building car list");
@@ -242,7 +242,7 @@ public class CarsBean implements Serializable {
     }
 
     public List<String> getAllVendors() {
-        final List<String> result = new ArrayList<String>();
+        final List<String> result = new ArrayList<>();
         for (final InventoryVendorList vendorList : this.getInventoryVendorLists()) {
             result.add(vendorList.getVendor());
         }
@@ -252,7 +252,7 @@ public class CarsBean implements Serializable {
     public List<InventoryVendorList> getInventoryVendorLists() {
         synchronized (this) {
             if (this.inventoryVendorLists == null) {
-                this.inventoryVendorLists = new ArrayList<InventoryVendorList>();
+                this.inventoryVendorLists = new ArrayList<>();
                 final List<InventoryItem> inventoryItems = this.getAllInventoryItems();
 
                 Collections.sort(inventoryItems, new Comparator<InventoryItem>() {
@@ -282,7 +282,7 @@ public class CarsBean implements Serializable {
     }
 
     public List<SelectItem> getVendorOptions() {
-        final List<SelectItem> result = new ArrayList<SelectItem>();
+        final List<SelectItem> result = new ArrayList<>();
         result.add(new SelectItem("", ""));
         for (final InventoryVendorList vendorList : this.getInventoryVendorLists()) {
             result.add(new SelectItem(vendorList.getVendor()));

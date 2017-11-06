@@ -11,8 +11,8 @@ import javax.inject.Named;
 
 @ApplicationScoped
 @Named
-@FacesConverter(value = "moneyConverter")
-public class MoneyConverter implements Converter {
+@FacesConverter(value = "moneyConverter", managed = true)
+public class MoneyConverter implements Converter<Object> {
 
     @Override
     public Object getAsObject(final FacesContext facesContext, final UIComponent component, final String stringValue) {

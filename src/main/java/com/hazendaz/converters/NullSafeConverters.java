@@ -33,7 +33,7 @@ public class NullSafeConverters {
     }
 
     public <T> boolean isEmpty(final T value) {
-        return value == null || value.equals("") || CharMatcher.WHITESPACE.matchesAllOf(value.toString());
+        return value == null || value.equals("") || CharMatcher.whitespace().matchesAllOf(value.toString());
     }
 
     public <T extends Number> boolean isEmpty(final T value) {

@@ -60,7 +60,7 @@ public final class BeanProvider {
         }
         final BeanManager beanManager = BeanProvider.getBeanManager();
         final CreationalContext<Object> creationalContext = beanManager.createCreationalContext(null);
-        final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<Object>()
+        final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<>()
                 .readFromType((AnnotatedType<Object>) beanManager.createAnnotatedType(instance.getClass()), true);
         try {
             final Iterator<?> iterator = ignoreMap.entrySet().iterator();

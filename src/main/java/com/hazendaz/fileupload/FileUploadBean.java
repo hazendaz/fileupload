@@ -32,7 +32,7 @@ public class FileUploadBean implements Serializable {
 
     private ExecutorService          threadPool;
 
-    private ArrayList<UploadedImage> files            = new ArrayList<UploadedImage>();
+    private ArrayList<UploadedImage> files            = new ArrayList<>();
 
     private String                   cancel;
 

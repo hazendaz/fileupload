@@ -9,8 +9,8 @@ import javax.inject.Named;
 
 @ApplicationScoped
 @Named
-@FacesConverter(forClass = String.class)
-public class UppercaseConverter implements Converter {
+@FacesConverter(forClass = String.class, managed = true)
+public class UppercaseConverter implements Converter<Object> {
 
     @Override
     public Object getAsObject(final FacesContext facesContext, final UIComponent component, final String stringValue) {

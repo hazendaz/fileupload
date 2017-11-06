@@ -24,7 +24,7 @@ public class StateCodesBean implements Serializable {
     static {
         final PropertyResourceBundle properties = (PropertyResourceBundle) ResourceBundle.getBundle("StateCodes");
         final Enumeration<String> keys = properties.getKeys();
-        StateCodesBean.stateCodes = new ArrayList<SelectItem>();
+        StateCodesBean.stateCodes = new ArrayList<>();
         String nextKey = null;
         while (keys.hasMoreElements()) {
             nextKey = keys.nextElement();

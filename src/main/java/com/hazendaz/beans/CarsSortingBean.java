@@ -37,8 +37,8 @@ public class CarsSortingBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        this.sortsOrders = new HashMap<String, SortOrder>();
-        this.sortPriorities = new ArrayList<String>();
+        this.sortsOrders = new HashMap<>();
+        this.sortPriorities = new ArrayList<>();
     }
 
     /**

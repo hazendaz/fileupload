@@ -24,7 +24,7 @@ public class BeanIoExample {
         final BeanReader beanReader = factory.createReader("beanio",
                 new File("C:/Users/Jeremy/Documents/GitHub/hazendaz/fileupload/src/main/resources/beanio.txt"));
 
-        final List<BeanIo> rows = new ArrayList<BeanIo>();
+        final List<BeanIo> rows = new ArrayList<>();
 
         Object row = null;
         while ((row = beanReader.read()) != null) {

@@ -12,7 +12,7 @@ import javax.enterprise.inject.spi.ProcessInjectionTarget;
 
 public class AfterDeployExtension implements Extension {
 
-    private final List<InjectionTarget<?>> methods = new ArrayList<InjectionTarget<?>>();
+    private final List<InjectionTarget<?>> methods = new ArrayList<>();
 
     public <T> void collect(@Observes final ProcessInjectionTarget<T> event) {
         if (event.getAnnotatedType().isAnnotationPresent(AfterDeploy.class)) {

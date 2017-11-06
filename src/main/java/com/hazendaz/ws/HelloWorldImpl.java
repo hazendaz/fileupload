@@ -35,7 +35,7 @@ public class HelloWorldImpl implements HelloWorld {
 
     @PostConstruct
     public void init() {
-        final Map<String, Class<?>> ignoreMap = new HashMap<String, Class<?>>();
+        final Map<String, Class<?>> ignoreMap = new HashMap<>();
         ignoreMap.put("context", Resource.class);
         try {
             BeanProvider.injectFields(this, ignoreMap);

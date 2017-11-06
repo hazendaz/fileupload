@@ -17,6 +17,6 @@ public class UserList implements Serializable {
     private List<User>        userList;
 
     public UserList() {
-        this.userList = new ArrayList<User>();
+        this.userList = new ArrayList<>();
     }
 }
