@@ -1,9 +1,9 @@
 package com.hazendaz.undertow;
 
+import com.sun.xml.ws.transport.http.servlet.WSServlet;
+
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.ServletException;
-
-import com.sun.xml.ws.transport.http.servlet.WSServlet;
 
 import io.undertow.Handlers;
 import io.undertow.Undertow;

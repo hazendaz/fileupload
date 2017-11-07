@@ -1,5 +1,7 @@
 package com.hazendaz.rs;
 
+import com.hazendaz.beans.BeanIo;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -8,8 +10,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
-
-import com.hazendaz.beans.BeanIo;
 
 @Path("hello")
 public class HelloWorldService {

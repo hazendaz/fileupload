@@ -1,5 +1,7 @@
 package com.hazendaz.scheduler;
 
+import com.hazendaz.beans.InventoryItem;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -10,8 +12,6 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
-
-import com.hazendaz.beans.InventoryItem;
 
 @Scheduled(cronExpression = "0/10 * * * * ?")
 public class DailyCleanup2 implements Job {

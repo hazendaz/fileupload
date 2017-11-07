@@ -1,9 +1,9 @@
 package com.hazendaz.converters;
 
-import java.util.ArrayList;
-
 import com.google.common.base.CaseFormat;
 import com.google.common.base.CharMatcher;
+
+import java.util.ArrayList;
 
 public class NullSafeConverters {
 

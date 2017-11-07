@@ -1,5 +1,7 @@
 package com.hazendaz.ws;
 
+import com.hazendaz.weld.BeanProvider;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,8 +13,6 @@ import javax.jws.WebService;
 import javax.xml.ws.WebServiceContext;
 
 import org.slf4j.Logger;
-
-import com.hazendaz.weld.BeanProvider;
 
 @Vetoed
 @WebService(endpointInterface = "com.hazendaz.ws.HelloWorld")

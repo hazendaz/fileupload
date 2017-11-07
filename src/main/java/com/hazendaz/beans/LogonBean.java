@@ -1,5 +1,9 @@
 package com.hazendaz.beans;
 
+import com.hazendaz.jndi.JNDITree;
+import com.hazendaz.model.User;
+import com.hazendaz.model.UserList;
+
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
@@ -10,16 +14,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpSession;
-// import javax.validation.constraints.Past;
-
-import lombok.Data;
-import lombok.ToString;
 
 import org.slf4j.Logger;
 
-import com.hazendaz.jndi.JNDITree;
-import com.hazendaz.model.User;
-import com.hazendaz.model.UserList;
+// import javax.validation.constraints.Past;
+import lombok.Data;
+import lombok.ToString;
 
 @Data
 @ToString(exclude = "context")

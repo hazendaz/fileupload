@@ -13,10 +13,10 @@ import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import lombok.Data;
-
 import org.richfaces.component.SortOrder;
 import org.slf4j.Logger;
+
+import lombok.Data;
 
 @Data
 @Named

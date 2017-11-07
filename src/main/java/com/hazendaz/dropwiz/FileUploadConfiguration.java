@@ -1,8 +1,8 @@
 package com.hazendaz.dropwiz;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import io.dropwizard.Configuration;
 

@@ -9,15 +9,15 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.faces.view.ViewScoped;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import lombok.Data;
-
 import org.slf4j.Logger;
+
+import lombok.Data;
 
 @Data
 @Named

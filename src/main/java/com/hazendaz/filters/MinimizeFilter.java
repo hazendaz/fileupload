@@ -1,5 +1,12 @@
 package com.hazendaz.filters;
 
+import com.google.common.base.Charsets;
+import com.googlecode.htmlcompressor.compressor.HtmlCompressor;
+import com.googlecode.htmlcompressor.compressor.XmlCompressor;
+import com.googlecode.htmlcompressor.compressor.YuiCssCompressor;
+import com.googlecode.htmlcompressor.compressor.YuiJavaScriptCompressor;
+import com.hazendaz.model.IUser;
+
 import java.io.CharArrayWriter;
 import java.io.IOException;
 
@@ -15,13 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
-
-import com.google.common.base.Charsets;
-import com.googlecode.htmlcompressor.compressor.HtmlCompressor;
-import com.googlecode.htmlcompressor.compressor.XmlCompressor;
-import com.googlecode.htmlcompressor.compressor.YuiCssCompressor;
-import com.googlecode.htmlcompressor.compressor.YuiJavaScriptCompressor;
-import com.hazendaz.model.IUser;
 
 @WebFilter(urlPatterns = { "/*" })
 public class MinimizeFilter implements Filter {

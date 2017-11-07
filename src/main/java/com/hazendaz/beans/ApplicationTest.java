@@ -1,14 +1,14 @@
 package com.hazendaz.beans;
 
+import com.hazendaz.weld.AfterDeploy;
+import com.hazendaz.weld.Eager;
+
 import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 
 import lombok.Getter;
-
-import com.hazendaz.weld.AfterDeploy;
-import com.hazendaz.weld.Eager;
 
 @ApplicationScoped
 @Eager

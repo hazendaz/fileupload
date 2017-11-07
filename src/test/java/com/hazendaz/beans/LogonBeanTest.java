@@ -1,11 +1,11 @@
 package com.hazendaz.beans;
 
+import mockit.Deencapsulation;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
-
-import mockit.Deencapsulation;
 
 public class LogonBeanTest {
 

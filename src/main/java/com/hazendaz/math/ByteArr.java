@@ -1,13 +1,13 @@
 package com.hazendaz.math;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Charsets;
+import com.google.common.io.BaseEncoding;
+
 import java.math.BigInteger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Charsets;
-import com.google.common.io.BaseEncoding;
 
 public class ByteArr {
 

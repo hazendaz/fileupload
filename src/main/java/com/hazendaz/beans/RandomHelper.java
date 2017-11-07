@@ -1,8 +1,8 @@
 package com.hazendaz.beans;
 
-import java.util.Random;
-
 import com.google.common.base.Charsets;
+
+import java.util.Random;
 
 public final class RandomHelper {
     public static int genRand() {

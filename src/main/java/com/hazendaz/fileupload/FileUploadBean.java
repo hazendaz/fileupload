@@ -1,5 +1,7 @@
 package com.hazendaz.fileupload;
 
+import com.hazendaz.servlets.RunnableTest;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Serializable;
@@ -18,8 +20,6 @@ import javax.inject.Named;
 import org.richfaces.event.FileUploadEvent;
 import org.richfaces.model.UploadedFile;
 import org.slf4j.Logger;
-
-import com.hazendaz.servlets.RunnableTest;
 
 @Named
 @SessionScoped
