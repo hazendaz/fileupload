@@ -12,7 +12,7 @@ public final class RandomHelper {
     public static int rand(final int lo, final int hi) {
         final Random rn2 = new Random();
         final int n = hi - lo + 1;
-        int i = rn2.nextInt() % n;
+        int i = (rn2.nextBoolean() ? 1 : -1) * rn2.nextInt(n);
 
         if (i < 0) {
             i = -i;
