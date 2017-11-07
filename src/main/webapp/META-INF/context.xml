@@ -6,9 +6,9 @@
   <JarScanner>
     <JarScanFilter defaultPluggabilityScan="false"
                    defaultTldScan="false"
-                   pluggabilityScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},fileupload*.jar,omnifaces-*.jar"
+                   pluggabilityScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},fileupload*.jar,javax.faces*.jar,omnifaces-*.jar"
                    pluggabilitySkip=""
-                   tldScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},jsf-impl*.jar"
+                   tldScan="${tomcat.util.scan.StandardJarScanFilter.jarsToScan},javax.faces*.jar"
                    tldSkip="metrics-servlets-*.jar,swingx-common-*.jar,quartz-jobs-*.jar,deltaspike-cdictrl-weld-*.jar,swingx-core-*.jar,dropwizard-servlets-*.jar,weld-api-*.jar,jboss-classfilewriter-*.jar" />
   </JarScanner>
 </Context>
