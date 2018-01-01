@@ -21,7 +21,6 @@ public class ByteManipulation {
         // Convert the internal UCS2 representation into outputEncoding
         final ByteBuffer bbuf = encoder.encode(CharBuffer.wrap(cbuf));
         System.out.println(new String(bbuf.array(), 0, bbuf.limit(), Charsets.UTF_8));
-
     }
 
 }
