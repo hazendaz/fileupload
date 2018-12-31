@@ -19,7 +19,7 @@ public class CsveedTest {
 
     public class Bean {
         private Integer first;
-        private Long    second;
+        private Long second;
 
         public Bean(Integer first, Long second) {
             this.first = first;

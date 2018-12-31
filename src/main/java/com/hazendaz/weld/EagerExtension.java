@@ -15,8 +15,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class EagerExtension implements Extension {
-    private final Logger        logger                = LoggerFactory.getLogger(EagerExtension.class);
-    private final List<Bean<?>> eagerBeansList        = new ArrayList<>();
+    private final Logger logger = LoggerFactory.getLogger(EagerExtension.class);
+    private final List<Bean<?>> eagerBeansList = new ArrayList<>();
     private final List<Bean<?>> invalidEagerBeansList = new ArrayList<>();
 
     public <T> void collect(@Observes final ProcessBean<T> event) {

@@ -18,13 +18,13 @@ import org.slf4j.Logger;
 public class DailyCleanup implements Job {
 
     @Inject
-    private Logger        logger;
+    private Logger logger;
 
     @Inject
     private InventoryItem inventoryItem;
 
     @Inject
-    private UserList      userList;
+    private UserList userList;
 
     @Override
     public void execute(final JobExecutionContext context) throws JobExecutionException {

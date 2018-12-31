@@ -14,7 +14,7 @@ public class UserList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private List<User>        userList;
+    private List<User> userList;
 
     public UserList() {
         this.userList = new ArrayList<>();

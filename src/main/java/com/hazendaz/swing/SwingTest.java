@@ -16,7 +16,7 @@ import org.jboss.weld.environment.se.events.ContainerInitialized;
  */
 public class SwingTest extends javax.swing.JFrame {
 
-    private static final long     serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private javax.swing.JMenuItem aboutMenuItem;
 
@@ -24,11 +24,11 @@ public class SwingTest extends javax.swing.JFrame {
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
-    private javax.swing.JMenu     editMenu;
+    private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu     fileMenu;
-    private javax.swing.JMenu     helpMenu;
-    private javax.swing.JMenuBar  menuBar;
+    private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;

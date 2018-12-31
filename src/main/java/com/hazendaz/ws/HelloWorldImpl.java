@@ -19,7 +19,7 @@ import org.slf4j.Logger;
 public class HelloWorldImpl implements HelloWorld {
 
     @Inject
-    private Logger            logger;
+    private Logger logger;
 
     @Resource
     private WebServiceContext context;

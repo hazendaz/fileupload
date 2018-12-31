@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 public class DailyCleanup2 implements Job {
 
     @Inject
-    private Logger        logger;
+    private Logger logger;
 
     @Inject
     private InventoryItem inventoryItem;

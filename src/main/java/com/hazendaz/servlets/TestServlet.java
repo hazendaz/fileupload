@@ -10,7 +10,7 @@ public class TestServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Inject
-    private Logger            logger;
+    private Logger logger;
 
     @Override
     public void init() {
