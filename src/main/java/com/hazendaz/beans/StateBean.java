@@ -10,10 +10,11 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import lombok.Data;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import lombok.Data;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
@@ -25,17 +26,17 @@ public class StateBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Logger            logger           = LoggerFactory.getLogger(StateBean.class);
+    private Logger logger = LoggerFactory.getLogger(StateBean.class);
 
-    private String            state;
-    private String            extra;
-    private String            upperCased;
-    private String            upperCased2;
-    private String            notUpperCased;
-    private double            money            = 5;
+    private String state;
+    private String extra;
+    private String upperCased;
+    private String upperCased2;
+    private String notUpperCased;
+    private double money = 5;
 
-    private Cache             cache;
-    private List<String>      states;
+    private Cache cache;
+    private List<String> states;
 
     public String check() {
         return null;

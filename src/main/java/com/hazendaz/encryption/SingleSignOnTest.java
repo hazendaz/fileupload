@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
 
 public class SingleSignOnTest {
 
-    private static Logger logger             = LoggerFactory.getLogger(SingleSignOnTest.class);
+    private static Logger logger = LoggerFactory.getLogger(SingleSignOnTest.class);
 
     // private static File publicKeyFile = new File(
     // "/Development/Java/Single Sign On with Encryption(PGP)/PGP1D0.pkr");

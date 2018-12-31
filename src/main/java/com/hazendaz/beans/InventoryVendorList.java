@@ -8,8 +8,8 @@ import lombok.Data;
 
 @Data
 public class InventoryVendorList implements Serializable {
-    private static final long         serialVersionUID = -6547391197128734913L;
-    private String                    vendor;
+    private static final long serialVersionUID = -6547391197128734913L;
+    private String vendor;
     private List<InventoryVendorItem> vendorItems;
 
     public InventoryVendorList() {

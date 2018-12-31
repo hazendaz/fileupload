@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponseWrapper;
 public class MinimizeServletResponseWrapper extends HttpServletResponseWrapper {
 
     private final ByteArrayOutputStream output;
-    private MinimizeResponseStream      filterOutput;
-    private PrintWriter                 pw;
+    private MinimizeResponseStream filterOutput;
+    private PrintWriter pw;
 
     public MinimizeServletResponseWrapper(final HttpServletResponse response) {
         super(response);

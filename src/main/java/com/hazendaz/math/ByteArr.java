@@ -5,6 +5,7 @@ import com.google.common.base.Charsets;
 import com.google.common.io.BaseEncoding;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,16 +23,16 @@ public class ByteArr {
         final byte[] bb = { (byte) 0x32, (byte) 0x00, (byte) 0x32, (byte) 0x00 };
         final byte[] cc = { 'f', 'a', 'g', 's', 'g' };
 
-        System.out.println(String.valueOf(a));
-        System.out.println(String.valueOf(b));
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
         System.out.println(a == b);
-        System.out.println(a.equals(b));
+        System.out.println(Arrays.equals(a, b));
 
-        System.out.println(String.valueOf(aa));
-        System.out.println(String.valueOf(bb));
+        System.out.println(Arrays.toString(aa));
+        System.out.println(Arrays.toString(bb));
         System.out.println(aa == bb);
-        System.out.println(aa.equals(bb));
-        System.out.println(new String(cc) + "This doesn't print - liar only some doesn't print");
+        System.out.println(Arrays.equals(aa, bb));
+        System.out.println(Arrays.toString(cc) + "This doesn't print - liar only some doesn't print");
         byteArr.logger.info("Does this print '{}'?", new String(cc));
 
         System.out.println("Data types conversion example!");
@@ -47,7 +48,7 @@ public class ByteArr {
         final String oct = Integer.toOctalString(in);
         System.out.println("Octal: " + oct);
 
-        System.out.println(new String(cc));
+        System.out.println(Arrays.toString(cc));
         System.out.println(BaseEncoding.base64().encode(cc));
 
         final long t = 1328175927236L;
@@ -59,7 +60,7 @@ public class ByteArr {
         String nullToEmptyString = new String(nullToEmpty, Charsets.ISO_8859_1);
         System.out.println("field is:'" + nullToEmptyString + "'\n");
 
-        nullToEmptyString = CharMatcher.JAVA_ISO_CONTROL.trimTrailingFrom(nullToEmptyString);
+        nullToEmptyString = CharMatcher.javaIsoControl().trimTrailingFrom(nullToEmptyString);
 
         System.out.println("field is:'" + nullToEmptyString + "'\n");
 

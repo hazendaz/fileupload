@@ -51,9 +51,9 @@ public class AesTest {
 
     private final Logger logger = LoggerFactory.getLogger(AesTest.class);
 
-    private final byte[] key    = "KEY STRING LENTH OF THIRTYTWO 32".getBytes(Charsets.UTF_8);
+    private final byte[] key = "KEY STRING LENTH OF THIRTYTWO 32".getBytes(Charsets.UTF_8);
 
-    private final byte[] iv     = "company/departme".getBytes(Charsets.UTF_8);
+    private final byte[] iv = "company/departme".getBytes(Charsets.UTF_8);
 
     public String decode(final String encodedText) throws Exception {
         return new String(AesTest.decrypt(Base64.decode(encodedText.getBytes(Charsets.UTF_8)), this.key, this.iv),

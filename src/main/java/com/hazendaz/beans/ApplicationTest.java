@@ -17,10 +17,10 @@ public class ApplicationTest implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Getter
-    private String            foundAtStartup;
+    private String foundAtStartup;
 
     @Getter
-    private String            svnTest;
+    private String svnTest;
 
     @PostConstruct
     public void init() {

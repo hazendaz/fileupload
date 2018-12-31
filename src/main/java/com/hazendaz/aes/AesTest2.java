@@ -45,12 +45,12 @@ public class AesTest2 implements Serializable {
         System.out.println(decrypted);
     }
 
-    private final Logger              logger    = LoggerFactory.getLogger(AesTest2.class);
+    private final Logger logger = LoggerFactory.getLogger(AesTest2.class);
 
-    private final BlockCipher         AESCipher = new AESEngine();
+    private final BlockCipher AESCipher = new AESEngine();
 
     private PaddedBufferedBlockCipher cipher;
-    private KeyParameter              keyParameter;
+    private KeyParameter keyParameter;
 
     public byte[] decrypt(final byte[] input) throws DataLengthException, InvalidCipherTextException {
         return this.processing(input, false);

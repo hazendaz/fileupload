@@ -9,10 +9,10 @@ public class UploadedImage implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @NotNull
-    private String            name;
-    private String            mime;
-    private long              length;
-    private byte[]            data;
+    private String name;
+    private String mime;
+    private long length;
+    private byte[] data;
 
     public byte[] getData() {
         return this.data;

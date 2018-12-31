@@ -15,7 +15,7 @@ public class PopupBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private boolean           showDuplicate;
+    private boolean showDuplicate;
 
     public void duplicate() {
         this.showDuplicate = !this.showDuplicate;

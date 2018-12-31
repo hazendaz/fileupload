@@ -27,10 +27,10 @@ import org.slf4j.Logger;
 public class MinimizeFilter implements Filter {
 
     @Inject
-    private Logger       logger;
+    private Logger logger;
 
     @Inject
-    private IUser        user;
+    private IUser user;
 
     /**
      * The filter configuration object we are associated with. If this value is null, this filter instance is not

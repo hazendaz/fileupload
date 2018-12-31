@@ -15,19 +15,19 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.slf4j.Logger;
-
 import lombok.Data;
+
+import org.slf4j.Logger;
 
 @Data
 @Named
 @ViewScoped
 public class CarsBean implements Serializable {
 
-    private static final long serialVersionUID         = -3832235132261771583L;
-    private static final int  DECIMALS                 = 1;
-    private static final int  CLIENT_ROWS_IN_AJAX_MODE = 15;
-    private static final int  ROUNDING_MODE            = BigDecimal.ROUND_HALF_UP;
+    private static final long serialVersionUID = -3832235132261771583L;
+    private static final int DECIMALS = 1;
+    private static final int CLIENT_ROWS_IN_AJAX_MODE = 15;
+    private static final int ROUNDING_MODE = BigDecimal.ROUND_HALF_UP;
 
     private static void itemToVendorItem(final InventoryItem item, final InventoryVendorItem newItem) {
         newItem.setActivity(item.getActivity());
@@ -46,17 +46,17 @@ public class CarsBean implements Serializable {
         newItem.setVin(item.getVin());
     }
 
-    private List<InventoryItem>       allInventoryItems    = null;
+    private List<InventoryItem> allInventoryItems = null;
     private List<InventoryVendorList> inventoryVendorLists = null;
-    private int                       currentCarIndex;
-    private InventoryItem             editedCar;
+    private int currentCarIndex;
+    private InventoryItem editedCar;
 
-    private int                       page                 = 1;
+    private int page = 1;
 
-    private int                       clientRows;
+    private int clientRows;
 
     @Inject
-    private Logger                    logger;
+    private Logger logger;
 
     public List<InventoryItem> createCar(final String vendor, final String model, final int count) {
         ArrayList<InventoryItem> iiList = null;

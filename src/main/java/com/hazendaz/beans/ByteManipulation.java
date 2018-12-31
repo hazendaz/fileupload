@@ -1,12 +1,12 @@
 package com.hazendaz.beans;
 
+import com.google.common.base.Charsets;
+
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.charset.CharacterCodingException;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
-
-import com.google.common.base.Charsets;
 
 public class ByteManipulation {
 

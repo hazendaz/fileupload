@@ -13,27 +13,27 @@ import javax.faces.event.ValueChangeEvent;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import lombok.Data;
+
 import org.richfaces.component.SortOrder;
 import org.slf4j.Logger;
-
-import lombok.Data;
 
 @Data
 @Named
 @SessionScoped
 public class CarsSortingBean implements Serializable {
 
-    private static final long      serialVersionUID        = 1L;
+    private static final long serialVersionUID = 1L;
 
     private Map<String, SortOrder> sortsOrders;
-    private List<String>           sortPriorities;
+    private List<String> sortPriorities;
 
-    private boolean                multipleSorting         = false;
+    private boolean multipleSorting = false;
 
-    private static final String    SORT_PROPERTY_PARAMETER = "sortProperty";
+    private static final String SORT_PROPERTY_PARAMETER = "sortProperty";
 
     @Inject
-    private Logger                 logger;
+    private Logger logger;
 
     @PostConstruct
     public void init() {

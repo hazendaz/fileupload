@@ -10,5 +10,5 @@ import lombok.EqualsAndHashCode;
 @RequestScoped
 public class InventoryItem extends InventoryVendorItem {
     private static final long serialVersionUID = 2052446469750935597L;
-    private String            vendor;
+    private String vendor;
 }

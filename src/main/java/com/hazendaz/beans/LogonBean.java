@@ -15,11 +15,11 @@ import javax.inject.Named;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-
 // import javax.validation.constraints.Past;
 import lombok.Data;
 import lombok.ToString;
+
+import org.slf4j.Logger;
 
 @Data
 @ToString(exclude = "context")
@@ -30,31 +30,31 @@ public class LogonBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Inject
-    private Logger            logger;
+    private Logger logger;
 
     @Inject
-    private FacesContext      context;
+    private FacesContext context;
 
     @Inject
     @Any
-    private ApplicationTest   applicationTest;
+    private ApplicationTest applicationTest;
 
     @Inject
-    private User              user;
+    private User user;
 
     // TODO In order to test annotation processing with hibernate validator, use
     // this
     // @Past
     // private String cannotBePast;
 
-    private String            userName         = null;
+    private String userName = null;
 
-    private String            sad;
+    private String sad;
 
-    private String            thisIsNotFast;
+    private String thisIsNotFast;
 
     @Inject
-    private UserList          userList;
+    private UserList userList;
 
     public String clear() {
         this.logger.info("testme");

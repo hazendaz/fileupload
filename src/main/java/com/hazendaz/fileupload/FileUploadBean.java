@@ -25,18 +25,18 @@ import org.slf4j.Logger;
 @SessionScoped
 public class FileUploadBean implements Serializable {
 
-    private static final long        serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Inject
-    private Logger                   logger;
+    private Logger logger;
 
-    private ExecutorService          threadPool;
+    private ExecutorService threadPool;
 
-    private ArrayList<UploadedImage> files            = new ArrayList<>();
+    private ArrayList<UploadedImage> files = new ArrayList<>();
 
-    private String                   cancel;
+    private String cancel;
 
-    private String                   date;
+    private String date;
 
     public String cancel() {
         this.setCancel();

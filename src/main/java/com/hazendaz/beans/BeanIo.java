@@ -1,9 +1,9 @@
 package com.hazendaz.beans;
 
+import lombok.Data;
+
 import org.beanio.annotation.Field;
 import org.beanio.annotation.Record;
-
-import lombok.Data;
 
 @Data
 @Record(minOccurs = 1)

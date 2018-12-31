@@ -7,9 +7,9 @@ import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
 
 public class JNDITree {
-    private Context context     = null;
+    private Context context = null;
 
-    private int     indentLevel = 0;
+    private int indentLevel = 0;
 
     public JNDITree() throws NamingException {
         this.context = new InitialContext();

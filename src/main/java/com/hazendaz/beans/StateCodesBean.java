@@ -17,7 +17,7 @@ import javax.inject.Named;
 @SessionScoped
 public class StateCodesBean implements Serializable {
 
-    private static final long       serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private static List<SelectItem> stateCodes;
 
