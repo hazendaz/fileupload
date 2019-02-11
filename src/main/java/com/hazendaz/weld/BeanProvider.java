@@ -28,13 +28,13 @@ import org.apache.deltaspike.core.util.metadata.builder.AnnotatedTypeBuilder;
  * because the current class is not managed by the CDI Container. This can happen in e.g. a JPA-2.0 EntityListener, a
  * ServletFilter, a Spring managed Bean, etc.
  * </p>
- * 
+ *
  * <p>
  * <b>Attention:</b> This method is intended for being used in user code at runtime. If this method gets used during
  * Container boot (in an Extension), non-portable behavior results. The CDI specification only allows injection of the
  * BeanManager during CDI-Container boot time.
  * </p>
- * 
+ *
  * @see BeanManagerProvider
  */
 @Typed()
@@ -42,9 +42,9 @@ public final class BeanProvider {
 
     /**
      * Allows to perform dependency injection for instances which aren't managed by CDI.
-     * 
+     *
      * Attention: The resulting instance isn't managed by CDI; only fields annotated with @Inject get initialized.
-     * 
+     *
      * @param instance
      *            current instance
      * @param <T>
@@ -82,7 +82,7 @@ public final class BeanProvider {
 
     /**
      * Internal method to resolve the BeanManager via the {@link BeanManagerProvider}
-     * 
+     *
      * @return current bean-manager
      */
     private static BeanManager getBeanManager() {

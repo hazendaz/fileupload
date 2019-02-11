@@ -108,7 +108,7 @@
         <listener-class>net.sf.ehcache.constructs.web.ShutdownListener</listener-class>
     </listener>
 
-    <!-- <filter> <filter-name>MinimizeFilter</filter-name> <filter-class>com.hazendaz.filters.MinimizeFilter</filter-class> 
+    <!-- <filter> <filter-name>MinimizeFilter</filter-name> <filter-class>com.hazendaz.filters.MinimizeFilter</filter-class>
         </filter> <filter-mapping> <filter-name>MinimizeFilter</filter-name> <url-pattern>/*</url-pattern> </filter-mapping> -->
 
     <!-- WELD -->
@@ -170,7 +170,7 @@
     </servlet-mapping>
 
     <!-- Test Servlet (Won't work in weblogic) -->
-    <!-- <servlet> <servlet-name>Test Servlet</servlet-name> <servlet-class>com.hazendaz.servlets.TestServlet</servlet-class> 
+    <!-- <servlet> <servlet-name>Test Servlet</servlet-name> <servlet-class>com.hazendaz.servlets.TestServlet</servlet-class>
         <load-on-startup>1</load-on-startup> </servlet> -->
 
     <!-- Quartz Scheduler -->
@@ -235,8 +235,8 @@
         <url-pattern>/waffle</url-pattern>
     </servlet-mapping>
 
-    <!-- for Waffle <security-constraint> <web-resource-collection> <web-resource-name>fileupload</web-resource-name> <url-pattern>/*</url-pattern> 
-        </web-resource-collection> <auth-constraint> <role-name>BUILTIN\Users</role-name> </auth-constraint> <user-data-constraint> 
+    <!-- for Waffle <security-constraint> <web-resource-collection> <web-resource-name>fileupload</web-resource-name> <url-pattern>/*</url-pattern>
+        </web-resource-collection> <auth-constraint> <role-name>BUILTIN\Users</role-name> </auth-constraint> <user-data-constraint>
         <transport-guarantee>CONFIDENTIAL</transport-guarantee> </user-data-constraint> </security-constraint> -->
 
     <!-- Mime type mappings for weblogic -->

@@ -151,7 +151,7 @@ public class MinimizeFilter implements Filter {
 
     /**
      * Return filter config Required by Weblogic 6.1
-     * 
+     *
      * @return FilterConfig
      */
     public FilterConfig getFilterConfig() {
@@ -160,7 +160,7 @@ public class MinimizeFilter implements Filter {
 
     /**
      * Place this filter into service.
-     * 
+     *
      * @param filterConfig
      *            The filter configuration object
      */
@@ -171,7 +171,7 @@ public class MinimizeFilter implements Filter {
 
     /**
      * Set filter config This function is equivalent to init. Required by Weblogic 6.1
-     * 
+     *
      * @param filterConfig
      *            The filter configuration object
      */
