@@ -6,3 +6,4 @@
 .settings
 target
 /.apt_generated_tests/
+.mvn/wrapper/maven-wrapper.jar
