@@ -75,7 +75,7 @@ public class CarsBean implements Serializable {
                         CarsBean.ROUNDING_MODE));
                 ii.setMileageMarket(new BigDecimal(RandomHelper.rand(25000, 45000)).setScale(CarsBean.DECIMALS,
                         CarsBean.ROUNDING_MODE));
-                ii.setPrice(new Integer(RandomHelper.rand(15000, 55000)));
+                ii.setPrice(Integer.valueOf(RandomHelper.rand(15000, 55000)));
                 ii.setPriceMarket(new BigDecimal(RandomHelper.rand(15000, 55000)).setScale(CarsBean.DECIMALS,
                         CarsBean.ROUNDING_MODE));
                 ii.setDaysLive(RandomHelper.rand(1, 90));

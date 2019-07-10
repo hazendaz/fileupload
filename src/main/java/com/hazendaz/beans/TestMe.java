@@ -4,7 +4,7 @@ public class TestMe {
 
     public static void main(final String[] args) {
         System.out.println(TestMe.toImpliedDecimal(null));
-        System.out.println(TestMe.toImpliedDecimal(new Double(1)));
+        System.out.println(TestMe.toImpliedDecimal(Double.valueOf(1)));
         System.out.println(TestMe.toImpliedDecimal(Double.valueOf(1.01)));
         System.out.println(TestMe.toImpliedDecimal(Double.valueOf(10.00)));
         System.out.println(TestMe.toImpliedDecimal(Double.valueOf(10.10)));
