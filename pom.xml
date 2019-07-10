@@ -711,24 +711,12 @@
             <artifactId>webservices-rt</artifactId>
             <version>2.4.3</version>
             <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>webservices-api</artifactId>
-                    <groupId>org.glassfish.metro</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.glassfish.metro</groupId>
             <artifactId>webservices-tools</artifactId>
             <version>2.4.3</version>
             <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>webservices-api</artifactId>
-                    <groupId>org.glassfish.metro</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.csveed</groupId>
