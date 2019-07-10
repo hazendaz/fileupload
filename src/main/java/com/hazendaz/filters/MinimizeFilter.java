@@ -1,6 +1,5 @@
 package com.hazendaz.filters;
 
-import com.google.common.base.Charsets;
 import com.googlecode.htmlcompressor.compressor.HtmlCompressor;
 import com.googlecode.htmlcompressor.compressor.XmlCompressor;
 import com.googlecode.htmlcompressor.compressor.YuiCssCompressor;
@@ -9,6 +8,7 @@ import com.hazendaz.model.IUser;
 
 import java.io.CharArrayWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import javax.inject.Inject;
 import javax.servlet.Filter;
@@ -82,8 +82,9 @@ public class MinimizeFilter implements Filter {
                         compressor.setPreserveAllSemiColons(true);
                         try {
                             final CharArrayWriter caw = new CharArrayWriter();
-                            caw.write(compressor.compress(new String(wrappedResponse.getDataStream(), Charsets.UTF_8)));
-                            response.setContentLength(caw.toString().getBytes(Charsets.UTF_8).length);
+                            caw.write(compressor
+                                    .compress(new String(wrappedResponse.getDataStream(), StandardCharsets.UTF_8)));
+                            response.setContentLength(caw.toString().getBytes(StandardCharsets.UTF_8).length);
                             response.getWriter().print(caw.toString());
                             response.getWriter().close();
                         } catch (final Exception e) {
@@ -95,8 +96,9 @@ public class MinimizeFilter implements Filter {
                         compressor.setLineBreak(-1);
                         try {
                             final CharArrayWriter caw = new CharArrayWriter();
-                            caw.write(compressor.compress(new String(wrappedResponse.getDataStream(), Charsets.UTF_8)));
-                            response.setContentLength(caw.toString().getBytes(Charsets.UTF_8).length);
+                            caw.write(compressor
+                                    .compress(new String(wrappedResponse.getDataStream(), StandardCharsets.UTF_8)));
+                            response.setContentLength(caw.toString().getBytes(StandardCharsets.UTF_8).length);
                             response.getWriter().print(caw.toString());
                             response.getWriter().close();
                         } catch (final Exception e) {
@@ -112,8 +114,9 @@ public class MinimizeFilter implements Filter {
                         compressor.setRemoveQuotes(false);
                         try {
                             final CharArrayWriter caw = new CharArrayWriter();
-                            caw.write(compressor.compress(new String(wrappedResponse.getDataStream(), Charsets.UTF_8)));
-                            response.setContentLength(caw.toString().getBytes(Charsets.UTF_8).length);
+                            caw.write(compressor
+                                    .compress(new String(wrappedResponse.getDataStream(), StandardCharsets.UTF_8)));
+                            response.setContentLength(caw.toString().getBytes(StandardCharsets.UTF_8).length);
                             response.getWriter().print(caw.toString());
                             response.getWriter().close();
                         } catch (final Exception e) {
@@ -126,8 +129,9 @@ public class MinimizeFilter implements Filter {
                         compressor.setRemoveIntertagSpaces(false);
                         try {
                             final CharArrayWriter caw = new CharArrayWriter();
-                            caw.write(compressor.compress(new String(wrappedResponse.getDataStream(), Charsets.UTF_8)));
-                            response.setContentLength(caw.toString().getBytes(Charsets.UTF_8).length);
+                            caw.write(compressor
+                                    .compress(new String(wrappedResponse.getDataStream(), StandardCharsets.UTF_8)));
+                            response.setContentLength(caw.toString().getBytes(StandardCharsets.UTF_8).length);
                             response.getWriter().print(caw.toString());
                             response.getWriter().close();
                         } catch (final Exception e) {
@@ -136,8 +140,8 @@ public class MinimizeFilter implements Filter {
                     } else {
                         try {
                             final CharArrayWriter caw = new CharArrayWriter();
-                            caw.write(new String(wrappedResponse.getDataStream(), Charsets.UTF_8));
-                            response.setContentLength(caw.toString().getBytes(Charsets.UTF_8).length);
+                            caw.write(new String(wrappedResponse.getDataStream(), StandardCharsets.UTF_8));
+                            response.setContentLength(caw.toString().getBytes(StandardCharsets.UTF_8).length);
                             response.getWriter().print(caw.toString());
                             response.getWriter().close();
                         } catch (final Exception e) {

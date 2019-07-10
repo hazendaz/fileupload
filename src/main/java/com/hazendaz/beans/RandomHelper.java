@@ -1,7 +1,6 @@
 package com.hazendaz.beans;
 
-import com.google.common.base.Charsets;
-
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public final class RandomHelper {
@@ -29,7 +28,7 @@ public final class RandomHelper {
             b[i] = (byte) RandomHelper.rand('A', 'Z');
         }
 
-        return new String(b, Charsets.UTF_8);
+        return new String(b, StandardCharsets.UTF_8);
     }
 
     private RandomHelper() {

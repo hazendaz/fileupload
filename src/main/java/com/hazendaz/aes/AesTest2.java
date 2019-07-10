@@ -1,6 +1,7 @@
 package com.hazendaz.aes;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
@@ -38,10 +39,10 @@ public class AesTest2 implements Serializable {
         final String secret = "Jeremy is Cool";
         System.out.println(secret);
 
-        final byte[] encr = abc.encrypt(secret.getBytes("UTF-8"));
+        final byte[] encr = abc.encrypt(secret.getBytes(StandardCharsets.UTF_8));
         final byte[] decr = abc.decrypt(encr);
 
-        final String decrypted = new String(decr, "UTF-8");
+        final String decrypted = new String(decr, StandardCharsets.UTF_8);
         System.out.println(decrypted);
     }
 

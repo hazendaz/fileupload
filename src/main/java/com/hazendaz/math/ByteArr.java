@@ -1,10 +1,10 @@
 package com.hazendaz.math;
 
 import com.google.common.base.CharMatcher;
-import com.google.common.base.Charsets;
 import com.google.common.io.BaseEncoding;
 
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import org.slf4j.Logger;
@@ -57,7 +57,7 @@ public class ByteArr {
 
         final byte[] nullToEmpty = new byte[2];
         nullToEmpty[0] = (byte) '\u0000';
-        String nullToEmptyString = new String(nullToEmpty, Charsets.ISO_8859_1);
+        String nullToEmptyString = new String(nullToEmpty, StandardCharsets.ISO_8859_1);
         System.out.println("field is:'" + nullToEmptyString + "'\n");
 
         nullToEmptyString = CharMatcher.javaIsoControl().trimTrailingFrom(nullToEmptyString);

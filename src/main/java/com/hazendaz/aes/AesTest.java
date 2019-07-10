@@ -1,6 +1,6 @@
 package com.hazendaz.aes;
 
-import com.google.common.base.Charsets;
+import java.nio.charset.StandardCharsets;
 
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.engines.AESEngine;
@@ -51,18 +51,19 @@ public class AesTest {
 
     private final Logger logger = LoggerFactory.getLogger(AesTest.class);
 
-    private final byte[] key = "KEY STRING LENTH OF THIRTYTWO 32".getBytes(Charsets.UTF_8);
+    private final byte[] key = "KEY STRING LENTH OF THIRTYTWO 32".getBytes(StandardCharsets.UTF_8);
 
-    private final byte[] iv = "company/departme".getBytes(Charsets.UTF_8);
+    private final byte[] iv = "company/departme".getBytes(StandardCharsets.UTF_8);
 
     public String decode(final String encodedText) throws Exception {
-        return new String(AesTest.decrypt(Base64.decode(encodedText.getBytes(Charsets.UTF_8)), this.key, this.iv),
-                Charsets.UTF_8);
+        return new String(
+                AesTest.decrypt(Base64.decode(encodedText.getBytes(StandardCharsets.UTF_8)), this.key, this.iv),
+                StandardCharsets.UTF_8);
     }
 
     public String encode(final String plainText) throws Exception {
-        return new String(Base64.encode(AesTest.encrypt(plainText.getBytes(Charsets.UTF_8), this.key, this.iv)),
-                Charsets.UTF_8);
+        return new String(Base64.encode(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key, this.iv)),
+                StandardCharsets.UTF_8);
     }
 
 }
