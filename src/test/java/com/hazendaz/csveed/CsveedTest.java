@@ -1,6 +1,6 @@
 package com.hazendaz.csveed;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -11,10 +11,10 @@ import java.util.Locale;
 
 import org.csveed.bean.BeanWriter;
 import org.csveed.bean.BeanWriterImpl;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
-@Ignore
+@Disabled
 public class CsveedTest {
 
     public class Bean {

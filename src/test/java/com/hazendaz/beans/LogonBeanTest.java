@@ -2,9 +2,9 @@ package com.hazendaz.beans;
 
 import mockit.Deencapsulation;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 public class LogonBeanTest {
@@ -16,10 +16,10 @@ public class LogonBeanTest {
         final LogonBean test = new LogonBean();
         Deencapsulation.setField(this.logonBean, "logger", LoggerFactory.getLogger("testClass"));
         this.logonBean.clear();
-        Assert.assertEquals(test.getUserName(), this.logonBean.getUserName());
+        Assertions.assertEquals(test.getUserName(), this.logonBean.getUserName());
     }
 
-    @Before
+    @BeforeEach
     public void init() {
         this.logonBean = new LogonBean();
     }

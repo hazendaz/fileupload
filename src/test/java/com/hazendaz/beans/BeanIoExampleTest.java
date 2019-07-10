@@ -1,7 +1,7 @@
 package com.hazendaz.beans;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class BeanIoExampleTest {
 
@@ -9,7 +9,7 @@ public class BeanIoExampleTest {
 
     @Test
     public void csvExample() {
-        Assert.assertEquals(2, this.beanIoExample.csvExample());
+        Assertions.assertEquals(2, this.beanIoExample.csvExample());
     }
 
 }
