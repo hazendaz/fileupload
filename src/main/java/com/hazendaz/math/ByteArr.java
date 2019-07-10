@@ -1,11 +1,11 @@
 package com.hazendaz.math;
 
 import com.google.common.base.CharMatcher;
-import com.google.common.io.BaseEncoding;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Base64;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,10 +49,10 @@ public class ByteArr {
         System.out.println("Octal: " + oct);
 
         System.out.println(Arrays.toString(cc));
-        System.out.println(BaseEncoding.base64().encode(cc));
+        System.out.println(Arrays.toString(Base64.getEncoder().encode(cc)));
 
         final long t = 1328175927236L;
-        final String epochtime1 = BaseEncoding.base64().encode(BigInteger.valueOf(t).toByteArray());
+        final String epochtime1 = Arrays.toString(Base64.getEncoder().encode(BigInteger.valueOf(t).toByteArray()));
         System.out.println("received base64: " + epochtime1 + " got here\n");
 
         final byte[] nullToEmpty = new byte[2];
