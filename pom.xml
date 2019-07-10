@@ -116,6 +116,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency> <!-- Hack for jdk 11 javadocs until jsf team fixes issue with osgi bundle -->
+            <groupId>jakarta.faces</groupId>
+            <artifactId>jakarta.faces-api</artifactId>
+            <version>2.3.1</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>jakarta.faces</artifactId>
