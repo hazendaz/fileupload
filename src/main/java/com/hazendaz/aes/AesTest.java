@@ -9,6 +9,7 @@ import org.bouncycastle.crypto.paddings.PaddedBufferedBlockCipher;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
 import org.bouncycastle.util.encoders.Base64;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,6 +65,11 @@ public class AesTest {
     public String encode(final String plainText) throws Exception {
         return new String(Base64.encode(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key, this.iv)),
                 StandardCharsets.UTF_8);
+    }
+
+    @Test
+    public void benIsHappy() {
+        System.out.print("Jeremy " + "Ben is Happy".substring(4));
     }
 
 }
