@@ -735,7 +735,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.csveed</groupId>
+            <groupId>com.github.hazendaz</groupId>
             <artifactId>csveed</artifactId>
             <version>0.7.0</version>
             <scope>compile</scope>
