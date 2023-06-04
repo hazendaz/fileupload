@@ -27,6 +27,7 @@
 
     <dependencies>
         <!-- mine -->
+        <!-- Needs released...
         <dependency>
             <groupId>com.github.hazendaz</groupId>
             <artifactId>test-aggregator</artifactId>
@@ -34,11 +35,28 @@
             <scope>test</scope>
             <type>pom</type>
         </dependency>
+        -->
+        <!-- Must build resources lit to incude here
         <dependency>
             <groupId>com.github.hazendaz</groupId>
             <artifactId>fileUploadResourcesLite</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
+        </dependency>
+        -->
+
+        <!-- Have tests in normal packages so let this be compile -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-reflect</artifactId>
+            <version>2.0.9</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -72,6 +90,10 @@
                 <exclusion>
                      <groupId>org.hibernate</groupId>
                      <artifactId>hibernate-validator</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.validation</groupId>
+                    <artifactId>validation-api</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -132,7 +154,7 @@
         <dependency>
             <groupId>com.github.albfernandez.richfaces</groupId>
             <artifactId>richfaces</artifactId>
-            <version>4.6.14.ayg</version>
+            <version>4.6.21.ayg</version>
         </dependency>
         <!-- Added for future use -->
         <dependency>
@@ -167,14 +189,14 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcpg-jdk15on</artifactId>
-            <version>1.69</version>
+            <artifactId>bcpg-jdk18on</artifactId>
+            <version>1.73</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.69</version>
+            <artifactId>bcprov-jdk18on</artifactId>
+            <version>1.73</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -284,7 +306,7 @@
         <dependency>
             <groupId>org.jboss.classfilewriter</groupId>
             <artifactId>jboss-classfilewriter</artifactId>
-            <version>1.2.4.Final</version>
+            <version>1.2.5.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -296,121 +318,121 @@
         <dependency>
             <groupId>org.apache.deltaspike.core</groupId>
             <artifactId>deltaspike-core-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.core</groupId>
             <artifactId>deltaspike-core-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.cdictrl</groupId>
             <artifactId>deltaspike-cdictrl-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.cdictrl</groupId>
             <artifactId>deltaspike-cdictrl-weld</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-security-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-security-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-scheduler-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-scheduler-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-jsf-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-jsf-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-jpa-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-jpa-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-data-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-data-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-servlet-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-servlet-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-partial-bean-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-partial-bean-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-bean-validation-module-api</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-bean-validation-module-impl</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -434,13 +456,13 @@
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <version>3.28.0-GA</version>
+            <version>3.29.0-GA</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.5.7</version>
+            <version>3.5.13</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -464,7 +486,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis2</artifactId>
-            <version>2.4.4</version>
+            <version>2.5.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -504,7 +526,7 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-cdi</artifactId>
-            <version>6.2.0.Final</version>
+            <version>6.2.3.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -770,13 +792,13 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>5.3.10</version>
+            <version>5.3.27</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>5.3.10</version>
+            <version>5.3.27</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
