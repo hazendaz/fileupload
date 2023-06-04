@@ -1,10 +1,9 @@
 package com.hazendaz.beans;
 
-import mockit.Deencapsulation;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.powermock.reflect.Whitebox;
 import org.slf4j.LoggerFactory;
 
 public class LogonBeanTest {
@@ -14,7 +13,7 @@ public class LogonBeanTest {
     @Test
     public void clearTest() {
         final LogonBean test = new LogonBean();
-        Deencapsulation.setField(this.logonBean, "logger", LoggerFactory.getLogger("testClass"));
+        Whitebox.setInternalState(this.logonBean, "logger", LoggerFactory.getLogger("testClass"));
         this.logonBean.clear();
         Assertions.assertEquals(test.getUserName(), this.logonBean.getUserName());
     }
