@@ -2,9 +2,9 @@ package com.hazendaz.dropwiz;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import io.dropwizard.Configuration;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class FileUploadConfiguration extends Configuration {
 

@@ -2,9 +2,6 @@ package com.hazendaz.undertow;
 
 import com.sun.xml.ws.transport.http.servlet.WSServlet;
 
-import javax.faces.webapp.FacesServlet;
-import javax.servlet.ServletException;
-
 import io.undertow.Handlers;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
@@ -12,6 +9,10 @@ import io.undertow.server.handlers.PathHandler;
 import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
+
+import javax.faces.webapp.FacesServlet;
+import javax.servlet.ServletException;
+
 import waffle.servlet.WaffleInfoServlet;
 
 public class HelloWorld {
