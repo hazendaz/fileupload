@@ -154,7 +154,7 @@ public class TestKeyGen {
                     new Date());
 
             final PGPKeyRingGenerator keyRingGen = TestKeyGen
-                    .generateKeyRingGenerator(email + "<" + email + "@homail.com>", password, 0xc0);
+                    .generateKeyRingGenerator(email + "<" + email + "@hotmail.com>", password, 0xc0);
 
             keyRingGen.addSubKey(secretKey2);
 
