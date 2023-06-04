@@ -67,7 +67,7 @@ public class PGPEncryption {
             // PGPPublicKey key = readPublicKey(in);
             final char password[] = { 't', 'e', 's', 't', 'm', 'e' };
             final TestKeyGen testKeyGen = new TestKeyGen();
-            final PGPPublicKey key = testKeyGen.createPublicKey("jeremylandis@hotmail.com", password).getPublicKey();
+            final PGPPublicKey key = testKeyGen.createPublicKey("someuser@email.com", password).getPublicKey();
 
             // find out a little about the keys in the public key ring
             PGPEncryption.logger.info("Key Strength = " + key.getBitStrength());

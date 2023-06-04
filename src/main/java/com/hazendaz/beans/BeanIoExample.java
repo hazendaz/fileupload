@@ -21,8 +21,7 @@ public class BeanIoExample {
                 .parser(new DelimitedParserBuilder(',')).addRecord(BeanIo.class);
         factory.define(builder);
 
-        final BeanReader beanReader = factory.createReader("beanio",
-                new File("C:/Users/Jeremy/Documents/GitHub/hazendaz/fileupload/src/main/resources/beanio.txt"));
+        final BeanReader beanReader = factory.createReader("beanio", new File("src/main/resources/beanio.txt"));
 
         final List<BeanIo> rows = new ArrayList<>();
 

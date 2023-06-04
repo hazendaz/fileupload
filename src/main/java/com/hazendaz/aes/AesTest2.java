@@ -31,7 +31,7 @@ public class AesTest2 implements Serializable {
         final AesTest2 abc = new AesTest2();
         abc.init();
 
-        final String secret = "Jeremy is Cool";
+        final String secret = "User is Cool";
         System.out.println(secret);
 
         final byte[] encr = abc.encrypt(secret.getBytes(StandardCharsets.UTF_8));

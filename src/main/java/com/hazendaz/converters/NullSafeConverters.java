@@ -11,12 +11,12 @@ public class NullSafeConverters {
         final NullSafeConverters nullSafeConverters = new NullSafeConverters();
         System.out.println("'arrayList = " + nullSafeConverters.toString(new ArrayList<String>()) + "'\n");
         System.out.println("'null = " + nullSafeConverters.toString(null) + "'\n");
-        System.out.println("'Jeremy Landis = " + nullSafeConverters.toString("Jeremy Landis") + "'\n");
+        System.out.println("'User Name = " + nullSafeConverters.toString("User Name") + "'\n");
         System.out.println("'55 = " + nullSafeConverters.toString(Integer.valueOf(55)) + "'\n");
         System.out.println("'55.0 = " + nullSafeConverters.toString(Double.valueOf(55.0)) + "'\n");
 
         System.out.println("'null = " + nullSafeConverters.isEmpty(null) + "'\n");
-        System.out.println("'Jeremy Landis = " + nullSafeConverters.isEmpty("Jeremy Landis") + "'\n");
+        System.out.println("'User Name = " + nullSafeConverters.isEmpty("User Name") + "'\n");
         System.out.println("'Spaces = " + nullSafeConverters.isEmpty("   ") + "'\n");
         System.out.println("'Space = " + nullSafeConverters.isEmpty(" ") + "'\n");
         System.out.println("'Empty = " + nullSafeConverters.isEmpty("") + "'\n");

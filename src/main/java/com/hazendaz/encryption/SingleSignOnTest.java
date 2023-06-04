@@ -64,7 +64,7 @@ public class SingleSignOnTest {
             final ByteArrayInputStream bais = new ByteArrayInputStream(encdata);
             // FileInputStream privKey = new FileInputStream(privateKeyFile);
             final TestKeyGen testKeyGen = new TestKeyGen();
-            final PGPSecretKey key = testKeyGen.createSecretKey("jeremylandis@hotmail.com", "testme".toCharArray())
+            final PGPSecretKey key = testKeyGen.createSecretKey("someuser@email.com", "testme".toCharArray())
                     .getSecretKey();
             final FileInputStream privKey = new FileInputStream(key.toString());
             final String result = SingleSignOnTest._decrypt(bais, privKey,
@@ -89,7 +89,7 @@ public class SingleSignOnTest {
             // PGPPublicKey key = readPublicKeyFromCol(new FileInputStream(
             // publicKeyFile));
             final TestKeyGen testKeyGen = new TestKeyGen();
-            final PGPPublicKey key = testKeyGen.createPublicKey("jeremylandis@hotmail.com", "testme".toCharArray())
+            final PGPPublicKey key = testKeyGen.createPublicKey("someuser@email.com", "testme".toCharArray())
                     .getPublicKey();
             SingleSignOnTest.logger.info("Creating a temp file...");
             // create a file and write the string to it

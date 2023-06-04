@@ -106,8 +106,8 @@ public class TestKeyGen {
 
         final char password[] = { 't', 'e', 's', 't', 'm', 'e' };
         Security.addProvider(new BouncyCastleProvider());
-        testKeyGen.logger.info(testKeyGen.createSecretKey("jeremylandis@hotmail.com", password).toString());
-        testKeyGen.logger.info(testKeyGen.createPublicKey("jeremylandis@hotmail.com", password).toString());
+        testKeyGen.logger.info(testKeyGen.createSecretKey("someuser@email.com", password).toString());
+        testKeyGen.logger.info(testKeyGen.createPublicKey("someuser@email.com", password).toString());
     }
 
     @Inject

@@ -17,7 +17,7 @@ public class AesTest {
 
     public static void main(final String[] args) throws Exception {
         final AesTest aesTest = new AesTest();
-        final String encodedData = aesTest.encode("Jeremy Landis");
+        final String encodedData = aesTest.encode("Some Name");
         final String decodedData = aesTest.decode(encodedData);
         aesTest.logger.info("My password is: {}", decodedData);
     }
@@ -63,8 +63,8 @@ public class AesTest {
     }
 
     @Test
-    public void benIsHappy() {
-        System.out.print("Jeremy " + "Ben is Happy".substring(4));
+    public void userIsHappy() {
+        System.out.print("User " + "ABC is Happy".substring(4));
     }
 
 }
