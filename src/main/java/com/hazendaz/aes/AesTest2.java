@@ -21,11 +21,6 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- *
- * @author Jeremy
- *
- */
 @SessionScoped
 public class AesTest2 implements Serializable {
 

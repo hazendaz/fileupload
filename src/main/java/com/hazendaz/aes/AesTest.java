@@ -13,11 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- *
- * @author Jeremy
- *
- */
 public class AesTest {
 
     public static void main(final String[] args) throws Exception {
