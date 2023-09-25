@@ -505,8 +505,10 @@
             <version>2.5.0</version>
             <scope>compile</scope>
             <exclusions>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -515,8 +517,10 @@
             <version>1.2.0</version>
             <scope>compile</scope>
             <exclusions>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
