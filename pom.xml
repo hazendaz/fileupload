@@ -860,9 +860,13 @@
                 <artifactId>license-maven-plugin</artifactId>
                 <version>4.3</version>
                 <configuration>
-                    <excludes combine.children="append">
-                        <exclude>**/*beanio.txt</exclude>
-                    </excludes>
+                    <licenseSets>
+                        <licenseSet>
+                            <excludes combine.children="append">
+                                <exclude>**/*beanio.txt</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
                 </configuration>
             </plugin>
         </plugins>
