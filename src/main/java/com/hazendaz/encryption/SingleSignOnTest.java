@@ -25,6 +25,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.security.Security;
 import java.util.Iterator;
 
@@ -114,7 +115,7 @@ public class SingleSignOnTest {
             SingleSignOnTest.logger.info(tempfile.getAbsolutePath());
             SingleSignOnTest.logger
                     .info("Reading the temp file to make sure that the bits were written\n--------------");
-            final BufferedReader isr = new BufferedReader(new FileReader(tempfile));
+            final BufferedReader isr = new BufferedReader(new FileReader(tempfile, StandardCharsets.UTF_8));
             String line = "";
             while ((line = isr.readLine()) != null) {
                 SingleSignOnTest.logger.info(line + "\n");

@@ -21,6 +21,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.util.Iterator;
@@ -60,7 +61,7 @@ public class PGPEncryption {
 
             // create a file and write the string to it
             final File outputfile = File.createTempFile("pgp", null);
-            final FileWriter writer = new FileWriter(outputfile);
+            final FileWriter writer = new FileWriter(outputfile, StandardCharsets.UTF_8);
             writer.write("the message I want to encrypt".toCharArray());
             writer.close();
 
@@ -69,7 +70,7 @@ public class PGPEncryption {
             PGPEncryption.logger.info(
                     "Reading the temp file to make sure that the bits were written\n----------------------------");
 
-            final BufferedReader isr = new BufferedReader(new FileReader(outputfile));
+            final BufferedReader isr = new BufferedReader(new FileReader(outputfile, StandardCharsets.UTF_8));
             String line = "";
             while ((line = isr.readLine()) != null) {
                 System.out.println(line + "\n");
@@ -101,7 +102,7 @@ public class PGPEncryption {
 
             PGPEncryption.logger.info("Reading the encrypted file\n----------------------------");
             final BufferedReader isr2 = new BufferedReader(
-                    new FileReader(new File(outputfile.getAbsolutePath() + ".asc")));
+                    new FileReader(new File(outputfile.getAbsolutePath() + ".asc"), StandardCharsets.UTF_8));
             String line2 = "";
             while ((line2 = isr2.readLine()) != null) {
                 System.out.println(line2);
