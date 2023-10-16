@@ -868,7 +868,29 @@
         </plugins>
         <pluginManagement>
             <plugins>
-                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <configuration>
+                        <rules>
+                            <restrictImports>
+                                <includeTestCode>true</includeTestCode>
+                                <groups>
+                                    <group>
+                                        <reason>Don't allow obsolete logging</reason>
+                                        <bannedImports>
+                                            <bannedImport>java.util.logging.**</bannedImport>
+                                            <bannedImport>org.apache.commons.logging.**</bannedImport>
+                                            <bannedImport>org.apache.log4j.**</bannedImport>
+                                        </bannedImports>
+                                        <exclusion>com.hazendaz.listeners.LoggingListener</exclusion>
+                                    </group>
+                                </groups>
+                            </restrictImports>
+                        </rules>
+                    </configuration>
+                </plugin>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven
                     build itself. -->
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
