@@ -14,8 +14,7 @@
         Hazendaz (Jeremy Landis).
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -87,14 +86,14 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-           <groupId>io.dropwizard</groupId>
+            <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>javax.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
+                    <artifactId>javax.inject</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.glassfish.web</groupId>
@@ -109,8 +108,8 @@
                     <artifactId>logback-access</artifactId>
                 </exclusion>
                 <exclusion>
-                     <groupId>org.hibernate</groupId>
-                     <artifactId>hibernate-validator</artifactId>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-validator</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>javax.validation</groupId>
@@ -155,8 +154,8 @@
             <version>2.7.0</version>
             <exclusions>
                 <exclusion>
-                    <artifactId>servlet-api</artifactId>
                     <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -281,16 +280,16 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>jboss-el-api_3.0_spec</artifactId>
                     <groupId>org.jboss.spec.javax.el</groupId>
+                    <artifactId>jboss-el-api_3.0_spec</artifactId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>jboss-annotations-api_1.2_spec</artifactId>
                     <groupId>org.jboss.spec.javax.annotation</groupId>
+                    <artifactId>jboss-annotations-api_1.2_spec</artifactId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>jboss-interceptors-api_1.2_spec</artifactId>
                     <groupId>org.jboss.spec.javax.interceptor</groupId>
+                    <artifactId>jboss-interceptors-api_1.2_spec</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -307,8 +306,8 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>jboss-annotations-api_1.2_spec</artifactId>
                     <groupId>org.jboss.spec.javax.annotation</groupId>
+                    <artifactId>jboss-annotations-api_1.2_spec</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -319,8 +318,8 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>jboss-el-api_3.0_spec</artifactId>
                     <groupId>org.jboss.spec.javax.el</groupId>
+                    <artifactId>jboss-el-api_3.0_spec</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -475,8 +474,8 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>ehcache-core</artifactId>
                     <groupId>net.sf.ehcache</groupId>
+                    <artifactId>ehcache-core</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -588,10 +587,10 @@
             <version>1.5.6</version>
             <scope>compile</scope>
             <exclusions>
-                 <exclusion>
-                      <groupId>com.sun.mail</groupId>
-                      <artifactId>javax.mail</artifactId>
-                 </exclusion>
+                <exclusion>
+                    <groupId>com.sun.mail</groupId>
+                    <artifactId>javax.mail</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -649,8 +648,8 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>javax.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
+                    <artifactId>javax.inject</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -661,12 +660,12 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>jakarta.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
+                    <artifactId>jakarta.inject</artifactId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>osgi-resource-locator</artifactId>
                     <groupId>org.glassfish.hk2</groupId>
+                    <artifactId>osgi-resource-locator</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -677,12 +676,12 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>jakarta.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
+                    <artifactId>jakarta.inject</artifactId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>osgi-resource-locator</artifactId>
                     <groupId>org.glassfish.hk2</groupId>
+                    <artifactId>osgi-resource-locator</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -705,8 +704,8 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>jakarta.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
+                    <artifactId>jakarta.inject</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -717,16 +716,16 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
+                    <groupId>com.sun.commons</groupId>
                     <artifactId>logging-api</artifactId>
-                    <groupId>com.sun.commons</groupId>
                 </exclusion>
                 <exclusion>
+                    <groupId>com.sun.commons</groupId>
                     <artifactId>beanutils</artifactId>
-                    <groupId>com.sun.commons</groupId>
                 </exclusion>
                 <exclusion>
-                    <artifactId>modeler</artifactId>
                     <groupId>com.sun.commons</groupId>
+                    <artifactId>modeler</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -796,39 +795,6 @@
 
     <build>
         <finalName>${project.name}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.jboss.jandex</groupId>
-                <artifactId>jandex-maven-plugin</artifactId>
-                <version>1.2.3</version>
-                <executions>
-                    <execution>
-                        <id>make-index</id>
-                        <goals>
-                            <goal>jandex</goal>
-                        </goals>
-                        <!-- phase is 'process-classes by default' -->
-                        <configuration>
-                            <!-- Nothing needed here for simple cases -->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>4.3</version>
-                <configuration>
-                    <licenseSets>
-                        <licenseSet>
-                            <excludes combine.children="append">
-                                <exclude>**/*beanio.txt</exclude>
-                            </excludes>
-                        </licenseSet>
-                    </licenseSets>
-                </configuration>
-            </plugin>
-        </plugins>
 
         <pluginManagement>
             <plugins>
@@ -882,6 +848,39 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.jboss.jandex</groupId>
+                <artifactId>jandex-maven-plugin</artifactId>
+                <version>1.2.3</version>
+                <executions>
+                    <execution>
+                        <id>make-index</id>
+                        <goals>
+                            <goal>jandex</goal>
+                        </goals>
+                        <!-- phase is 'process-classes by default' -->
+                        <configuration>
+                            <!-- Nothing needed here for simple cases -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>4.3</version>
+                <configuration>
+                    <licenseSets>
+                        <licenseSet>
+                            <excludes combine.children="append">
+                                <exclude>**/*beanio.txt</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
