@@ -57,7 +57,7 @@
             <type>pom</type>
         </dependency>
         -->
-        <!-- Must build resources lit to incude here
+        <!-- Must build resources lite to incude here
         <dependency>
             <groupId>com.github.hazendaz</groupId>
             <artifactId>fileUploadResourcesLite</artifactId>
