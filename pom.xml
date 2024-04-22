@@ -661,16 +661,12 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>javax.inject</artifactId>
+                    <artifactId>jakarta.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
                 </exclusion>
                 <exclusion>
                     <artifactId>osgi-resource-locator</artifactId>
                     <groupId>org.glassfish.hk2</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>javax.annotation-api</artifactId>
-                    <groupId>javax.annotation</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -681,12 +677,8 @@
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>javax.inject</artifactId>
+                    <artifactId>jakarta.inject</artifactId>
                     <groupId>org.glassfish.hk2.external</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>javax.annotation-api</artifactId>
-                    <groupId>javax.annotation</groupId>
                 </exclusion>
                 <exclusion>
                     <artifactId>osgi-resource-locator</artifactId>
@@ -801,6 +793,7 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
     <build>
         <finalName>${project.name}</finalName>
         <plugins>
@@ -836,6 +829,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
         <pluginManagement>
             <plugins>
                 <plugin>
