@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -15,12 +15,12 @@ package com.hazendaz.rs;
 
 import com.hazendaz.beans.BeanIo;
 
-import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 

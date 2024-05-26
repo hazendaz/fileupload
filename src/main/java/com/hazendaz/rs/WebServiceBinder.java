@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,9 +13,9 @@
  */
 package com.hazendaz.rs;
 
-import javax.enterprise.context.spi.CreationalContext;
-import javax.enterprise.inject.spi.Bean;
-import javax.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.context.spi.CreationalContext;
+import jakarta.enterprise.inject.spi.Bean;
+import jakarta.enterprise.inject.spi.BeanManager;
 
 import org.apache.deltaspike.core.api.provider.BeanManagerProvider;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;

@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,13 +13,13 @@
  */
 package com.hazendaz.filters;
 
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponseWrapper;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
 
 public class MinimizeServletResponseWrapper extends HttpServletResponseWrapper {
 

@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -15,8 +15,8 @@ package com.hazendaz.scheduler;
 
 import com.hazendaz.beans.InventoryItem;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 
 import org.apache.deltaspike.cdise.api.ContextControl;
 import org.apache.deltaspike.core.api.provider.BeanProvider;

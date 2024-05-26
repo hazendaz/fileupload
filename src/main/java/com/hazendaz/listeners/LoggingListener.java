@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,11 +13,11 @@
  */
 package com.hazendaz.listeners;
 
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+
 import java.util.logging.Handler;
 import java.util.logging.LogManager;
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 
 import org.slf4j.bridge.SLF4JBridgeHandler;
 

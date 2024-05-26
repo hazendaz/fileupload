@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,6 +13,8 @@
  */
 package com.hazendaz.encryption;
 
+import jakarta.inject.Inject;
+
 import java.math.BigInteger;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -22,7 +24,6 @@ import java.security.Security;
 import java.util.Date;
 
 import javax.crypto.Cipher;
-import javax.inject.Inject;
 
 import org.bouncycastle.bcpg.CompressionAlgorithmTags;
 import org.bouncycastle.bcpg.HashAlgorithmTags;

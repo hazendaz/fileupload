@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,8 +13,8 @@
  */
 package com.hazendaz.weld;
 
-import javax.enterprise.inject.Specializes;
-import javax.faces.context.FacesContext;
+import jakarta.enterprise.inject.Specializes;
+import jakarta.faces.context.FacesContext;
 
 import org.apache.deltaspike.jsf.spi.scope.window.DefaultClientWindowConfig;
 

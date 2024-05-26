@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -22,15 +22,15 @@
  */
 package com.hazendaz.weld;
 
+import jakarta.enterprise.context.spi.CreationalContext;
+import jakarta.enterprise.inject.Typed;
+import jakarta.enterprise.inject.spi.AnnotatedType;
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.InjectionTarget;
+
 import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.Map;
-
-import javax.enterprise.context.spi.CreationalContext;
-import javax.enterprise.inject.Typed;
-import javax.enterprise.inject.spi.AnnotatedType;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.enterprise.inject.spi.InjectionTarget;
 
 import org.apache.deltaspike.core.api.provider.BeanManagerProvider;
 import org.apache.deltaspike.core.util.metadata.builder.AnnotatedTypeBuilder;

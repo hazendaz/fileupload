@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,13 +13,13 @@
  */
 package com.hazendaz.weld;
 
+import jakarta.annotation.Resource;
+import jakarta.xml.ws.WebServiceContext;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javax.annotation.Resource;
-import javax.xml.ws.WebServiceContext;
 
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.junit5.WeldInitiator;

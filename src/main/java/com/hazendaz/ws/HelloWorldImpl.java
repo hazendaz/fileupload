@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -15,15 +15,15 @@ package com.hazendaz.ws;
 
 import com.hazendaz.weld.BeanProvider;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
+import jakarta.enterprise.inject.Vetoed;
+import jakarta.inject.Inject;
+import jakarta.jws.WebService;
+import jakarta.xml.ws.WebServiceContext;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import javax.enterprise.inject.Vetoed;
-import javax.inject.Inject;
-import javax.jws.WebService;
-import javax.xml.ws.WebServiceContext;
 
 import org.slf4j.Logger;
 

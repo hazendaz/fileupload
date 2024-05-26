@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -11,22 +11,15 @@
  * Contributors:
  *     Hazendaz (Jeremy Landis).
  */
-/*
- * SwingTest.java Created on __DATE__, __TIME__
- */
-
 package com.hazendaz.swing;
 
-import java.util.List;
+import jakarta.enterprise.event.Observes;
 
-import javax.enterprise.event.Observes;
+import java.util.List;
 
 import org.jboss.weld.environment.se.bindings.Parameters;
 import org.jboss.weld.environment.se.events.ContainerInitialized;
 
-/**
- * @author __USER__
- */
 public class SwingTest extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 1L;

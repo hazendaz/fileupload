@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,11 +13,11 @@
  */
 package com.hazendaz.beans;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.faces.event.AbortProcessingException;
-import javax.faces.event.ValueChangeEvent;
-import javax.faces.event.ValueChangeListener;
-import javax.inject.Named;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.faces.event.AbortProcessingException;
+import jakarta.faces.event.ValueChangeEvent;
+import jakarta.faces.event.ValueChangeListener;
+import jakarta.inject.Named;
 
 @ApplicationScoped
 @Named

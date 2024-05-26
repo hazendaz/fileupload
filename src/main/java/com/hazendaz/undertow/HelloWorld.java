@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -23,8 +23,8 @@ import io.undertow.servlet.Servlets;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
 
-import javax.faces.webapp.FacesServlet;
-import javax.servlet.ServletException;
+import jakarta.faces.webapp.FacesServlet;
+import jakarta.servlet.ServletException;
 
 import waffle.servlet.WaffleInfoServlet;
 

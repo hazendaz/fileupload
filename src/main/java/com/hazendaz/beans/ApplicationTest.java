@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -16,10 +16,10 @@ package com.hazendaz.beans;
 import com.hazendaz.weld.AfterDeploy;
 import com.hazendaz.weld.Eager;
 
-import java.io.Serializable;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 
 import lombok.Getter;
 

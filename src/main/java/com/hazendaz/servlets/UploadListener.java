@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,12 +13,12 @@
  */
 package com.hazendaz.servlets;
 
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
 
 public class UploadListener implements ServletContextListener {
 

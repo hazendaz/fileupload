@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,11 +13,11 @@
  */
 package com.hazendaz.swing;
 
-import java.util.List;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Singleton;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.event.Observes;
-import javax.inject.Singleton;
+import java.util.List;
 
 import org.jboss.weld.environment.se.bindings.Parameters;
 import org.jboss.weld.environment.se.events.ContainerInitialized;

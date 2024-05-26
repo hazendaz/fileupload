@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,18 +13,18 @@
  */
 package com.hazendaz.beans;
 
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.model.SelectItem;
+import jakarta.inject.Named;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
-
-import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.faces.model.SelectItem;
-import javax.inject.Named;
 
 @Named
 @SessionScoped

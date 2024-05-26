@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,6 +13,12 @@
  */
 package com.hazendaz.beans;
 
+import jakarta.faces.event.ValueChangeEvent;
+import jakarta.faces.model.SelectItem;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -21,12 +27,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-
-import javax.faces.event.ValueChangeEvent;
-import javax.faces.model.SelectItem;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
 
 import lombok.Data;
 

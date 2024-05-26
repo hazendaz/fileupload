@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -12,6 +12,8 @@
  *     Hazendaz (Jeremy Landis).
  */
 package com.hazendaz.encryption;
+
+import jakarta.inject.Inject;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -25,8 +27,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.util.Iterator;
-
-import javax.inject.Inject;
 
 import org.bouncycastle.bcpg.ArmoredOutputStream;
 import org.bouncycastle.bcpg.CompressionAlgorithmTags;

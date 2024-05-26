@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,10 +13,10 @@
  */
 package com.hazendaz.producers;
 
-import javax.enterprise.context.ContextNotActiveException;
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Produces;
-import javax.faces.context.FacesContext;
+import jakarta.enterprise.context.ContextNotActiveException;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.inject.Produces;
+import jakarta.faces.context.FacesContext;
 
 public class FacesContextProducer {
 

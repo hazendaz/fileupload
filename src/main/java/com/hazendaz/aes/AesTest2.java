@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2024 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,14 +13,15 @@
  */
 package com.hazendaz.aes;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.SessionScoped;
+
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
-import javax.annotation.PostConstruct;
 import javax.crypto.KeyGenerator;
-import javax.enterprise.context.SessionScoped;
 
 import org.bouncycastle.crypto.BlockCipher;
 import org.bouncycastle.crypto.DataLengthException;
