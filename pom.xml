@@ -593,7 +593,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.waffle</groupId>
-            <artifactId>waffle-jna</artifactId>
+            <artifactId>waffle-jna-jakarta</artifactId>
             <version>3.4.0</version>
             <scope>compile</scope>
         </dependency>
