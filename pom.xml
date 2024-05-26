@@ -671,10 +671,12 @@
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.core</artifactId>
+            <version>4.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.moxy</artifactId>
+            <version>4.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
