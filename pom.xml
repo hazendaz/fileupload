@@ -642,51 +642,13 @@
         <dependency>
             <groupId>org.glassfish.hk2</groupId>
             <artifactId>hk2-locator</artifactId>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.glassfish.hk2.external</groupId>
-                    <artifactId>jakarta.inject</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.metro</groupId>
-            <artifactId>webservices-extra</artifactId>
-            <version>2.4.10</version>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.sun.commons</groupId>
-                    <artifactId>logging-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.sun.commons</groupId>
-                    <artifactId>beanutils</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.sun.commons</groupId>
-                    <artifactId>modeler</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.metro</groupId>
-            <artifactId>webservices-extra-api</artifactId>
-            <version>2.4.10</version>
             <version>3.1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.metro</groupId>
             <artifactId>webservices-rt</artifactId>
-            <version>2.4.10</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.metro</groupId>
-            <artifactId>webservices-tools</artifactId>
-            <version>2.4.10</version>
+            <version>4.0.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
