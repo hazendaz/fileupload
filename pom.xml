@@ -40,7 +40,7 @@
         <java.test.release.version>17</java.test.release.version>
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <dropwizard.version>2.1.2</dropwizard.version>
+        <dropwizard.version>4.0.7</dropwizard.version>
         <impsort.plugin>1.9.0</impsort.plugin>
         <modernizer.plugin>2.9.0</modernizer.plugin>
     </properties>
