@@ -26,13 +26,13 @@ import jakarta.enterprise.context.spi.CreationalContext;
 import jakarta.enterprise.inject.Typed;
 import jakarta.enterprise.inject.spi.AnnotatedType;
 import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.CDI;
 import jakarta.enterprise.inject.spi.InjectionTarget;
 
 import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.apache.deltaspike.core.api.provider.BeanManagerProvider;
 import org.apache.deltaspike.core.util.metadata.builder.AnnotatedTypeBuilder;
 
 /**
@@ -93,12 +93,12 @@ public final class BeanProvider {
     }
 
     /**
-     * Internal method to resolve the BeanManager via the {@link BeanManagerProvider}
+     * Internal method to resolve the BeanManager.
      *
      * @return current bean-manager
      */
     private static BeanManager getBeanManager() {
-        return BeanManagerProvider.getInstance().getBeanManager();
+        return CDI.current().getBeanManager();
     }
 
     private BeanProvider() {
