@@ -31,7 +31,7 @@ import java.util.Calendar;
 import java.util.concurrent.ExecutorService;
 
 import org.richfaces.event.FileUploadEvent;
-import org.richfaces.model.UploadedFile;
+// import org.richfaces.model.UploadedFile;
 import org.slf4j.Logger;
 
 @Named
@@ -97,11 +97,12 @@ public class FileUploadBean implements Serializable {
     }
 
     public void listener(final FileUploadEvent event) throws Exception {
-        final UploadedFile item = event.getUploadedFile();
+        // TODO richfaces is still javax. Could replace this by using tomcat variation for fileupload from psi probe
+        // final UploadedFile item = event.getUploadedFile();
         final UploadedImage file = new UploadedImage();
-        file.setLength(item.getData().length);
-        file.setName(item.getName());
-        file.setData(item.getData());
+        // file.setLength(item.getData().length);
+        // file.setName(item.getName());
+        // file.setData(item.getData());
         this.files.add(file);
         this.threadPool = (ExecutorService) FacesContext.getCurrentInstance().getExternalContext().getApplicationMap()
                 .get("THREAD_POOL");
