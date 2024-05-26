@@ -825,9 +825,9 @@
                             <pluginExecutions>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>org.jboss.jandex</groupId>
+                                        <groupId>io.smallrye</groupId>
                                         <artifactId>jandex-maven-plugin</artifactId>
-                                        <versionRange>[1.0.8,)</versionRange>
+                                        <versionRange>[3.2.0,)</versionRange>
                                         <goals>
                                             <goal>jandex</goal>
                                         </goals>
@@ -844,9 +844,9 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>org.jboss.jandex</groupId>
+                <groupId>io.smallrye</groupId>
                 <artifactId>jandex-maven-plugin</artifactId>
-                <version>1.2.3</version>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>make-index</id>
