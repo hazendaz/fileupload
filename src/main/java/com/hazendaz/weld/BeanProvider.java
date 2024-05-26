@@ -46,8 +46,6 @@ import org.apache.deltaspike.core.util.metadata.builder.AnnotatedTypeBuilder;
  * Container boot (in an Extension), non-portable behavior results. The CDI specification only allows injection of the
  * BeanManager during CDI-Container boot time.
  * </p>
- *
- * @see BeanManagerProvider
  */
 @Typed()
 public final class BeanProvider {
