@@ -282,7 +282,7 @@
         <dependency>
             <groupId>org.jboss.weld.module</groupId>
             <artifactId>weld-jsf</artifactId>
-            <version>5.1.4.Final</version>
+            <version>6.0.0.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
