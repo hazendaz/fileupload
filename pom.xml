@@ -43,7 +43,6 @@
 
         <deltaspike.version>2.0.1</deltaspike.version>
         <dropwizard.version>2.1.12</dropwizard.version>
-        <impsort.plugin>1.9.0</impsort.plugin>
         <modernizer.plugin>2.9.0</modernizer.plugin>
     </properties>
 
