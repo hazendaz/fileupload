@@ -42,7 +42,7 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 
         <deltaspike.version>2.0.1</deltaspike.version>
-        <dropwizard.version>2.1.12</dropwizard.version>
+        <dropwizard.version>5.0.0</dropwizard.version>
         <modernizer.plugin>2.9.0</modernizer.plugin>
     </properties>
 
