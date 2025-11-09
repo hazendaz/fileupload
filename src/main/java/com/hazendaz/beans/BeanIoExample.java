@@ -1,5 +1,5 @@
 /*
- * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
+ * fileupload (https://github.com/hazendaz/fileupload)
  *
  * Copyright 2009-2025 Hazendaz.
  *
