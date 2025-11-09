@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.dropwizard.core.Configuration;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import jakarta.validation.constraints.NotEmpty;
 
 public class FileUploadConfiguration extends Configuration {
 
