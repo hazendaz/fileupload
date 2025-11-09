@@ -57,7 +57,7 @@ public class AesTest2 implements Serializable {
 
     private final Logger logger = LoggerFactory.getLogger(AesTest2.class);
 
-    private final BlockCipher AESCipher = new AESEngine();
+    private final BlockCipher AESCipher = AESEngine.newInstance();
 
     private PaddedBufferedBlockCipher cipher;
     private KeyParameter keyParameter;

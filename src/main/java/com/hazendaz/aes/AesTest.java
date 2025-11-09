@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2025 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -45,14 +45,16 @@ public class AesTest {
     }
 
     private static byte[] decrypt(final byte[] cipher, final byte[] key, final byte[] iv) throws Exception {
-        final PaddedBufferedBlockCipher aes = new PaddedBufferedBlockCipher(new CBCBlockCipher(new AESEngine()));
+        final PaddedBufferedBlockCipher aes = new PaddedBufferedBlockCipher(
+                CBCBlockCipher.newInstance(AESEngine.newInstance()));
         final CipherParameters ivAndKey = new ParametersWithIV(new KeyParameter(key), iv);
         aes.init(false, ivAndKey);
         return AesTest.cipherData(aes, cipher);
     }
 
     private static byte[] encrypt(final byte[] plain, final byte[] key, final byte[] iv) throws Exception {
-        final PaddedBufferedBlockCipher aes = new PaddedBufferedBlockCipher(new CBCBlockCipher(new AESEngine()));
+        final PaddedBufferedBlockCipher aes = new PaddedBufferedBlockCipher(
+                CBCBlockCipher.newInstance(AESEngine.newInstance()));
         final CipherParameters ivAndKey = new ParametersWithIV(new KeyParameter(key), iv);
         aes.init(true, ivAndKey);
         return AesTest.cipherData(aes, plain);
