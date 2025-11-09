@@ -44,7 +44,6 @@
         <bc.version>2.73.9</bc.version>
         <deltaspike.version>2.0.1</deltaspike.version>
         <dropwizard.version>5.0.0</dropwizard.version>
-        <modernizer.plugin>2.9.0</modernizer.plugin>
         <eclipselink.version>4.0.8</eclipselink.version>
         <hk2.version>3.1.1</hk2.version>
         <janino.version>3.1.12</janino.version>
@@ -61,8 +60,8 @@
                 <groupId>com.github.hazendaz</groupId>
                 <artifactId>test-aggregator</artifactId>
                 <version>1.1.0</version>
-                <scope>test</scope>
                 <type>pom</type>
+                <scope>test</scope>
             </dependency>
 
             <dependency>

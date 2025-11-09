@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2025 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -19,13 +19,12 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.Security;
 import java.util.Iterator;
 
@@ -80,10 +79,10 @@ public class SingleSignOnTest {
             final TestKeyGen testKeyGen = new TestKeyGen();
             final PGPSecretKey key = testKeyGen.createSecretKey("someuser@email.com", "testme".toCharArray())
                     .getSecretKey();
-            final FileInputStream privKey = new FileInputStream(key.toString());
-            final String result = SingleSignOnTest._decrypt(bais, privKey,
-                    SingleSignOnTest.privateKeyPassword.toCharArray());
-            privKey.close();
+            String result;
+            try (InputStream privKey = Files.newInputStream(Path.of(key.toString()))) {
+                result = SingleSignOnTest._decrypt(bais, privKey, SingleSignOnTest.privateKeyPassword.toCharArray());
+            }
             return result;
         } catch (final Exception e) {
             SingleSignOnTest.logger.error(e.getMessage());
@@ -108,19 +107,19 @@ public class SingleSignOnTest {
             SingleSignOnTest.logger.info("Creating a temp file...");
             // create a file and write the string to it
             final File tempfile = File.createTempFile("pgp", null);
-            final FileOutputStream fos = new FileOutputStream(tempfile);
-            fos.write(data);
-            fos.close();
+            try (OutputStream fos = Files.newOutputStream(tempfile.toPath())) {
+                fos.write(data);
+            }
             SingleSignOnTest.logger.info("Temp file created at ");
             SingleSignOnTest.logger.info(tempfile.getAbsolutePath());
             SingleSignOnTest.logger
                     .info("Reading the temp file to make sure that the bits were written\n--------------");
-            final BufferedReader isr = new BufferedReader(new FileReader(tempfile, StandardCharsets.UTF_8));
-            String line = "";
-            while ((line = isr.readLine()) != null) {
-                SingleSignOnTest.logger.info(line + "\n");
+            try (BufferedReader isr = Files.newBufferedReader(tempfile.toPath(), StandardCharsets.UTF_8)) {
+                String line = "";
+                while ((line = isr.readLine()) != null) {
+                    SingleSignOnTest.logger.info(line + "\n");
+                }
             }
-            isr.close();
             // find out a little about the keys in the public key ring
             System.out.println("Key Strength = " + key.getBitStrength());
             System.out.println("Algorithm = " + key.getAlgorithm());
@@ -311,7 +310,7 @@ public class SingleSignOnTest {
         SingleSignOnTest.logger.info("creating comData...");
         // get the data from the original file
         final PGPCompressedDataGenerator comData = new PGPCompressedDataGenerator(CompressionAlgorithmTags.ZIP);
-        PGPUtil.writeFileToLiteralData(comData.open(bOut), PGPLiteralData.BINARY, new File(fileName));
+        PGPUtil.writeFileToLiteralData(comData.open(bOut), PGPLiteralData.BINARY, Path.of(fileName).toFile());
         comData.close();
         SingleSignOnTest.logger.info("comData created...");
         SingleSignOnTest.logger.info("using PGPEncryptedDataGenerator...");
@@ -354,7 +353,7 @@ public class SingleSignOnTest {
     //
     public byte[] readFile(final File file) throws IOException {
 
-        final BufferedInputStream fis = new BufferedInputStream(new FileInputStream(file));
+        final BufferedInputStream fis = new BufferedInputStream(Files.newInputStream(file.toPath()));
         final byte[] buf = new byte[8192];
         int numRead = 0;
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();

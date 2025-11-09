@@ -1,7 +1,7 @@
 /*
  * fileUploadResources (https://github.com/hazendaz/fileUploadResources)
  *
- * Copyright 2009-2023 Hazendaz.
+ * Copyright 2009-2025 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -13,7 +13,7 @@
  */
 package com.hazendaz.beans;
 
-import java.io.File;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class BeanIoExample {
                 .parser(new DelimitedParserBuilder(',')).addRecord(BeanIo.class);
         factory.define(builder);
 
-        final BeanReader beanReader = factory.createReader("beanio", new File("src/main/resources/beanio.txt"));
+        final BeanReader beanReader = factory.createReader("beanio", Path.of("src/main/resources/beanio.txt").toFile());
 
         final List<BeanIo> rows = new ArrayList<>();
 
