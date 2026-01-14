@@ -315,7 +315,7 @@
         <dependency>
             <groupId>org.jboss.weld.se</groupId>
             <artifactId>weld-se-core</artifactId>
-            <version>6.0.3.Final</version>
+            <version>6.0.4.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
