@@ -309,7 +309,7 @@
         <dependency>
             <groupId>org.jboss.weld.module</groupId>
             <artifactId>weld-jsf</artifactId>
-            <version>6.0.3.Final</version>
+            <version>6.0.4.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
