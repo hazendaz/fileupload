@@ -82,7 +82,7 @@ abstract class AnnotatedImpl implements Annotated {
      */
     @Override
     public Set<Type> getTypeClosure() {
-        return new HashSet<Type>(typeClosure);
+        return new HashSet<>(typeClosure);
     }
 
     /**

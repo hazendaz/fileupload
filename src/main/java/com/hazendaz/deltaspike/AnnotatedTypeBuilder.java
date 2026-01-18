@@ -25,7 +25,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
-import java.security.AccessController;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,14 +62,14 @@ public class AnnotatedTypeBuilder<X> {
      */
     public AnnotatedTypeBuilder() {
         typeAnnotations = new AnnotationBuilder();
-        constructors = new HashMap<Constructor<?>, AnnotationBuilder>();
-        constructorParameters = new HashMap<Constructor<?>, Map<Integer, AnnotationBuilder>>();
-        constructorParameterTypes = new HashMap<Constructor<?>, Map<Integer, Type>>();
-        fields = new HashMap<Field, AnnotationBuilder>();
-        fieldTypes = new HashMap<Field, Type>();
-        methods = new HashMap<Method, AnnotationBuilder>();
-        methodParameters = new HashMap<Method, Map<Integer, AnnotationBuilder>>();
-        methodParameterTypes = new HashMap<Method, Map<Integer, Type>>();
+        constructors = new HashMap<>();
+        constructorParameters = new HashMap<>();
+        constructorParameterTypes = new HashMap<>();
+        fields = new HashMap<>();
+        fieldTypes = new HashMap<>();
+        methods = new HashMap<>();
+        methodParameters = new HashMap<>();
+        methodParameterTypes = new HashMap<>();
     }
 
     /**
@@ -260,7 +259,7 @@ public class AnnotatedTypeBuilder<X> {
             methods.put(method, new AnnotationBuilder());
         }
         if (methodParameters.get(method) == null) {
-            methodParameters.put(method, new HashMap<Integer, AnnotationBuilder>());
+            methodParameters.put(method, new HashMap<>());
         }
         if (methodParameters.get(method).get(position) == null) {
             methodParameters.get(method).put(position, new AnnotationBuilder());
@@ -389,7 +388,7 @@ public class AnnotatedTypeBuilder<X> {
             constructors.put(constructor, new AnnotationBuilder());
         }
         if (constructorParameters.get(constructor) == null) {
-            constructorParameters.put(constructor, new HashMap<Integer, AnnotationBuilder>());
+            constructorParameters.put(constructor, new HashMap<>());
         }
         if (constructorParameters.get(constructor).get(position) == null) {
             constructorParameters.get(constructor).put(position, new AnnotationBuilder());
@@ -563,7 +562,7 @@ public class AnnotatedTypeBuilder<X> {
             mergeAnnotationsOnElement(method, overwrite, methods.get(method.getJavaMember()));
             for (AnnotatedParameter<? super X> p : method.getParameters()) {
                 if (methodParameters.get(method.getJavaMember()) == null) {
-                    methodParameters.put(method.getJavaMember(), new HashMap<Integer, AnnotationBuilder>());
+                    methodParameters.put(method.getJavaMember(), new HashMap<>());
                 }
                 if (methodParameters.get(method.getJavaMember()).get(p.getPosition()) == null) {
                     methodParameters.get(method.getJavaMember()).put(p.getPosition(), new AnnotationBuilder());
@@ -579,7 +578,7 @@ public class AnnotatedTypeBuilder<X> {
             mergeAnnotationsOnElement(constructor, overwrite, constructors.get(constructor.getJavaMember()));
             for (AnnotatedParameter<? super X> p : constructor.getParameters()) {
                 if (constructorParameters.get(constructor.getJavaMember()) == null) {
-                    constructorParameters.put(constructor.getJavaMember(), new HashMap<Integer, AnnotationBuilder>());
+                    constructorParameters.put(constructor.getJavaMember(), new HashMap<>());
                 }
                 if (constructorParameters.get(constructor.getJavaMember()).get(p.getPosition()) == null) {
                     constructorParameters.get(constructor.getJavaMember()).put(p.getPosition(),
@@ -660,7 +659,7 @@ public class AnnotatedTypeBuilder<X> {
 
             Map<Integer, AnnotationBuilder> parameters = methodParameters.get(method);
             if (parameters == null) {
-                parameters = new HashMap<Integer, AnnotationBuilder>();
+                parameters = new HashMap<>();
                 methodParameters.put(method, parameters);
             }
             for (int i = 0; i < method.getParameterTypes().length; ++i) {
@@ -691,7 +690,7 @@ public class AnnotatedTypeBuilder<X> {
             }
             Map<Integer, AnnotationBuilder> mparams = constructorParameters.get(constructor);
             if (mparams == null) {
-                mparams = new HashMap<Integer, AnnotationBuilder>();
+                mparams = new HashMap<>();
                 constructorParameters.put(constructor, mparams);
             }
             for (int i = 0; i < constructor.getParameterTypes().length; ++i) {
@@ -729,11 +728,11 @@ public class AnnotatedTypeBuilder<X> {
      * builder will be automatically added.
      */
     public AnnotatedType<X> create() {
-        Map<Constructor<?>, Map<Integer, AnnotationStore>> constructorParameterAnnotations = new HashMap<Constructor<?>, Map<Integer, AnnotationStore>>();
-        Map<Constructor<?>, AnnotationStore> constructorAnnotations = new HashMap<Constructor<?>, AnnotationStore>();
-        Map<Method, Map<Integer, AnnotationStore>> methodParameterAnnotations = new HashMap<Method, Map<Integer, AnnotationStore>>();
-        Map<Method, AnnotationStore> methodAnnotations = new HashMap<Method, AnnotationStore>();
-        Map<Field, AnnotationStore> fieldAnnotations = new HashMap<Field, AnnotationStore>();
+        Map<Constructor<?>, Map<Integer, AnnotationStore>> constructorParameterAnnotations = new HashMap<>();
+        Map<Constructor<?>, AnnotationStore> constructorAnnotations = new HashMap<>();
+        Map<Method, Map<Integer, AnnotationStore>> methodParameterAnnotations = new HashMap<>();
+        Map<Method, AnnotationStore> methodAnnotations = new HashMap<>();
+        Map<Field, AnnotationStore> fieldAnnotations = new HashMap<>();
 
         for (Map.Entry<Field, AnnotationBuilder> field : fields.entrySet()) {
             fieldAnnotations.put(field.getKey(), field.getValue().create());
@@ -743,7 +742,7 @@ public class AnnotatedTypeBuilder<X> {
             methodAnnotations.put(method.getKey(), method.getValue().create());
         }
         for (Map.Entry<Method, Map<Integer, AnnotationBuilder>> parameters : methodParameters.entrySet()) {
-            Map<Integer, AnnotationStore> parameterAnnotations = new HashMap<Integer, AnnotationStore>();
+            Map<Integer, AnnotationStore> parameterAnnotations = new HashMap<>();
             methodParameterAnnotations.put(parameters.getKey(), parameterAnnotations);
             for (Map.Entry<Integer, AnnotationBuilder> parameter : parameters.getValue().entrySet()) {
                 parameterAnnotations.put(parameter.getKey(), parameter.getValue().create());
@@ -754,7 +753,7 @@ public class AnnotatedTypeBuilder<X> {
             constructorAnnotations.put(constructor.getKey(), constructor.getValue().create());
         }
         for (Map.Entry<Constructor<?>, Map<Integer, AnnotationBuilder>> parameters : constructorParameters.entrySet()) {
-            Map<Integer, AnnotationStore> parameterAnnotations = new HashMap<Integer, AnnotationStore>();
+            Map<Integer, AnnotationStore> parameterAnnotations = new HashMap<>();
             constructorParameterAnnotations.put(parameters.getKey(), parameterAnnotations);
             for (Map.Entry<Integer, AnnotationBuilder> parameter : parameters.getValue().entrySet()) {
                 parameterAnnotations.put(parameter.getKey(), parameter.getValue().create());
@@ -823,7 +822,7 @@ public class AnnotatedTypeBuilder<X> {
             throw new IllegalArgumentException(String.format("%s parameter must not be null", "type"));
         }
         if (methodParameterTypes.get(method) == null) {
-            methodParameterTypes.put(method, new HashMap<Integer, Type>());
+            methodParameterTypes.put(method, new HashMap<>());
         }
         methodParameterTypes.get(method).put(position, type);
         return this;
@@ -851,7 +850,7 @@ public class AnnotatedTypeBuilder<X> {
             throw new IllegalArgumentException(String.format("%s parameter must not be null", "type"));
         }
         if (constructorParameterTypes.get(constructor) == null) {
-            constructorParameterTypes.put(constructor, new HashMap<Integer, Type>());
+            constructorParameterTypes.put(constructor, new HashMap<>());
         }
         constructorParameterTypes.get(constructor).put(position, type);
         return this;

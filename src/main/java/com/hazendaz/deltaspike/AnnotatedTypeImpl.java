@@ -54,27 +54,27 @@ class AnnotatedTypeImpl<X> extends AnnotatedImpl implements AnnotatedType<X> {
             Map<Constructor<?>, Map<Integer, Type>> constructorParameterTypes) {
         super(clazz, typeAnnotations, null, null);
         javaClass = clazz;
-        constructors = new HashSet<AnnotatedConstructor<X>>();
-        Set<Constructor<?>> cset = new HashSet<Constructor<?>>();
-        Set<Method> mset = new HashSet<Method>();
-        Set<Field> fset = new HashSet<Field>();
+        constructors = new HashSet<>();
+        Set<Constructor<?>> cset = new HashSet<>();
+        Set<Method> mset = new HashSet<>();
+        Set<Field> fset = new HashSet<>();
         for (Constructor<?> c : clazz.getConstructors()) {
-            AnnotatedConstructor<X> nc = new AnnotatedConstructorImpl<X>(this, c, constructorAnnotations.get(c),
+            AnnotatedConstructor<X> nc = new AnnotatedConstructorImpl<>(this, c, constructorAnnotations.get(c),
                     constructorParameterAnnotations.get(c), constructorParameterTypes.get(c));
             constructors.add(nc);
             cset.add(c);
         }
         for (Map.Entry<Constructor<?>, AnnotationStore> c : constructorAnnotations.entrySet()) {
             if (!cset.contains(c.getKey())) {
-                AnnotatedConstructor<X> nc = new AnnotatedConstructorImpl<X>(this, c.getKey(), c.getValue(),
+                AnnotatedConstructor<X> nc = new AnnotatedConstructorImpl<>(this, c.getKey(), c.getValue(),
                         constructorParameterAnnotations.get(c.getKey()), constructorParameterTypes.get(c.getKey()));
                 constructors.add(nc);
             }
         }
-        methods = new HashSet<AnnotatedMethod<? super X>>();
+        methods = new HashSet<>();
         for (Method m : clazz.getMethods()) {
             if (!m.getDeclaringClass().equals(Object.class) && !m.getDeclaringClass().equals(Annotation.class)) {
-                AnnotatedMethodImpl<X> met = new AnnotatedMethodImpl<X>(this, m, methodAnnotations.get(m),
+                AnnotatedMethodImpl<X> met = new AnnotatedMethodImpl<>(this, m, methodAnnotations.get(m),
                         methodParameterAnnotations.get(m), methodParameterTypes.get(m));
                 methods.add(met);
                 mset.add(m);
@@ -82,20 +82,20 @@ class AnnotatedTypeImpl<X> extends AnnotatedImpl implements AnnotatedType<X> {
         }
         for (Map.Entry<Method, AnnotationStore> c : methodAnnotations.entrySet()) {
             if (!c.getKey().getDeclaringClass().equals(Object.class) && !mset.contains(c.getKey())) {
-                AnnotatedMethodImpl<X> nc = new AnnotatedMethodImpl<X>(this, c.getKey(), c.getValue(),
+                AnnotatedMethodImpl<X> nc = new AnnotatedMethodImpl<>(this, c.getKey(), c.getValue(),
                         methodParameterAnnotations.get(c.getKey()), methodParameterTypes.get(c.getKey()));
                 methods.add(nc);
             }
         }
-        fields = new HashSet<AnnotatedField<? super X>>();
+        fields = new HashSet<>();
         for (Field f : clazz.getFields()) {
-            AnnotatedField<X> b = new AnnotatedFieldImpl<X>(this, f, fieldAnnotations.get(f), fieldTypes.get(f));
+            AnnotatedField<X> b = new AnnotatedFieldImpl<>(this, f, fieldAnnotations.get(f), fieldTypes.get(f));
             fields.add(b);
             fset.add(f);
         }
         for (Map.Entry<Field, AnnotationStore> e : fieldAnnotations.entrySet()) {
             if (!fset.contains(e.getKey())) {
-                fields.add(new AnnotatedFieldImpl<X>(this, e.getKey(), e.getValue(), fieldTypes.get(e.getKey())));
+                fields.add(new AnnotatedFieldImpl<>(this, e.getKey(), e.getValue(), fieldTypes.get(e.getKey())));
             }
         }
     }
