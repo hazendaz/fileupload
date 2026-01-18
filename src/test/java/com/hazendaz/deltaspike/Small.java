@@ -11,18 +11,17 @@
  * Contributors:
  *     Hazendaz (Jeremy Landis).
  */
-package com.hazendaz.beans;
+package com.hazendaz.deltaspike;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import jakarta.inject.Qualifier;
 
-class BeanIoExampleTest {
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-    BeanIoExample beanIoExample = new BeanIoExample();
-
-    @Test
-    void csvExample() {
-        Assertions.assertEquals(2, this.beanIoExample.csvExample());
-    }
-
+@Qualifier
+@Documented
+@Retention(value = RetentionPolicy.RUNTIME)
+public @interface Small {
+    String value() default "";
 }

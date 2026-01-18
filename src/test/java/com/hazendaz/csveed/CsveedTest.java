@@ -1,7 +1,7 @@
 /*
  * fileupload (https://github.com/hazendaz/fileupload)
  *
- * Copyright 2009-2025 Hazendaz.
+ * Copyright 2009-2026 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -28,7 +28,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 @Disabled
-public class CsveedTest {
+class CsveedTest {
 
     public class Bean {
         private Integer first;
@@ -57,14 +57,14 @@ public class CsveedTest {
     }
 
     @Test
-    public void bugReason() {
+    void bugReason() {
         NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
         String value = numberFormat.format(6666);
         assertEquals("6,666", value);
     }
 
     @Test
-    public void bugSolution() {
+    void bugSolution() {
         NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
         numberFormat.setGroupingUsed(false);
         String value = numberFormat.format(6666);
@@ -72,7 +72,7 @@ public class CsveedTest {
     }
 
     @Test
-    public void testLocale() throws IOException {
+    void testLocale() throws IOException {
 
         List<Bean> beans = new ArrayList<>();
         beans.add(new Bean(2222, 6666L));

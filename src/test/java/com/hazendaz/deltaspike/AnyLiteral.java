@@ -11,18 +11,14 @@
  * Contributors:
  *     Hazendaz (Jeremy Landis).
  */
-package com.hazendaz.beans;
+package com.hazendaz.deltaspike;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import jakarta.enterprise.inject.Any;
+import jakarta.enterprise.util.AnnotationLiteral;
 
-class BeanIoExampleTest {
-
-    BeanIoExample beanIoExample = new BeanIoExample();
-
-    @Test
-    void csvExample() {
-        Assertions.assertEquals(2, this.beanIoExample.csvExample());
-    }
-
+/**
+ * Literal for the {@link jakarta.enterprise.inject.Any} annotation.
+ */
+public class AnyLiteral extends AnnotationLiteral<Any> implements Any {
+    private static final long serialVersionUID = -8623640277155878657L;
 }

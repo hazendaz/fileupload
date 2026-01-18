@@ -11,18 +11,14 @@
  * Contributors:
  *     Hazendaz (Jeremy Landis).
  */
-package com.hazendaz.beans;
+package com.hazendaz.deltaspike;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.util.AnnotationLiteral;
 
-class BeanIoExampleTest {
-
-    BeanIoExample beanIoExample = new BeanIoExample();
-
-    @Test
-    void csvExample() {
-        Assertions.assertEquals(2, this.beanIoExample.csvExample());
-    }
-
+/**
+ * Literal for {@link ApplicationScoped}
+ */
+public class ApplicationScopedLiteral extends AnnotationLiteral<ApplicationScoped> implements ApplicationScoped {
+    private static final long serialVersionUID = 6582580975876369665L;
 }
