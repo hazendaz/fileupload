@@ -1,7 +1,7 @@
 /*
  * fileupload (https://github.com/hazendaz/fileupload)
  *
- * Copyright 2009-2025 Hazendaz.
+ * Copyright 2009-2026 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -19,12 +19,12 @@ import org.junit.jupiter.api.Test;
 import org.powermock.reflect.Whitebox;
 import org.slf4j.LoggerFactory;
 
-public class LogonBeanTest {
+class LogonBeanTest {
 
     LogonBean logonBean;
 
     @Test
-    public void clearTest() {
+    void clearTest() {
         final LogonBean test = new LogonBean();
         Whitebox.setInternalState(this.logonBean, "logger", LoggerFactory.getLogger("testClass"));
         this.logonBean.clear();
@@ -32,7 +32,7 @@ public class LogonBeanTest {
     }
 
     @BeforeEach
-    public void init() {
+    void init() {
         this.logonBean = new LogonBean();
     }
 

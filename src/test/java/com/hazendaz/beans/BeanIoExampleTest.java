@@ -1,7 +1,7 @@
 /*
  * fileupload (https://github.com/hazendaz/fileupload)
  *
- * Copyright 2009-2025 Hazendaz.
+ * Copyright 2009-2026 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -16,12 +16,12 @@ package com.hazendaz.beans;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class BeanIoExampleTest {
+class BeanIoExampleTest {
 
     BeanIoExample beanIoExample = new BeanIoExample();
 
     @Test
-    public void csvExample() {
+    void csvExample() {
         Assertions.assertEquals(2, this.beanIoExample.csvExample());
     }
 

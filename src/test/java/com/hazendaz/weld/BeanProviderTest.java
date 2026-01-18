@@ -30,7 +30,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(WeldJunit5Extension.class)
-public class BeanProviderTest {
+class BeanProviderTest {
 
     @Resource
     private WebServiceContext context;
@@ -39,38 +39,38 @@ public class BeanProviderTest {
     public WeldInitiator weld = WeldInitiator.of(new Weld());
 
     @Test
-    public void injectFields_empty_map() {
+    void injectFields_empty_map() {
         final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         Assertions.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
-    public void injectFields_full_map() {
+    void injectFields_full_map() {
         final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         ignoreMap.put("context", Resource.class);
         Assertions.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
-    public void injectFields_missing_property() {
+    void injectFields_missing_property() {
         final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         ignoreMap.put("string", String.class);
         Assertions.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
-    public void injectFields_null_instance() {
+    void injectFields_null_instance() {
         final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
         Assertions.assertNull(BeanProvider.injectFields(null, ignoreMap));
     }
 
     @Test
-    public void injectFields_null_map() {
+    void injectFields_null_map() {
         Assertions.assertNull(BeanProvider.injectFields(this, null));
     }
 
     @Test
-    public void privateConstructorTest() throws Exception {
+    void privateConstructorTest() throws Exception {
         final Constructor<?>[] constructors = BeanProvider.class.getDeclaredConstructors();
         constructors[0].setAccessible(true);
         constructors[0].newInstance((Object[]) null);

@@ -1,7 +1,7 @@
 /*
  * fileupload (https://github.com/hazendaz/fileupload)
  *
- * Copyright 2009-2025 Hazendaz.
+ * Copyright 2009-2026 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -26,7 +26,7 @@ import org.slf4j.Logger;
 
 @Disabled
 @ExtendWith(WeldJunit5Extension.class)
-public class LogManagerTest {
+class LogManagerTest {
 
     @WeldSetup
     public WeldInitiator weld = WeldInitiator.of(new Weld());
@@ -35,7 +35,7 @@ public class LogManagerTest {
     private Logger logger;
 
     @Test
-    public void getLoggerTest() {
+    void getLoggerTest() {
         this.logger.info("logger worked");
     }
 
