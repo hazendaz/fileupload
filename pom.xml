@@ -52,6 +52,8 @@
         <logback.version>1.5.24</logback.version>
         <slf4j.version>2.0.17</slf4j.version>
         <spring.version>7.0.3</spring.version>
+
+        <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
     </properties>
 
     <dependencyManagement>
@@ -669,6 +671,13 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.27.6</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
