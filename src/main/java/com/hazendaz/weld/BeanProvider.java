@@ -88,7 +88,7 @@ public final class BeanProvider {
             e.printStackTrace();
         }
 
-        // Finalize processing using core 'deltaspiek' bean provider
+        // Finalize processing using core 'deltaspike' bean provider
         final AnnotatedType<Object> annotatedType = builder.create();
         final InjectionTarget<Object> injectionTarget = beanManager.getInjectionTargetFactory(annotatedType)
                 .createInjectionTarget(null);
