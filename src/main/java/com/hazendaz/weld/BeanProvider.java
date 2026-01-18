@@ -22,8 +22,10 @@
  */
 package com.hazendaz.weld;
 
+import com.hazendaz.deltaspike.AnnotatedTypeBuilder;
+
 import jakarta.enterprise.context.spi.CreationalContext;
-import jakarta.enterprise.inject.Typed;
+import jakarta.enterprise.inject.Vetoed;
 import jakarta.enterprise.inject.spi.AnnotatedType;
 import jakarta.enterprise.inject.spi.BeanManager;
 import jakarta.enterprise.inject.spi.CDI;
@@ -32,8 +34,6 @@ import jakarta.enterprise.inject.spi.InjectionTarget;
 import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.Map;
-
-import org.apache.deltaspike.core.util.metadata.builder.AnnotatedTypeBuilder;
 
 /**
  * <p>
@@ -47,7 +47,7 @@ import org.apache.deltaspike.core.util.metadata.builder.AnnotatedTypeBuilder;
  * BeanManager during CDI-Container boot time.
  * </p>
  */
-@Typed()
+@Vetoed
 public final class BeanProvider {
 
     /**
@@ -65,11 +65,14 @@ public final class BeanProvider {
      */
     @SuppressWarnings("unchecked")
     public static <T> T injectFields(final T instance, final Map<String, Class<?>> ignoreMap) {
+        // Initialize processing using core 'deltaspike' bean provider
         if (instance == null || ignoreMap == null) {
             return null;
         }
         final BeanManager beanManager = BeanProvider.getBeanManager();
         final CreationalContext<Object> creationalContext = beanManager.createCreationalContext(null);
+
+        // Handle 'ignoreMap' customization to injection
         final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<>()
                 .readFromType((AnnotatedType<Object>) beanManager.createAnnotatedType(instance.getClass()), true);
         try {
@@ -84,8 +87,11 @@ public final class BeanProvider {
         } catch (final NoSuchFieldException e) {
             e.printStackTrace();
         }
+
+        // Finalize processing using core 'deltaspiek' bean provider
         final AnnotatedType<Object> annotatedType = builder.create();
-        final InjectionTarget<Object> injectionTarget = beanManager.createInjectionTarget(annotatedType);
+        final InjectionTarget<Object> injectionTarget = beanManager.getInjectionTargetFactory(annotatedType)
+                .createInjectionTarget(null);
         injectionTarget.inject(instance, creationalContext);
         return instance;
     }
