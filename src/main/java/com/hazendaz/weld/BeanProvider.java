@@ -30,10 +30,14 @@ import jakarta.enterprise.inject.spi.AnnotatedType;
 import jakarta.enterprise.inject.spi.BeanManager;
 import jakarta.enterprise.inject.spi.CDI;
 import jakarta.enterprise.inject.spi.InjectionTarget;
+import jakarta.inject.Inject;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import org.apache.deltaspike.core.util.metadata.AnnotationInstanceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,6 +91,13 @@ public final class BeanProvider {
                 builder.removeFromField(instance.getClass().getDeclaredField(entry.getKey()),
                         (Class<? extends Annotation>) entry.getValue());
             }
+
+            // Support @PostInject annotation by adding @Inject along side it
+            final Annotation injectAnnotation = AnnotationInstanceProvider.of(Inject.class);
+            for (final Field field : instance.getClass().getDeclaredFields()) {
+                if (field.isAnnotationPresent(PostInject.class)) {
+                    builder.addToField(field, injectAnnotation);
+                }
             }
         } catch (final SecurityException e) {
             logger.error(e.getMessage());
