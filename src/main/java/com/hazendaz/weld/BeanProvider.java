@@ -61,7 +61,7 @@ public final class BeanProvider {
     /**
      * Allows to perform dependency injection for instances which aren't managed by CDI.
      * <p>
-     * Attention: The resulting instance isn't managed by CDI; only fields annotated with {@Inject} (or marked with
+     * Attention: The resulting instance isn't managed by CDI; only fields annotated with {@link Inject} (or marked with
      * {@link PostInject} and then synthesized to {@link Inject}) get initialized.
      *
      * @param instance
