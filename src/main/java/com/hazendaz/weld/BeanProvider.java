@@ -47,7 +47,6 @@ import org.slf4j.LoggerFactory;
  * This class contains utility methods to resolve contextual references in situations where no injection is available
  * because the current class is not managed by the CDI Container. This can happen in e.g. a JPA-2.0 EntityListener, a
  * ServletFilter, a Spring managed Bean, etc.
- * </p>
  * <p>
  * <b>Attention:</b> This method is intended for being used in user code at runtime. If this method gets used during
  * Container boot (in an Extension), non-portable behavior results. The CDI specification only allows injection of the
@@ -60,15 +59,17 @@ public final class BeanProvider {
     private static final Logger logger = LoggerFactory.getLogger(BeanProvider.class);
 
     /**
-     * Allows to perform dependency injection for instances which aren't managed by CDI. Attention: The resulting
-     * instance isn't managed by CDI; only fields annotated with @Inject get initialized.
+     * Allows to perform dependency injection for instances which aren't managed by CDI.
+     * <p>
+     * Attention: The resulting instance isn't managed by CDI; only fields annotated with {@Inject} (or marked with
+     * {@link PostInject} and then synthesized to {@link Inject}) get initialized.
      *
      * @param instance
-     *            current instance
+     *            current instance (required)
      * @param <T>
      *            current type
      * @param ignoreMap
-     *            map of properties to ignore
+     *            map of field names to annotation types which should be removed from those fields (required)
      *
      * @return instance with injected fields (if possible - or null if the given instance is null)
      */
