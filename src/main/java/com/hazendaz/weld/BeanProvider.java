@@ -34,6 +34,8 @@ import jakarta.enterprise.inject.spi.InjectionTarget;
 import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -49,6 +51,9 @@ import java.util.Map;
  */
 @Vetoed
 public final class BeanProvider {
+
+    /** Logger instance. */
+    private static final Logger logger = LoggerFactory.getLogger(BeanProvider.class);
 
     /**
      * Allows to perform dependency injection for instances which aren't managed by CDI. Attention: The resulting
@@ -67,6 +72,7 @@ public final class BeanProvider {
     public static <T> T injectFields(final T instance, final Map<String, Class<?>> ignoreMap) {
         // Initialize processing using core 'deltaspike' bean provider
         if (instance == null || ignoreMap == null) {
+            logger.error("BeanProvider 'injectFields' method requires a non-null instance and ignoreMap.");
             return null;
         }
         final BeanManager beanManager = BeanProvider.getBeanManager();
@@ -83,9 +89,11 @@ public final class BeanProvider {
                         (Class<? extends Annotation>) pairs.getValue());
             }
         } catch (final SecurityException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
+            logger.trace("SecurityException: ", e);
         } catch (final NoSuchFieldException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
+            logger.trace("NoSuchFieldException: ", e);
         }
 
         // Finalize processing using core 'deltaspike' bean provider
