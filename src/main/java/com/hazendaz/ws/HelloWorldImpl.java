@@ -1,7 +1,7 @@
 /*
  * fileupload (https://github.com/hazendaz/fileupload)
  *
- * Copyright 2009-2025 Hazendaz.
+ * Copyright 2009-2026 Hazendaz.
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of The Apache Software License,
@@ -22,6 +22,7 @@ import jakarta.inject.Inject;
 import jakarta.jws.WebService;
 import jakarta.xml.ws.WebServiceContext;
 
+import java.lang.annotation.Annotation;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +49,7 @@ public class HelloWorldImpl implements HelloWorld {
 
     @PostConstruct
     public void init() {
-        final Map<String, Class<?>> ignoreMap = new HashMap<>();
+        final Map<String, Class<? extends Annotation>> ignoreMap = new HashMap<>();
         ignoreMap.put("context", Resource.class);
         try {
             BeanProvider.injectFields(this, ignoreMap);

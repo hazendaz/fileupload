@@ -38,8 +38,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.deltaspike.core.util.metadata.AnnotationInstanceProvider;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Customized BeanProvider which allows to perform field-injection on non-CDI managed classes.
@@ -55,9 +53,6 @@ import org.slf4j.LoggerFactory;
 @Vetoed
 public final class BeanProvider {
 
-    /** Logger instance. */
-    private static final Logger logger = LoggerFactory.getLogger(BeanProvider.class);
-
     /**
      * Allows to perform dependency injection for instances which aren't managed by CDI.
      * <p>
@@ -71,40 +66,54 @@ public final class BeanProvider {
      * @param ignoreMap
      *            map of field names to annotation types which should be removed from those fields (required)
      *
-     * @return instance with injected fields (if possible - or null if the given instance is null)
+     * @return the same instance with injected fields
      */
-    public static <T> T injectFields(final T instance, final Map<String, Class<?>> ignoreMap) {
-        // Initialize processing using core 'deltaspike' bean provider
-        if (instance == null || ignoreMap == null) {
-            logger.error("BeanProvider 'injectFields' method requires a non-null instance and ignoreMap.");
-            return null;
+    public static <T> T injectFields(final T instance, final Map<String, Class<? extends Annotation>> ignoreMap) {
+        if (instance == null) {
+            throw new IllegalArgumentException("BeanProvider `injectFields` method requires a non-null instance.");
         }
+        if (ignoreMap == null) {
+            throw new IllegalArgumentException("BeanProvider `injectFields` method requires a non-null ignoreMap.");
+        }
+
+        // Initialize processing using core 'deltaspike' bean provider
         final BeanManager beanManager = BeanProvider.getBeanManager();
 
         // Handle 'ignoreMap' customization to injection
         @SuppressWarnings("unchecked")
         final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<>()
                 .readFromType((AnnotatedType<Object>) beanManager.createAnnotatedType(instance.getClass()), true);
-        try {
-            // Remove annotations as specified in ignoreMap
-            for (final Entry<String, Class<?>> entry : ignoreMap.entrySet()) {
-                builder.removeFromField(instance.getClass().getDeclaredField(entry.getKey()),
-                        (Class<? extends Annotation>) entry.getValue());
+
+        // Remove annotations as specified in ignoreMap
+        for (final Entry<String, Class<? extends Annotation>> entry : ignoreMap.entrySet()) {
+            final String fieldName = entry.getKey();
+            if (fieldName == null) {
+                throw new IllegalArgumentException("BeanProvider `ignoreMap` contains a null field name.");
             }
 
-            // Support @PostInject annotation by adding @Inject along side it
-            final Annotation injectAnnotation = AnnotationInstanceProvider.of(Inject.class);
-            for (final Field field : instance.getClass().getDeclaredFields()) {
-                if (field.isAnnotationPresent(PostInject.class)) {
-                    builder.addToField(field, injectAnnotation);
-                }
+            final Class<? extends Annotation> annotationType = entry.getValue();
+            if (annotationType == null) {
+                throw new IllegalArgumentException(
+                        "BeanProvider `ignoreMap` contains a null annotation type for field: " + fieldName);
             }
-        } catch (final SecurityException e) {
-            logger.error(e.getMessage());
-            logger.trace("SecurityException: ", e);
-        } catch (final NoSuchFieldException e) {
-            logger.error(e.getMessage());
-            logger.trace("NoSuchFieldException: ", e);
+
+            final Field field;
+            try {
+                field = instance.getClass().getDeclaredField(fieldName);
+            } catch (final NoSuchFieldException e) {
+                throw new IllegalArgumentException("BeanProvider `ignoreMap` references missing field: " + fieldName,
+                        e);
+            }
+
+            builder.removeFromField(field, annotationType);
+        }
+
+        // Support @PostInject annotation by adding @Inject along side it
+        final Annotation injectAnnotation = AnnotationInstanceProvider.of(Inject.class);
+        for (final Field field : instance.getClass().getDeclaredFields()) {
+            if (field.isAnnotationPresent(PostInject.class)) {
+                builder.addToField(field, injectAnnotation);
+            }
         }
 
         // Finalize processing using core 'deltaspike' bean provider

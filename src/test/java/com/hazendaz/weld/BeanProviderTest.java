@@ -14,8 +14,10 @@
 package com.hazendaz.weld;
 
 import jakarta.annotation.Resource;
+import jakarta.inject.Inject;
 import jakarta.xml.ws.WebServiceContext;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.Map;
@@ -39,33 +41,33 @@ class BeanProviderTest {
 
     @Test
     void injectFields_empty_map() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
+        final Map<String, Class<? extends Annotation>> ignoreMap = new ConcurrentHashMap<>();
         Assertions.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
     void injectFields_full_map() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
+        final Map<String, Class<? extends Annotation>> ignoreMap = new ConcurrentHashMap<>();
         ignoreMap.put("context", Resource.class);
         Assertions.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
     void injectFields_missing_property() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
-        ignoreMap.put("string", String.class);
-        Assertions.assertSame(this, BeanProvider.injectFields(this, ignoreMap));
+        final Map<String, Class<? extends Annotation>> ignoreMap = new ConcurrentHashMap<>();
+        ignoreMap.put("inject", Inject.class);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> BeanProvider.injectFields(this, ignoreMap));
     }
 
     @Test
     void injectFields_null_instance() {
-        final Map<String, Class<?>> ignoreMap = new ConcurrentHashMap<>();
-        Assertions.assertNull(BeanProvider.injectFields(null, ignoreMap));
+        final Map<String, Class<? extends Annotation>> ignoreMap = new ConcurrentHashMap<>();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> BeanProvider.injectFields(null, ignoreMap));
     }
 
     @Test
     void injectFields_null_map() {
-        Assertions.assertNull(BeanProvider.injectFields(this, null));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> BeanProvider.injectFields(this, null));
     }
 
     @Test
