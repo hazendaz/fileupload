@@ -81,7 +81,6 @@ public final class BeanProvider {
             return null;
         }
         final BeanManager beanManager = BeanProvider.getBeanManager();
-        final CreationalContext<Object> creationalContext = beanManager.createCreationalContext(null);
 
         // Handle 'ignoreMap' customization to injection
         final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<>()
@@ -109,6 +108,8 @@ public final class BeanProvider {
         }
 
         // Finalize processing using core 'deltaspike' bean provider
+        final CreationalContext<Object> creationalContext = beanManager.createCreationalContext(null);
+
         final AnnotatedType<Object> annotatedType = builder.create();
         final InjectionTarget<Object> injectionTarget = beanManager.getInjectionTargetFactory(annotatedType)
                 .createInjectionTarget(null);
