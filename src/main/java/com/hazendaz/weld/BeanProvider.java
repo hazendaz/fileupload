@@ -38,6 +38,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * Customized BeanProvider which allows to perform field-injection on non-CDI managed classes.
  * <p>
  * This class contains utility methods to resolve contextual references in situations where no injection is available
  * because the current class is not managed by the CDI Container. This can happen in e.g. a JPA-2.0 EntityListener, a
@@ -47,7 +48,6 @@ import org.slf4j.LoggerFactory;
  * <b>Attention:</b> This method is intended for being used in user code at runtime. If this method gets used during
  * Container boot (in an Extension), non-portable behavior results. The CDI specification only allows injection of the
  * BeanManager during CDI-Container boot time.
- * </p>
  */
 @Vetoed
 public final class BeanProvider {
