@@ -73,7 +73,6 @@ public final class BeanProvider {
      *
      * @return instance with injected fields (if possible - or null if the given instance is null)
      */
-    @SuppressWarnings("unchecked")
     public static <T> T injectFields(final T instance, final Map<String, Class<?>> ignoreMap) {
         // Initialize processing using core 'deltaspike' bean provider
         if (instance == null || ignoreMap == null) {
@@ -83,6 +82,7 @@ public final class BeanProvider {
         final BeanManager beanManager = BeanProvider.getBeanManager();
 
         // Handle 'ignoreMap' customization to injection
+        @SuppressWarnings("unchecked")
         final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<>()
                 .readFromType((AnnotatedType<Object>) beanManager.createAnnotatedType(instance.getClass()), true);
         try {
