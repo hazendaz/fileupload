@@ -32,8 +32,8 @@ import jakarta.enterprise.inject.spi.CDI;
 import jakarta.enterprise.inject.spi.InjectionTarget;
 
 import java.lang.annotation.Annotation;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,11 +82,11 @@ public final class BeanProvider {
         final AnnotatedTypeBuilder<Object> builder = new AnnotatedTypeBuilder<>()
                 .readFromType((AnnotatedType<Object>) beanManager.createAnnotatedType(instance.getClass()), true);
         try {
-            final Iterator<?> iterator = ignoreMap.entrySet().iterator();
-            for (; iterator.hasNext();) {
-                final Map.Entry<String, Class<?>> pairs = (Map.Entry<String, Class<?>>) iterator.next();
-                builder.removeFromField(instance.getClass().getDeclaredField(pairs.getKey()),
-                        (Class<? extends Annotation>) pairs.getValue());
+            // Remove annotations as specified in ignoreMap
+            for (final Entry<String, Class<?>> entry : ignoreMap.entrySet()) {
+                builder.removeFromField(instance.getClass().getDeclaredField(entry.getKey()),
+                        (Class<? extends Annotation>) entry.getValue());
+            }
             }
         } catch (final SecurityException e) {
             logger.error(e.getMessage());
