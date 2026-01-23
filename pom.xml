@@ -92,6 +92,13 @@
 
     <dependencies>
         <!-- mine -->
+        <dependency>
+            <groupId>com.github.hazendaz.cdi</groupId>
+            <artifactId>beanprovider</artifactId>
+            <version>1.0.0-SNASHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- Must build resources lite to include here or release it first
         <dependency>
             <groupId>com.github.hazendaz</groupId>

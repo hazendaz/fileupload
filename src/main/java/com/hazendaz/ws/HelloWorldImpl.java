@@ -4,7 +4,7 @@
  */
 package com.hazendaz.ws;
 
-import com.hazendaz.weld.BeanProvider;
+import com.github.hazendaz.beanprovider.BeanProvider;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
