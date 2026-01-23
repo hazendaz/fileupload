@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
- * Copyright 2009-2025 Hazendaz
+ * Copyright 2009-2026 Hazendaz
  */
 /**
  * Ibatis Package.
