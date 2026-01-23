@@ -95,7 +95,7 @@
         <dependency>
             <groupId>com.github.hazendaz.cdi</groupId>
             <artifactId>beanprovider</artifactId>
-            <version>1.0.0-SNASHOT</version>
+            <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
