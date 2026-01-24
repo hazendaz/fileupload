@@ -63,9 +63,10 @@
         <eclipselink.version>4.0.9</eclipselink.version>
         <hk2.version>3.1.1</hk2.version>
         <janino.version>3.1.12</janino.version>
-        <jersey.version>4.0.0</jersey.version>
+        <jersey.version>4.0.1</jersey.version>
         <jna.version>5.18.1</jna.version>
         <logback.version>1.5.26</logback.version>
+        <rs-api.version>4.0.0</rs-api.version>
         <slf4j.version>2.0.17</slf4j.version>
         <spring.version>7.0.3</spring.version>
 
@@ -602,7 +603,7 @@
         <dependency>
             <groupId>jakarta.ws.rs</groupId>
             <artifactId>jakarta.ws.rs-api</artifactId>
-            <version>${jersey.version}</version>
+            <version>${rs-api.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
