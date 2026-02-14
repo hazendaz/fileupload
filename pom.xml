@@ -65,7 +65,7 @@
         <janino.version>3.1.12</janino.version>
         <jersey.version>4.0.2</jersey.version>
         <jna.version>5.18.1</jna.version>
-        <logback.version>1.5.29</logback.version>
+        <logback.version>1.5.30</logback.version>
         <rs-api.version>4.0.0</rs-api.version>
         <slf4j.version>2.0.17</slf4j.version>
         <spring.version>7.0.4</spring.version>
