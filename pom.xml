@@ -90,9 +90,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-        </dependencies>
 
-        <dependencies>
             <!-- Checker Framework -->
             <dependency>
                 <groupId>org.checkerframework</groupId>
