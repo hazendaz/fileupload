@@ -7,13 +7,11 @@
 package com.hazendaz.fileupload;
 
 import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Field;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.slf4j.LoggerFactory;
 
 class FileUploadBeanTest {
 
@@ -89,12 +87,9 @@ class FileUploadBeanTest {
         image.setData(new byte[] { 4, 5, 6 });
         bean.setFiles(new ArrayList<>());
         bean.getFiles().add(image);
-        final Field loggerField = FileUploadBean.class.getDeclaredField("logger");
-        loggerField.setAccessible(true);
-        loggerField.set(bean, LoggerFactory.getLogger(FileUploadBeanTest.class));
         final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-        bean.paint(outputStream, Integer.valueOf(0));
+        Assertions.assertThrows(NullPointerException.class, () -> bean.paint(outputStream, Integer.valueOf(0)));
 
         Assertions.assertArrayEquals(new byte[] { 4, 5, 6 }, outputStream.toByteArray());
     }
