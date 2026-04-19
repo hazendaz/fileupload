@@ -197,6 +197,11 @@
                 <version>${rs-api.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.31.0-GA</version>
+            </dependency>
+            <dependency>
                 <groupId>net.sourceforge.cssparser</groupId>
                 <artifactId>cssparser</artifactId>
                 <version>0.9.30</version>
