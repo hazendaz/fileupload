@@ -58,6 +58,7 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 
         <bc.version>2.73.10</bc.version>
+        <checker-qual.version>3.55.1</checker-qual.version>
         <deltaspike.version>2.0.1</deltaspike.version>
         <dropwizard.version>5.0.1</dropwizard.version>
         <eclipselink.version>5.0.0</eclipselink.version>
@@ -244,7 +245,7 @@
             <dependency>
                 <groupId>org.checkerframework</groupId>
                 <artifactId>checker-qual</artifactId>
-                <version>3.54.0</version>
+                <version>3.55.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
