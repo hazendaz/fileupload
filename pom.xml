@@ -67,6 +67,7 @@
         <jna.version>5.18.1</jna.version>
         <logback.version>1.5.32</logback.version>
         <rs-api.version>4.0.0</rs-api.version>
+        <jackson.version>2.21.0</jackson.version>
         <slf4j.version>2.0.17</slf4j.version>
         <spring.version>7.0.6</spring.version>
 
@@ -87,6 +88,22 @@
                 <groupId>org.apache.deltaspike.distribution</groupId>
                 <artifactId>distributions-bom</artifactId>
                 <version>${deltaspike.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-bom</artifactId>
+                <version>${slf4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
