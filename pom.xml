@@ -66,7 +66,7 @@
         <janino.version>3.1.12</janino.version>
         <jersey.version>4.0.2</jersey.version>
         <jna.version>5.18.1</jna.version>
-        <logback.version>1.5.32</logback.version>
+        <logback.version>1.5.33</logback.version>
         <rs-api.version>4.0.0</rs-api.version>
         <jackson.version>2.21.3</jackson.version>
         <jetty.version>12.1.9</jetty.version>
