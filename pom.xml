@@ -807,7 +807,7 @@
         <dependency>
             <groupId>org.glassfish.metro</groupId>
             <artifactId>webservices-rt</artifactId>
-            <version>4.0.6</version>
+            <version>4.0.7</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
