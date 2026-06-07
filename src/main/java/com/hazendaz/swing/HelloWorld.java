@@ -30,6 +30,8 @@ public class HelloWorld {
     }
 
     /**
+     * Prints the hello.
+     *
      * @param event
      *            is the containerInitialized even being processed.
      * @param parameters

@@ -34,6 +34,8 @@ public class EagerExtension implements Extension {
     /**
      * Collect.
      *
+     * @param <T>
+     *            the generic type
      * @param event
      *            the event
      */
@@ -48,6 +50,8 @@ public class EagerExtension implements Extension {
     }
 
     /**
+     * Load.
+     *
      * @param event
      *            afterDeploymentValidation
      * @param beanManager

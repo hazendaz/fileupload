@@ -60,6 +60,8 @@ public class CarsSortingBean implements Serializable {
     }
 
     /**
+     * Mode changed.
+     *
      * @param event
      *            ValueChangeEvent for modeChanged
      */

@@ -51,12 +51,16 @@ public class SwingTest extends javax.swing.JFrame {
     /** The save menu item. */
     private javax.swing.JMenuItem saveMenuItem;
 
-    /** Creates new form SwingTest */
+    /**
+     * Creates new form SwingTest.
+     */
     public SwingTest() {
         this.initComponents();
     }
 
     /**
+     * Main.
+     *
      * @param event
      *            containerInitialized event
      * @param parameters
@@ -72,6 +76,8 @@ public class SwingTest extends javax.swing.JFrame {
     }
 
     /**
+     * Exit menu item action performed.
+     *
      * @param evt
      *            awt action event
      */

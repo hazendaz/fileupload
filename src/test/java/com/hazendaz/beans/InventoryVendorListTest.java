@@ -30,6 +30,8 @@ class InventoryVendorListTest {
 
     /**
      * Gets the count should reflect vendor items size.
+     *
+     * @return the count should reflect vendor items size
      */
     @Test
     void getCountShouldReflectVendorItemsSize() {
@@ -44,6 +46,8 @@ class InventoryVendorListTest {
 
     /**
      * Gets the count should return zero when vendor items is null.
+     *
+     * @return the count should return zero when vendor items is null
      */
     @Test
     void getCountShouldReturnZeroWhenVendorItemsIsNull() {

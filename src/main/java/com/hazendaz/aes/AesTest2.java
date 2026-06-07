@@ -124,6 +124,8 @@ public class AesTest2 implements Serializable {
     }
 
     /**
+     * Sets the key.
+     *
      * @param key
      *            is the parameter key to set.
      */
@@ -132,6 +134,8 @@ public class AesTest2 implements Serializable {
     }
 
     /**
+     * Sets the padding.
+     *
      * @param cipherPadding
      *            is the chipher padding to set.
      */

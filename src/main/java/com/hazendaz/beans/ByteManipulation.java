@@ -13,8 +13,20 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * The Class ByteManipulation.
+ */
 public class ByteManipulation {
 
+    /**
+     * The main method.
+     *
+     * @param args
+     *            the arguments
+     *
+     * @throws CharacterCodingException
+     *             the character coding exception
+     */
     public static void main(final String[] args) throws CharacterCodingException {
         final CharsetDecoder decoder = StandardCharsets.ISO_8859_1.newDecoder();
         final CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();

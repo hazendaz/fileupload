@@ -45,6 +45,8 @@ public class PopupBean implements Serializable {
     }
 
     /**
+     * Test extends.
+     *
      * @param <T>
      *            Generic type for test string
      * @param testString

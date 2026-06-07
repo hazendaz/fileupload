@@ -26,6 +26,8 @@ public class WebServiceBinder extends AbstractBinder {
     /**
      * Get bean.
      *
+     * @param <T>
+     *            the generic type
      * @param beanManager
      *            the bean manager
      * @param clazz

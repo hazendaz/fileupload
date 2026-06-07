@@ -50,6 +50,8 @@ public class NullSafeConverters {
     /**
      * Is empty.
      *
+     * @param <T>
+     *            the generic type
      * @param value
      *            the value
      *
@@ -62,6 +64,8 @@ public class NullSafeConverters {
     /**
      * Is empty.
      *
+     * @param <T>
+     *            the generic type
      * @param value
      *            the value
      *
@@ -75,6 +79,8 @@ public class NullSafeConverters {
     /**
      * To string.
      *
+     * @param <T>
+     *            the generic type
      * @param value
      *            the value
      *
@@ -92,6 +98,8 @@ public class NullSafeConverters {
     /**
      * To type.
      *
+     * @param <T>
+     *            the generic type
      * @param value
      *            the value
      * @param type

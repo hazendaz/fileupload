@@ -211,6 +211,8 @@ public class FileUploadBean implements Serializable {
     }
 
     /**
+     * Sets the now.
+     *
      * @param now
      *            timestamp (not used)
      */

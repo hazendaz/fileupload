@@ -27,6 +27,8 @@ public class AfterDeployExtension implements Extension {
     /**
      * Collect.
      *
+     * @param <T>
+     *            the generic type
      * @param event
      *            the event
      */
@@ -37,6 +39,8 @@ public class AfterDeployExtension implements Extension {
     }
 
     /**
+     * Load.
+     *
      * @param event
      *            afterDeploymentEvent
      * @param beanManager
