@@ -12,6 +12,9 @@ import jakarta.faces.event.ValueChangeEvent;
 import jakarta.faces.event.ValueChangeListener;
 import jakarta.inject.Named;
 
+/**
+ * The Class MyValueChangeListener.
+ */
 @ApplicationScoped
 @Named
 public class MyValueChangeListener implements ValueChangeListener {

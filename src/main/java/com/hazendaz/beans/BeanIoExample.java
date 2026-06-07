@@ -17,10 +17,19 @@ import org.beanio.builder.StreamBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class BeanIoExample.
+ */
 public class BeanIoExample {
 
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(BeanIoExample.class);
 
+    /**
+     * Csv example.
+     *
+     * @return the int
+     */
     public int csvExample() {
         final StreamFactory factory = StreamFactory.newInstance();
         final StreamBuilder builder = new StreamBuilder("beanio").format("delimited")

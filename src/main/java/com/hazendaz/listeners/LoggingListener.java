@@ -14,6 +14,9 @@ import java.util.logging.LogManager;
 
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
+/**
+ * The Class LoggingListener.
+ */
 public class LoggingListener implements ServletContextListener {
 
     @Override

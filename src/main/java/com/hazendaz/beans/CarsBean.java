@@ -25,16 +25,31 @@ import lombok.Data;
 
 import org.slf4j.Logger;
 
+/**
+ * The Class CarsBean.
+ */
 @Data
 @Named
 @ViewScoped
 public class CarsBean implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = -3832235132261771583L;
+    /** The decimals. */
     private static final int DECIMALS = 1;
+    /** The client rows in ajax mode. */
     private static final int CLIENT_ROWS_IN_AJAX_MODE = 15;
+    /** The rounding mode. */
     private static final RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
 
+    /**
+     * Item to vendor item.
+     *
+     * @param item
+     *            the item
+     * @param newItem
+     *            the new item
+     */
     private static void itemToVendorItem(final InventoryItem item, final InventoryVendorItem newItem) {
         newItem.setActivity(item.getActivity());
         newItem.setChangePrice(item.getChangePrice());
@@ -52,18 +67,37 @@ public class CarsBean implements Serializable {
         newItem.setVin(item.getVin());
     }
 
+    /** The all inventory items. */
     private List<InventoryItem> allInventoryItems = null;
+    /** The inventory vendor lists. */
     private List<InventoryVendorList> inventoryVendorLists = null;
+    /** The current car index. */
     private int currentCarIndex;
+    /** The edited car. */
     private InventoryItem editedCar;
 
+    /** The page. */
     private int page = 1;
 
+    /** The client rows. */
     private int clientRows;
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /**
+     * Create car.
+     *
+     * @param vendor
+     *            the vendor
+     * @param model
+     *            the model
+     * @param count
+     *            the count
+     *
+     * @return the list
+     */
     public List<InventoryItem> createCar(final String vendor, final String model, final int count) {
         ArrayList<InventoryItem> iiList = null;
 
@@ -108,6 +142,11 @@ public class CarsBean implements Serializable {
         return iiList;
     }
 
+    /**
+     * Gets the all inventory items.
+     *
+     * @return the all inventory items
+     */
     public List<InventoryItem> getAllInventoryItems() {
         synchronized (this) {
             if (this.allInventoryItems == null) {
@@ -247,6 +286,11 @@ public class CarsBean implements Serializable {
         return this.allInventoryItems;
     }
 
+    /**
+     * Gets the all vendors.
+     *
+     * @return the all vendors
+     */
     public List<String> getAllVendors() {
         final List<String> result = new ArrayList<>();
         for (final InventoryVendorList vendorList : this.getInventoryVendorLists()) {
@@ -255,6 +299,11 @@ public class CarsBean implements Serializable {
         return result;
     }
 
+    /**
+     * Gets the inventory vendor lists.
+     *
+     * @return the inventory vendor lists
+     */
     public List<InventoryVendorList> getInventoryVendorLists() {
         synchronized (this) {
             if (this.inventoryVendorLists == null) {
@@ -282,6 +331,11 @@ public class CarsBean implements Serializable {
         return this.inventoryVendorLists;
     }
 
+    /**
+     * Gets the vendor options.
+     *
+     * @return the vendor options
+     */
     public List<SelectItem> getVendorOptions() {
         final List<SelectItem> result = new ArrayList<>();
         result.add(new SelectItem("", ""));
@@ -291,14 +345,26 @@ public class CarsBean implements Serializable {
         return result;
     }
 
+    /**
+     * Remove.
+     */
     public void remove() {
         this.allInventoryItems.remove(this.allInventoryItems.get(this.currentCarIndex));
     }
 
+    /**
+     * Store.
+     */
     public void store() {
         this.allInventoryItems.set(this.currentCarIndex, this.editedCar);
     }
 
+    /**
+     * Switch ajax loading.
+     *
+     * @param event
+     *            the event
+     */
     public void switchAjaxLoading(final ValueChangeEvent event) {
         this.clientRows = ((Boolean) event.getNewValue()).booleanValue() ? CarsBean.CLIENT_ROWS_IN_AJAX_MODE : 0;
     }

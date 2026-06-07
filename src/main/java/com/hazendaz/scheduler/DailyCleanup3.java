@@ -15,9 +15,13 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 
+/**
+ * The Class DailyCleanup3.
+ */
 @Scheduled(cronExpression = "0/15 * * * * ?")
 public class DailyCleanup3 implements Job {
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
@@ -27,6 +31,9 @@ public class DailyCleanup3 implements Job {
         this.logger.info("Hello World! - Job 3 {}", Long.valueOf(System.currentTimeMillis()));
     }
 
+    /**
+     * Init.
+     */
     @PostConstruct
     public void init() {
         this.logger.info("This is working");

@@ -13,6 +13,9 @@ import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.FacesConverter;
 import jakarta.inject.Named;
 
+/**
+ * The Class UppercaseConverter.
+ */
 @ApplicationScoped
 @Named
 @FacesConverter(forClass = String.class, managed = true)

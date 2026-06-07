@@ -8,6 +8,9 @@ package com.hazendaz.weld;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
+/**
+ * The Class EagerExtensionTest.
+ */
 @ApplicationScoped
 @Eager
 public class EagerExtensionTest {

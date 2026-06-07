@@ -20,11 +20,23 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class EagerExtension.
+ */
 public class EagerExtension implements Extension {
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(EagerExtension.class);
+    /** The eager beans list. */
     private final List<Bean<?>> eagerBeansList = new ArrayList<>();
+    /** The invalid eager beans list. */
     private final List<Bean<?>> invalidEagerBeansList = new ArrayList<>();
 
+    /**
+     * Collect.
+     *
+     * @param event
+     *            the event
+     */
     public <T> void collect(@Observes final ProcessBean<T> event) {
         if (event.getAnnotated().isAnnotationPresent(Eager.class)) {
             if (event.getAnnotated().isAnnotationPresent(ApplicationScoped.class)) {

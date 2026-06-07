@@ -16,10 +16,20 @@ import jakarta.enterprise.inject.spi.ProcessInjectionTarget;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class AfterDeployExtension.
+ */
 public class AfterDeployExtension implements Extension {
 
+    /** The methods. */
     private final List<InjectionTarget<?>> methods = new ArrayList<>();
 
+    /**
+     * Collect.
+     *
+     * @param event
+     *            the event
+     */
     public <T> void collect(@Observes final ProcessInjectionTarget<T> event) {
         if (event.getAnnotatedType().isAnnotationPresent(AfterDeploy.class)) {
             this.methods.add(event.getInjectionTarget());

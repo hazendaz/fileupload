@@ -13,8 +13,14 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class FileUploadBeanTest.
+ */
 class FileUploadBeanTest {
 
+    /**
+     * Cancel should set and return cancel message.
+     */
     @Test
     void cancelShouldSetAndReturnCancelMessage() {
         final FileUploadBean bean = new FileUploadBean();
@@ -25,6 +31,9 @@ class FileUploadBeanTest {
         Assertions.assertEquals(result, bean.getCancel());
     }
 
+    /**
+     * Clear upload data should empty files list.
+     */
     @Test
     void clearUploadDataShouldEmptyFilesList() {
         final FileUploadBean bean = new FileUploadBean();
@@ -38,6 +47,9 @@ class FileUploadBeanTest {
         Assertions.assertEquals(0, bean.getSize());
     }
 
+    /**
+     * Getters and setters should work for date and files.
+     */
     @Test
     void gettersAndSettersShouldWorkForDateAndFiles() {
         final FileUploadBean bean = new FileUploadBean();
@@ -52,6 +64,9 @@ class FileUploadBeanTest {
         Assertions.assertEquals(1, bean.getSize());
     }
 
+    /**
+     * Gets the size should return zero when files is null.
+     */
     @Test
     void getSizeShouldReturnZeroWhenFilesIsNull() {
         final FileUploadBean bean = new FileUploadBean();
@@ -60,6 +75,9 @@ class FileUploadBeanTest {
         Assertions.assertEquals(0, bean.getSize());
     }
 
+    /**
+     * Gets the now and time stamp should return current values.
+     */
     @Test
     void getNowAndTimeStampShouldReturnCurrentValues() {
         final FileUploadBean bean = new FileUploadBean();
@@ -71,6 +89,9 @@ class FileUploadBeanTest {
         Assertions.assertTrue(timestamp > 0);
     }
 
+    /**
+     * Set now should be no op.
+     */
     @Test
     void setNowShouldBeNoOp() {
         final FileUploadBean bean = new FileUploadBean();
@@ -80,6 +101,12 @@ class FileUploadBeanTest {
         Assertions.assertNull(bean.getDate());
     }
 
+    /**
+     * Paint should write file bytes to output stream.
+     *
+     * @throws Exception
+     *             the exception
+     */
     @Test
     void paintShouldWriteFileBytesToOutputStream() throws Exception {
         final FileUploadBean bean = new FileUploadBean();

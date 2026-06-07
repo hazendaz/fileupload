@@ -11,8 +11,14 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class PopupBeanTest.
+ */
 class PopupBeanTest {
 
+    /**
+     * Duplicate should toggle flag.
+     */
     @Test
     void duplicateShouldToggleFlag() {
         final PopupBean popupBean = new PopupBean();
@@ -24,6 +30,9 @@ class PopupBeanTest {
         Assertions.assertFalse(popupBean.isShowDuplicate());
     }
 
+    /**
+     * Test extends should accept generic list.
+     */
     @Test
     void testExtendsShouldAcceptGenericList() {
         final PopupBean popupBean = new PopupBean();

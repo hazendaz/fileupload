@@ -29,12 +29,17 @@ import java.nio.charset.StandardCharsets;
 
 import org.slf4j.Logger;
 
+/**
+ * The Class MinimizeFilter.
+ */
 @WebFilter(urlPatterns = { "/*" })
 public class MinimizeFilter implements Filter {
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /** The user. */
     @Inject
     private IUser user;
 

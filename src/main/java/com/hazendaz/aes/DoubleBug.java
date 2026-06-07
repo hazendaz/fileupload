@@ -6,7 +6,16 @@
  */
 package com.hazendaz.aes;
 
+/**
+ * The Class DoubleBug.
+ */
 public class DoubleBug {
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
         System.out.println("Test:");
         final double d = Double.parseDouble("2.2250738585072012e-308");

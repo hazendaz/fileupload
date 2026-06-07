@@ -11,8 +11,16 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Produces;
 import jakarta.faces.context.FacesContext;
 
+/**
+ * The Class FacesContextProducer.
+ */
 public class FacesContextProducer {
 
+    /**
+     * Gets the faces context.
+     *
+     * @return the faces context
+     */
     @Produces
     @RequestScoped
     public FacesContext getFacesContext() {

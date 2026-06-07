@@ -46,8 +46,26 @@ import org.bouncycastle.openpgp.operator.bc.BcPGPDigestCalculatorProvider;
 import org.bouncycastle.openpgp.operator.bc.BcPGPKeyPair;
 import org.slf4j.Logger;
 
+/**
+ * The Class TestKeyGen.
+ */
 public class TestKeyGen {
 
+    /**
+     * Generate key ring generator.
+     *
+     * @param id
+     *            the id
+     * @param pass
+     *            the pass
+     * @param s2kcount
+     *            the s2kcount
+     *
+     * @return the pgp key ring generator
+     *
+     * @throws Exception
+     *             the exception
+     */
     public final static PGPKeyRingGenerator generateKeyRingGenerator(final String id, final char[] pass,
             final int s2kcount) throws Exception {
         // This object generates individual key-pairs.
@@ -107,6 +125,12 @@ public class TestKeyGen {
         return keyRingGen;
     }
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
 
         final TestKeyGen testKeyGen = new TestKeyGen();
@@ -117,9 +141,20 @@ public class TestKeyGen {
         testKeyGen.logger.info(testKeyGen.createPublicKey("someuser@email.com", password).toString());
     }
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /**
+     * Create public key.
+     *
+     * @param email
+     *            the email
+     * @param password
+     *            the password
+     *
+     * @return the pgp public key ring
+     */
     public PGPPublicKeyRing createPublicKey(final String email, final char[] password) {
 
         // Checks for max allowed value --- without fix in Java, it should say
@@ -190,6 +225,16 @@ public class TestKeyGen {
     // 0xff, or about 2 million iterations. I'll use 0xc0 as a
     // default -- about 130,000 iterations.
 
+    /**
+     * Create secret key.
+     *
+     * @param email
+     *            the email
+     * @param password
+     *            the password
+     *
+     * @return the pgp secret key ring
+     */
     public PGPSecretKeyRing createSecretKey(final String email, final char[] password) {
 
         // Checks for max allowed value --- without fix in Java, it should say

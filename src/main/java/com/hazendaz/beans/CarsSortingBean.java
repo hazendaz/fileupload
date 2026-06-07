@@ -24,23 +24,35 @@ import lombok.Data;
 import org.richfaces.component.SortOrder;
 import org.slf4j.Logger;
 
+/**
+ * The Class CarsSortingBean.
+ */
 @Data
 @Named
 @SessionScoped
 public class CarsSortingBean implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The sorts orders. */
     private Map<String, SortOrder> sortsOrders;
+    /** The sort priorities. */
     private List<String> sortPriorities;
 
+    /** The multiple sorting. */
     private boolean multipleSorting = false;
 
+    /** The sort property parameter. */
     private static final String SORT_PROPERTY_PARAMETER = "sortProperty";
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /**
+     * Init.
+     */
     @PostConstruct
     public void init() {
         this.sortsOrders = new HashMap<>();
@@ -55,11 +67,17 @@ public class CarsSortingBean implements Serializable {
         this.reset();
     }
 
+    /**
+     * Reset.
+     */
     public void reset() {
         this.sortPriorities.clear();
         this.sortsOrders.clear();
     }
 
+    /**
+     * Sort.
+     */
     public void sort() {
         this.logger.info("Sort started");
         final String property = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap()

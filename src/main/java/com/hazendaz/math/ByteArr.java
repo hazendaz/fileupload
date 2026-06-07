@@ -16,8 +16,17 @@ import java.util.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class ByteArr.
+ */
 public class ByteArr {
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
         final ByteArr byteArr = new ByteArr();
 
@@ -72,6 +81,7 @@ public class ByteArr {
 
     }
 
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(ByteArr.class);
 
 }

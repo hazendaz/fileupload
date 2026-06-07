@@ -9,8 +9,14 @@ package com.hazendaz.beans;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class RandomHelperTest.
+ */
 class RandomHelperTest {
 
+    /**
+     * Gen rand should stay within expected range.
+     */
     @Test
     void genRandShouldStayWithinExpectedRange() {
         for (int i = 0; i < 100; i++) {
@@ -20,6 +26,9 @@ class RandomHelperTest {
         }
     }
 
+    /**
+     * Rand should stay within provided bounds.
+     */
     @Test
     void randShouldStayWithinProvidedBounds() {
         for (int i = 0; i < 100; i++) {
@@ -29,6 +38,9 @@ class RandomHelperTest {
         }
     }
 
+    /**
+     * Random string should contain only uppercase chars and expected length.
+     */
     @Test
     void randomStringShouldContainOnlyUppercaseCharsAndExpectedLength() {
         final String generated = RandomHelper.randomstring(5, 5);

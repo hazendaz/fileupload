@@ -13,10 +13,21 @@ import jakarta.jws.soap.SOAPBinding.Style;
 import jakarta.jws.soap.SOAPBinding.Use;
 
 // Service Endpoint Interface
+/**
+ * The Interface HelloWorld.
+ */
 @WebService
 @SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL)
 public interface HelloWorld {
 
+    /**
+     * Get hello world.
+     *
+     * @param name
+     *            the name
+     *
+     * @return the string
+     */
     @WebMethod(operationName = "getHelloWorld")
     String getHelloWorld(final String name);
 

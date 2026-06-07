@@ -14,19 +14,32 @@ import java.util.List;
 
 import lombok.Data;
 
+/**
+ * The Class PopupBean.
+ */
 @Data
 @Named
 @SessionScoped
 public class PopupBean implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The show duplicate. */
     private boolean showDuplicate;
 
+    /**
+     * Duplicate.
+     */
     public void duplicate() {
         this.showDuplicate = !this.showDuplicate;
     }
 
+    /**
+     * Checks if is show duplicate.
+     *
+     * @return true, if successful
+     */
     public boolean isShowDuplicate() {
         return this.showDuplicate;
     }

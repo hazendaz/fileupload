@@ -21,16 +21,29 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 
+/**
+ * The Class HelloWorldImpl.
+ */
 @Vetoed
 @WebService(endpointInterface = "com.hazendaz.ws.HelloWorld")
 public class HelloWorldImpl implements HelloWorld {
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /** The context. */
     @Resource
     private WebServiceContext context;
 
+    /**
+     * Get hello world.
+     *
+     * @param name
+     *            the name
+     *
+     * @return the string
+     */
     @Override()
     public String getHelloWorld(final String name) {
         if (this.logger == null) {
@@ -40,6 +53,9 @@ public class HelloWorldImpl implements HelloWorld {
         return "Hello World JAX-WS " + name;
     }
 
+    /**
+     * Init.
+     */
     @PostConstruct
     public void init() {
         final Map<String, Class<? extends Annotation>> ignoreMap = new HashMap<>();

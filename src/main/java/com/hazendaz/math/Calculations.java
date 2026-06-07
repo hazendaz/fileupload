@@ -13,8 +13,17 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
 
+/**
+ * The Class Calculations.
+ */
 public class Calculations {
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
 
         BigDecimal bigDecimal = new BigDecimal(100);

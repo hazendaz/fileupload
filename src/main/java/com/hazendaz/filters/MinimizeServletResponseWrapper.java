@@ -14,18 +14,35 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * The Class MinimizeServletResponseWrapper.
+ */
 public class MinimizeServletResponseWrapper extends HttpServletResponseWrapper {
 
+    /** The output. */
     private final ByteArrayOutputStream output;
+    /** The filter output. */
     private MinimizeResponseStream filterOutput;
+    /** The pw. */
     private PrintWriter pw;
 
+    /**
+     * Instantiates a new minimize servlet response wrapper.
+     *
+     * @param response
+     *            the response
+     */
     public MinimizeServletResponseWrapper(final HttpServletResponse response) {
         super(response);
         this.output = new ByteArrayOutputStream();
     }
 
     // get the output from byte stream
+    /**
+     * Gets the data stream.
+     *
+     * @return the data stream
+     */
     public byte[] getDataStream() {
         return this.output.toByteArray();
     }

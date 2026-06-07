@@ -20,15 +20,21 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 
+/**
+ * The Class DailyCleanup.
+ */
 @Scheduled(cronExpression = "0/5 * * * * ?")
 public class DailyCleanup implements Job {
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /** The inventory item. */
     @Inject
     private InventoryItem inventoryItem;
 
+    /** The user list. */
     @Inject
     private UserList userList;
 

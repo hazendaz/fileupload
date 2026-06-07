@@ -12,8 +12,14 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class InventoryVendorListTest.
+ */
 class InventoryVendorListTest {
 
+    /**
+     * Should start with empty vendor items and zero count.
+     */
     @Test
     void shouldStartWithEmptyVendorItemsAndZeroCount() {
         final InventoryVendorList list = new InventoryVendorList();
@@ -22,6 +28,9 @@ class InventoryVendorListTest {
         Assertions.assertEquals(0, list.getCount());
     }
 
+    /**
+     * Gets the count should reflect vendor items size.
+     */
     @Test
     void getCountShouldReflectVendorItemsSize() {
         final InventoryVendorList list = new InventoryVendorList();
@@ -33,6 +42,9 @@ class InventoryVendorListTest {
         Assertions.assertEquals(2, list.getCount());
     }
 
+    /**
+     * Gets the count should return zero when vendor items is null.
+     */
     @Test
     void getCountShouldReturnZeroWhenVendorItemsIsNull() {
         final InventoryVendorList list = new InventoryVendorList();

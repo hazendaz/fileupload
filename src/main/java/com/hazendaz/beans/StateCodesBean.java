@@ -19,12 +19,17 @@ import java.util.List;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
+/**
+ * The Class StateCodesBean.
+ */
 @Named
 @SessionScoped
 public class StateCodesBean implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The state codes. */
     private static List<SelectItem> stateCodes;
 
     static {
@@ -38,10 +43,23 @@ public class StateCodesBean implements Serializable {
         }
     }
 
+    /**
+     * Add five.
+     *
+     * @param value
+     *            the value
+     *
+     * @return the int
+     */
     public int addFive(final int value) {
         return value + 5;
     }
 
+    /**
+     * Gets the state codes.
+     *
+     * @return the state codes
+     */
     public List<SelectItem> getStateCodes() {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Test Message from @GetStateCodes"));
         return StateCodesBean.stateCodes;

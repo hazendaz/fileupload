@@ -17,12 +17,21 @@ import jakarta.ws.rs.core.MediaType;
 
 import org.slf4j.Logger;
 
+/**
+ * The Class HelloWorldService.
+ */
 @Path("hello")
 public class HelloWorldService {
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /**
+     * Gets the bean.
+     *
+     * @return the bean
+     */
     @POST
     @Path("bean")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -31,6 +40,11 @@ public class HelloWorldService {
         return new BeanIo();
     }
 
+    /**
+     * Gets the hello.
+     *
+     * @return the hello
+     */
     @POST
     @Path("hello")
     @Produces(MediaType.APPLICATION_JSON)

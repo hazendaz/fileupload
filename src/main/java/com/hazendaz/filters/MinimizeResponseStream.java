@@ -13,10 +13,20 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * The Class MinimizeResponseStream.
+ */
 public class MinimizeResponseStream extends ServletOutputStream {
 
+    /** The output. */
     private DataOutputStream output;
 
+    /**
+     * Instantiates a new minimize response stream.
+     *
+     * @param value
+     *            the value
+     */
     public MinimizeResponseStream(final OutputStream value) {
         this.output = new DataOutputStream(value);
     }
