@@ -13,8 +13,17 @@ import java.nio.charset.StandardCharsets;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class ByteManipulationTest.
+ */
 class ByteManipulationTest {
 
+    /**
+     * Main should print converted output.
+     *
+     * @throws Exception
+     *             the exception
+     */
     @Test
     void mainShouldPrintConvertedOutput() throws Exception {
         final PrintStream originalOut = System.out;

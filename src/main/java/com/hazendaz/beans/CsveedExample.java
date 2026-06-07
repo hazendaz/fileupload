@@ -18,10 +18,19 @@ import org.csveed.row.RowReaderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class CsveedExample.
+ */
 public class CsveedExample {
 
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(CsveedExample.class);
 
+    /**
+     * Csv example.
+     *
+     * @return the int
+     */
     public int csvExample() {
         final RowInstructions instructions = new RowInstructionsImpl();
         instructions.setUseHeader(false);

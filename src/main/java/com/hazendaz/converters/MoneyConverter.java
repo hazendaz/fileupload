@@ -15,6 +15,9 @@ import jakarta.inject.Named;
 
 import java.text.DecimalFormat;
 
+/**
+ * The Class MoneyConverter.
+ */
 @ApplicationScoped
 @Named
 @FacesConverter(value = "moneyConverter", managed = true)

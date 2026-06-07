@@ -14,14 +14,22 @@ import java.util.List;
 
 import lombok.Data;
 
+/**
+ * The Class UserList.
+ */
 @ApplicationScoped
 @Data
 public class UserList implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The user list. */
     private List<User> userList;
 
+    /**
+     * Instantiates a new user list.
+     */
     public UserList() {
         this.userList = new ArrayList<>();
     }

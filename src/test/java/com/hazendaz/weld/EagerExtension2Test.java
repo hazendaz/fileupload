@@ -6,6 +6,9 @@
  */
 package com.hazendaz.weld;
 
+/**
+ * The Class EagerExtension2Test.
+ */
 @Eager
 public class EagerExtension2Test {
     // Do Nothing

@@ -11,10 +11,15 @@ import jakarta.servlet.http.HttpServlet;
 
 import org.slf4j.Logger;
 
+/**
+ * The Class TestServlet.
+ */
 public class TestServlet extends HttpServlet {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The logger. */
     @Inject
     private Logger logger;
 

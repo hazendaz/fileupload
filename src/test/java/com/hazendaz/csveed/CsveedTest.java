@@ -20,35 +20,76 @@ import org.csveed.bean.BeanWriterImpl;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+/**
+ * The Class CsveedTest.
+ */
 @Disabled
 class CsveedTest {
 
+    /**
+     * The Class Bean.
+     */
     public class Bean {
+        /** The first. */
         private Integer first;
+        /** The second. */
         private Long second;
 
+        /**
+         * Instantiates a new bean.
+         *
+         * @param first
+         *            the first
+         * @param second
+         *            the second
+         */
         public Bean(Integer first, Long second) {
             this.first = first;
             this.second = second;
         }
 
+        /**
+         * Gets the first.
+         *
+         * @return the first
+         */
         public Integer getFirst() {
             return first;
         }
 
+        /**
+         * Sets the first.
+         *
+         * @param first
+         *            the first
+         */
         public void setFirst(Integer first) {
             this.first = first;
         }
 
+        /**
+         * Gets the second.
+         *
+         * @return the second
+         */
         public Long getSecond() {
             return second;
         }
 
+        /**
+         * Sets the second.
+         *
+         * @param second
+         *            the second
+         */
         public void setSecond(Long second) {
             this.second = second;
         }
     }
 
+    /**
+     * Bug reason.
+     */
     @Test
     void bugReason() {
         NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
@@ -56,6 +97,9 @@ class CsveedTest {
         assertEquals("6,666", value);
     }
 
+    /**
+     * Bug solution.
+     */
     @Test
     void bugSolution() {
         NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
@@ -64,6 +108,12 @@ class CsveedTest {
         assertEquals("6666", value);
     }
 
+    /**
+     * Test locale.
+     *
+     * @throws IOException
+     *             the io exception
+     */
     @Test
     void testLocale() throws IOException {
 

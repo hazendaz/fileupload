@@ -49,19 +49,32 @@ import org.bouncycastle.util.encoders.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class SingleSignOnTest.
+ */
 public class SingleSignOnTest {
 
+    /** The logger. */
     private static Logger logger = LoggerFactory.getLogger(SingleSignOnTest.class);
 
     // private static File publicKeyFile = new File(
     // "/Development/Java/Single Sign On with Encryption(PGP)/PGP1D0.pkr");
     // private static File privateKeyFile = new File(
     // "/Development/Java/Single Sign On with Encryption(PGP)/PGP1D0.skr");
+    /** The private key password. */
     private static String privateKeyPassword = "passphrase";
 
     //
     // Public class method decrypt
     //
+    /**
+     * Decrypt.
+     *
+     * @param encdata
+     *            the encdata
+     *
+     * @return the string
+     */
     public static String decrypt(final byte[] encdata) {
 
         SingleSignOnTest.logger.info("decrypt(): data length = {}", Integer.valueOf(encdata.length));
@@ -88,6 +101,14 @@ public class SingleSignOnTest {
     //
     // Public class method encrypt
     //
+    /**
+     * Encrypt.
+     *
+     * @param data
+     *            the data
+     *
+     * @return the byte[]
+     */
     public static byte[] encrypt(final byte[] data) {
 
         try {
@@ -174,6 +195,12 @@ public class SingleSignOnTest {
     //
     // Public main method
     //
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
 
         Security.addProvider(new BouncyCastleProvider());
@@ -206,6 +233,21 @@ public class SingleSignOnTest {
     //
     // Private class method _decrypt
     //
+    /**
+     * Decrypt.
+     *
+     * @param inputStream
+     *            the input stream
+     * @param keyIn
+     *            the key in
+     * @param passwd
+     *            the passwd
+     *
+     * @return the string
+     *
+     * @throws Exception
+     *             the exception
+     */
     private static String _decrypt(final InputStream inputStream, final InputStream keyIn, final char[] passwd)
             throws Exception {
 
@@ -295,6 +337,21 @@ public class SingleSignOnTest {
     //
     // Private class method _encrypt
     //
+    /**
+     * Encrypt.
+     *
+     * @param fileName
+     *            the file name
+     * @param outputStream
+     *            the output stream
+     * @param encKey
+     *            the enc key
+     *
+     * @throws IOException
+     *             the io exception
+     * @throws PGPException
+     *             the pgp exception
+     */
     private static void _encrypt(final String fileName, final OutputStream outputStream, final PGPPublicKey encKey)
             throws IOException, PGPException {
 
@@ -328,6 +385,23 @@ public class SingleSignOnTest {
     //
     // Private class method findSecretKey
     //
+    /**
+     * Find secret key.
+     *
+     * @param keyIn
+     *            the key in
+     * @param keyID
+     *            the key id
+     * @param pass
+     *            the pass
+     *
+     * @return the pgp private key
+     *
+     * @throws IOException
+     *             the io exception
+     * @throws PGPException
+     *             the pgp exception
+     */
     private static PGPPrivateKey findSecretKey(final InputStream keyIn, final long keyID, final char[] pass)
             throws IOException, PGPException {
 
@@ -344,6 +418,17 @@ public class SingleSignOnTest {
     //
     // Public class method readFile
     //
+    /**
+     * Read file.
+     *
+     * @param file
+     *            the file
+     *
+     * @return the byte[]
+     *
+     * @throws IOException
+     *             the io exception
+     */
     public byte[] readFile(final File file) throws IOException {
 
         final BufferedInputStream fis = new BufferedInputStream(Files.newInputStream(file.toPath()));

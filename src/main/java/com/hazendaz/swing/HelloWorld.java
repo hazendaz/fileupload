@@ -15,9 +15,15 @@ import java.util.List;
 import org.jboss.weld.environment.se.bindings.Parameters;
 import org.jboss.weld.environment.se.events.ContainerInitialized;
 
+/**
+ * The Class HelloWorld.
+ */
 @Singleton
 public class HelloWorld {
 
+    /**
+     * Init.
+     */
     @PostConstruct
     void init() {
         System.out.println("Initializing Hello World application");

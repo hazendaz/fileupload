@@ -9,8 +9,12 @@ package com.hazendaz.servlets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class RunnableTest.
+ */
 public class RunnableTest implements Runnable {
 
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(RunnableTest.class);
 
     @Override

@@ -17,16 +17,24 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 
+/**
+ * The Class LogManagerTest.
+ */
 @Disabled
 @ExtendWith(WeldJunit5Extension.class)
 class LogManagerTest {
 
+    /** The weld. */
     @WeldSetup
     public WeldInitiator weld = WeldInitiator.of(new Weld());
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /**
+     * Gets the logger test.
+     */
     @Test
     void getLoggerTest() {
         this.logger.info("logger worked");

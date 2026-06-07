@@ -21,8 +21,17 @@ import jakarta.servlet.ServletException;
 
 import waffle.servlet.WaffleInfoServlet;
 
+/**
+ * The Class HelloWorld.
+ */
 public class HelloWorld {
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
         try {
             DeploymentInfo servletBuilder = Servlets.deployment().setClassLoader(HelloWorld.class.getClassLoader())

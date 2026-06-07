@@ -19,8 +19,20 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class AesTest.
+ */
 public class AesTest {
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     *
+     * @throws Exception
+     *             the exception
+     */
     public static void main(final String[] args) throws Exception {
         final AesTest aesTest = new AesTest();
         final String encodedData = aesTest.encode("Some Name");
@@ -28,6 +40,19 @@ public class AesTest {
         aesTest.logger.info("My password is: {}", decodedData);
     }
 
+    /**
+     * Cipher data.
+     *
+     * @param cipher
+     *            the cipher
+     * @param data
+     *            the data
+     *
+     * @return the byte[]
+     *
+     * @throws Exception
+     *             the exception
+     */
     private static byte[] cipherData(final PaddedBufferedBlockCipher cipher, final byte[] data) throws Exception {
         final int minSize1 = cipher.getOutputSize(data.length);
         final byte[] outBuf = new byte[minSize1];
@@ -37,6 +62,21 @@ public class AesTest {
         return new byte[actualLength];
     }
 
+    /**
+     * Decrypt.
+     *
+     * @param cipher
+     *            the cipher
+     * @param key
+     *            the key
+     * @param iv
+     *            the iv
+     *
+     * @return the byte[]
+     *
+     * @throws Exception
+     *             the exception
+     */
     private static byte[] decrypt(final byte[] cipher, final byte[] key, final byte[] iv) throws Exception {
         final PaddedBufferedBlockCipher aes = new PaddedBufferedBlockCipher(
                 CBCBlockCipher.newInstance(AESEngine.newInstance()));
@@ -45,6 +85,21 @@ public class AesTest {
         return AesTest.cipherData(aes, cipher);
     }
 
+    /**
+     * Encrypt.
+     *
+     * @param plain
+     *            the plain
+     * @param key
+     *            the key
+     * @param iv
+     *            the iv
+     *
+     * @return the byte[]
+     *
+     * @throws Exception
+     *             the exception
+     */
     private static byte[] encrypt(final byte[] plain, final byte[] key, final byte[] iv) throws Exception {
         final PaddedBufferedBlockCipher aes = new PaddedBufferedBlockCipher(
                 CBCBlockCipher.newInstance(AESEngine.newInstance()));
@@ -53,23 +108,51 @@ public class AesTest {
         return AesTest.cipherData(aes, plain);
     }
 
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(AesTest.class);
 
+    /** The key. */
     private final byte[] key = "KEY STRING LENTH OF THIRTYTWO 32".getBytes(StandardCharsets.UTF_8);
 
+    /** The iv. */
     private final byte[] iv = "company/departme".getBytes(StandardCharsets.UTF_8);
 
+    /**
+     * Decode.
+     *
+     * @param encodedText
+     *            the encoded text
+     *
+     * @return the string
+     *
+     * @throws Exception
+     *             the exception
+     */
     public String decode(final String encodedText) throws Exception {
         return new String(
                 AesTest.decrypt(Base64.decode(encodedText.getBytes(StandardCharsets.UTF_8)), this.key, this.iv),
                 StandardCharsets.UTF_8);
     }
 
+    /**
+     * Encode.
+     *
+     * @param plainText
+     *            the plain text
+     *
+     * @return the string
+     *
+     * @throws Exception
+     *             the exception
+     */
     public String encode(final String plainText) throws Exception {
         return new String(Base64.encode(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key, this.iv)),
                 StandardCharsets.UTF_8);
     }
 
+    /**
+     * User is happy.
+     */
     @Test
     public void userIsHappy() {
         System.out.print("User " + "ABC is Happy".substring(4));

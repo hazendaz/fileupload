@@ -35,11 +35,21 @@ import org.bouncycastle.openpgp.operator.bc.BcPGPDataEncryptorBuilder;
 import org.bouncycastle.openpgp.operator.bc.BcPublicKeyKeyEncryptionMethodGenerator;
 import org.slf4j.Logger;
 
+/**
+ * The Class PGPEncryption.
+ */
 public class PGPEncryption {
 
+    /** The logger. */
     @Inject
     private static Logger logger;
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
 
         // the keyring that holds the public key we're encrypting with
@@ -113,6 +123,21 @@ public class PGPEncryption {
 
     }
 
+    /**
+     * Encrypt file.
+     *
+     * @param fileName
+     *            the file name
+     * @param outputStream
+     *            the output stream
+     * @param encKey
+     *            the enc key
+     *
+     * @throws IOException
+     *             the io exception
+     * @throws PGPException
+     *             the pgp exception
+     */
     private static void encryptFile(final String fileName, final OutputStream outputStream, final PGPPublicKey encKey)
             throws IOException, PGPException {
 

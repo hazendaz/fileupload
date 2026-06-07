@@ -10,8 +10,12 @@ import jakarta.faces.event.PhaseEvent;
 import jakarta.faces.event.PhaseId;
 import jakarta.faces.event.PhaseListener;
 
+/**
+ * The Class CheckLogon.
+ */
 public class CheckLogon implements PhaseListener {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
     @Override

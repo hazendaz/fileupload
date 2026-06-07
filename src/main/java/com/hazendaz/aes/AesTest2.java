@@ -28,11 +28,24 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class AesTest2.
+ */
 @SessionScoped
 public class AesTest2 implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     *
+     * @throws Exception
+     *             the exception
+     */
     public static void main(final String[] args) throws Exception {
 
         final AesTest2 abc = new AesTest2();
@@ -48,21 +61,54 @@ public class AesTest2 implements Serializable {
         System.out.println(decrypted);
     }
 
+    /** The logger. */
     private final Logger logger = LoggerFactory.getLogger(AesTest2.class);
 
+    /** The aes cipher. */
     private final BlockCipher AESCipher = AESEngine.newInstance();
 
+    /** The cipher. */
     private PaddedBufferedBlockCipher cipher;
+    /** The key parameter. */
     private KeyParameter keyParameter;
 
+    /**
+     * Decrypt.
+     *
+     * @param input
+     *            the input
+     *
+     * @return the byte[]
+     *
+     * @throws DataLengthException
+     *             the data length exception
+     * @throws InvalidCipherTextException
+     *             the invalid cipher text exception
+     */
     public byte[] decrypt(final byte[] input) throws DataLengthException, InvalidCipherTextException {
         return this.processing(input, false);
     }
 
+    /**
+     * Encrypt.
+     *
+     * @param input
+     *            the input
+     *
+     * @return the byte[]
+     *
+     * @throws DataLengthException
+     *             the data length exception
+     * @throws InvalidCipherTextException
+     *             the invalid cipher text exception
+     */
     public byte[] encrypt(final byte[] input) throws DataLengthException, InvalidCipherTextException {
         return this.processing(input, true);
     }
 
+    /**
+     * Init.
+     */
     @PostConstruct
     public void init() {
         KeyGenerator kg;
@@ -93,6 +139,21 @@ public class AesTest2 implements Serializable {
         this.cipher = new PaddedBufferedBlockCipher(this.AESCipher, cipherPadding);
     }
 
+    /**
+     * Processing.
+     *
+     * @param input
+     *            the input
+     * @param encrypt
+     *            the encrypt
+     *
+     * @return the byte[]
+     *
+     * @throws DataLengthException
+     *             the data length exception
+     * @throws InvalidCipherTextException
+     *             the invalid cipher text exception
+     */
     private byte[] processing(final byte[] input, final boolean encrypt)
             throws DataLengthException, InvalidCipherTextException {
         this.cipher.init(encrypt, this.keyParameter);

@@ -28,24 +28,32 @@ import lombok.ToString;
 
 import org.slf4j.Logger;
 
+/**
+ * The Class LogonBean.
+ */
 @Data
 @ToString(exclude = "context")
 @Named
 @RequestScoped
 public class LogonBean implements Serializable {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The logger. */
     @Inject
     private Logger logger;
 
+    /** The context. */
     @Inject
     private FacesContext context;
 
+    /** The application test. */
     @Inject
     @Any
     private ApplicationTest applicationTest;
 
+    /** The user. */
     @Inject
     private User user;
 
@@ -54,30 +62,53 @@ public class LogonBean implements Serializable {
     // @Past
     // private String cannotBePast;
 
+    /** The user name. */
     private String userName = null;
 
+    /** The sad. */
     private String sad;
 
+    /** The this is not fast. */
     private String thisIsNotFast;
 
+    /** The user list. */
     @Inject
     private UserList userList;
 
+    /**
+     * Clear.
+     *
+     * @return the string
+     */
     public String clear() {
         this.logger.info("testme");
         this.setUserName(null);
         return "logon";
     }
 
+    /**
+     * Context test.
+     */
     public void contextTest() {
         final HttpSession session = (HttpSession) this.context.getExternalContext().getSession(false);
         session.getMaxInactiveInterval();
     }
 
+    /**
+     * Happy.
+     *
+     * @param value
+     *            the value
+     *
+     * @return the string
+     */
     public String happy(final String value) {
         return value;
     }
 
+    /**
+     * Init.
+     */
     @PostConstruct
     public void init() {
         this.sad = "Had Expression Language Not Worked, I'd be sad";
@@ -85,6 +116,11 @@ public class LogonBean implements Serializable {
         this.thisIsNotFast = this.applicationTest.getFoundAtStartup();
     }
 
+    /**
+     * Logon.
+     *
+     * @return the string
+     */
     public String logon() {
         // Attempt to print out jndi tree
         try {

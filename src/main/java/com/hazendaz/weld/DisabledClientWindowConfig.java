@@ -11,9 +11,13 @@ import jakarta.faces.context.FacesContext;
 
 import org.apache.deltaspike.jsf.spi.scope.window.DefaultClientWindowConfig;
 
+/**
+ * The Class DisabledClientWindowConfig.
+ */
 @Specializes
 public class DisabledClientWindowConfig extends DefaultClientWindowConfig {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
     @Override

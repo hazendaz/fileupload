@@ -10,8 +10,12 @@ import org.apache.deltaspike.core.spi.activation.ClassDeactivator;
 import org.apache.deltaspike.core.spi.activation.Deactivatable;
 import org.apache.deltaspike.jsf.impl.listener.system.JsfSystemEventBroadcaster;
 
+/**
+ * The Class JsfSystemEventBroadcasterDeactivator.
+ */
 public class JsfSystemEventBroadcasterDeactivator implements ClassDeactivator {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
     @Override

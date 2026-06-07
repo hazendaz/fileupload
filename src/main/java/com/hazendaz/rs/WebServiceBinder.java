@@ -13,6 +13,9 @@ import jakarta.enterprise.inject.spi.BeanManager;
 import org.apache.deltaspike.core.api.provider.BeanManagerProvider;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 
+/**
+ * The Class WebServiceBinder.
+ */
 public class WebServiceBinder extends AbstractBinder {
 
     @Override
@@ -20,6 +23,16 @@ public class WebServiceBinder extends AbstractBinder {
         this.bind(this.getBean(this.getBeanManager(), HelloWorldService.class)).to(HelloWorldService.class);
     }
 
+    /**
+     * Get bean.
+     *
+     * @param beanManager
+     *            the bean manager
+     * @param clazz
+     *            the clazz
+     *
+     * @return the t
+     */
     @SuppressWarnings("unchecked")
     private <T> T getBean(final BeanManager beanManager, final Class<T> clazz) {
         final Bean<T> bean = (Bean<T>) beanManager.getBeans(clazz).iterator().next();
@@ -27,6 +40,11 @@ public class WebServiceBinder extends AbstractBinder {
         return (T) beanManager.getReference(bean, clazz, creationalContext);
     }
 
+    /**
+     * Gets the bean manager.
+     *
+     * @return the bean manager
+     */
     private BeanManager getBeanManager() {
         return BeanManagerProvider.getInstance().getBeanManager();
     }

@@ -10,8 +10,20 @@ import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
 
+/**
+ * The Class FileUploadApplication.
+ */
 public class FileUploadApplication extends Application<FileUploadConfiguration> {
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     *
+     * @throws Exception
+     *             the exception
+     */
     public static void main(String[] args) throws Exception {
         new FileUploadApplication().run(args);
     }

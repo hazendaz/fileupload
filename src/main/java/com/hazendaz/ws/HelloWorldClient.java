@@ -12,6 +12,9 @@ import java.net.URL;
 
 import javax.xml.namespace.QName;
 
+/**
+ * The Class HelloWorldClient.
+ */
 public class HelloWorldClient {
 
     static {
@@ -25,6 +28,15 @@ public class HelloWorldClient {
         });
     }
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     *
+     * @throws Exception
+     *             the exception
+     */
     public static void main(final String[] args) throws Exception {
         final URL url = new URL("https://localhost:8443/fileupload/hello?wsdl");
         final QName qname = new QName("http://ws.hazendaz.com/", "HelloWorldImplService");

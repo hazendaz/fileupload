@@ -11,8 +11,17 @@ import com.google.common.base.CharMatcher;
 
 import java.util.ArrayList;
 
+/**
+ * The Class NullSafeConverters.
+ */
 public class NullSafeConverters {
 
+    /**
+     * Main.
+     *
+     * @param args
+     *            the args
+     */
     public static void main(final String[] args) {
         final NullSafeConverters nullSafeConverters = new NullSafeConverters();
         System.out.println("'arrayList = " + nullSafeConverters.toString(new ArrayList<String>()) + "'\n");
@@ -38,15 +47,39 @@ public class NullSafeConverters {
 
     }
 
+    /**
+     * Is empty.
+     *
+     * @param value
+     *            the value
+     *
+     * @return true, if successful
+     */
     public <T> boolean isEmpty(final T value) {
         return value == null || value.equals("") || CharMatcher.whitespace().matchesAllOf(value.toString());
     }
 
+    /**
+     * Is empty.
+     *
+     * @param value
+     *            the value
+     *
+     * @return true, if successful
+     */
     public <T extends Number> boolean isEmpty(final T value) {
         return value == null || value.equals(Integer.valueOf(0)) || value.equals(Long.valueOf(0L))
                 || value.equals(Double.valueOf(0.0));
     }
 
+    /**
+     * To string.
+     *
+     * @param value
+     *            the value
+     *
+     * @return the string
+     */
     public <T> String toString(final T value) {
         if (value == null) {
             return "";
@@ -56,6 +89,16 @@ public class NullSafeConverters {
 
     // TODO This doesn't seem to be viable as it requires casting and lots of
     // checks...just use overloads.
+    /**
+     * To type.
+     *
+     * @param value
+     *            the value
+     * @param type
+     *            the type
+     *
+     * @return the t
+     */
     @SuppressWarnings("unchecked")
     public <T> T toType(final String value, final Class<T> type) {
         if (value == null) {

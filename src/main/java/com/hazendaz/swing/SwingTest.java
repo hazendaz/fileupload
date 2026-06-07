@@ -13,24 +13,42 @@ import java.util.List;
 import org.jboss.weld.environment.se.bindings.Parameters;
 import org.jboss.weld.environment.se.events.ContainerInitialized;
 
+/**
+ * The Class SwingTest.
+ */
 public class SwingTest extends javax.swing.JFrame {
 
+    /** The serial version uid. */
     private static final long serialVersionUID = 1L;
 
+    /** The about menu item. */
     private javax.swing.JMenuItem aboutMenuItem;
 
+    /** The contents menu item. */
     private javax.swing.JMenuItem contentsMenuItem;
+    /** The copy menu item. */
     private javax.swing.JMenuItem copyMenuItem;
+    /** The cut menu item. */
     private javax.swing.JMenuItem cutMenuItem;
+    /** The delete menu item. */
     private javax.swing.JMenuItem deleteMenuItem;
+    /** The edit menu. */
     private javax.swing.JMenu editMenu;
+    /** The exit menu item. */
     private javax.swing.JMenuItem exitMenuItem;
+    /** The file menu. */
     private javax.swing.JMenu fileMenu;
+    /** The help menu. */
     private javax.swing.JMenu helpMenu;
+    /** The menu bar. */
     private javax.swing.JMenuBar menuBar;
+    /** The open menu item. */
     private javax.swing.JMenuItem openMenuItem;
+    /** The paste menu item. */
     private javax.swing.JMenuItem pasteMenuItem;
+    /** The save as menu item. */
     private javax.swing.JMenuItem saveAsMenuItem;
+    /** The save menu item. */
     private javax.swing.JMenuItem saveMenuItem;
 
     /** Creates new form SwingTest */
