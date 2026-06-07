@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -260,7 +261,7 @@ public class CarsBean implements Serializable {
                 this.inventoryVendorLists = new ArrayList<>();
                 final List<InventoryItem> inventoryItems = this.getAllInventoryItems();
 
-                inventoryItems.sort((o1, o2) -> o1.getVendor().compareTo(o2.getVendor()));
+                inventoryItems.sort(Comparator.comparing(InventoryItem::getVendor));
                 final Iterator<InventoryItem> iterator = inventoryItems.iterator();
                 InventoryVendorList vendorList = new InventoryVendorList();
                 vendorList.setVendor(inventoryItems.get(0).getVendor());
