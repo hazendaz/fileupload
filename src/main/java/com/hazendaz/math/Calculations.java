@@ -7,6 +7,7 @@
 package com.hazendaz.math;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -26,7 +27,7 @@ public class Calculations {
     public static void main(final String[] args) {
 
         BigDecimal bigDecimal = new BigDecimal(100);
-        bigDecimal = bigDecimal.divide(new BigDecimal(106), 16, BigDecimal.ROUND_UP);
+        bigDecimal = bigDecimal.divide(new BigDecimal(106), 16, RoundingMode.UP);
         // System.out.println(String.valueOf(bigDecimal));
 
         final BigDecimal holdDecimal = bigDecimal;

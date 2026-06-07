@@ -41,7 +41,7 @@ public class TestMe {
      * @return the string
      */
     public static String toImpliedDecimal(final Double value) {
-        return value == null ? "0" : String.format("%.2f", value).replace(".", "");
+        return value == null ? "0" : "%.2f".formatted(value).replace(".", "");
     }
 
     /**
@@ -54,9 +54,9 @@ public class TestMe {
      */
     public static String toMoney(final String value) {
         if (value != null && value.length() < 3) {
-            return String.format("%.2f", Double.valueOf(Double.valueOf(value).doubleValue() / 100));
+            return "%.2f".formatted(Double.valueOf(Double.valueOf(value).doubleValue() / 100));
         }
-        return value == null ? "0.00" : String.format("%.2f", Double.valueOf(value));
+        return value == null ? "0.00" : "%.2f".formatted(Double.valueOf(value));
     }
 
 }
