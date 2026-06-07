@@ -14,9 +14,9 @@ import jakarta.inject.Named;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -33,7 +33,7 @@ public class CarsBean implements Serializable {
     private static final long serialVersionUID = -3832235132261771583L;
     private static final int DECIMALS = 1;
     private static final int CLIENT_ROWS_IN_AJAX_MODE = 15;
-    private static final int ROUNDING_MODE = BigDecimal.ROUND_HALF_UP;
+    private static final RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
 
     private static void itemToVendorItem(final InventoryItem item, final InventoryVendorItem newItem) {
         newItem.setActivity(item.getActivity());
@@ -261,12 +261,7 @@ public class CarsBean implements Serializable {
                 this.inventoryVendorLists = new ArrayList<>();
                 final List<InventoryItem> inventoryItems = this.getAllInventoryItems();
 
-                Collections.sort(inventoryItems, new Comparator<InventoryItem>() {
-                    @Override
-                    public int compare(final InventoryItem o1, final InventoryItem o2) {
-                        return o1.getVendor().compareTo(o2.getVendor());
-                    }
-                });
+                inventoryItems.sort(Comparator.comparing(InventoryItem::getVendor));
                 final Iterator<InventoryItem> iterator = inventoryItems.iterator();
                 InventoryVendorList vendorList = new InventoryVendorList();
                 vendorList.setVendor(inventoryItems.get(0).getVendor());
