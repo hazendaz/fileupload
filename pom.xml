@@ -917,7 +917,7 @@
                                     <pluginExecutionFilter>
                                         <groupId>io.smallrye</groupId>
                                         <artifactId>jandex-maven-plugin</artifactId>
-                                        <versionRange>[3.5.1,)</versionRange>
+                                        <versionRange>[3.6.0,)</versionRange>
                                         <goals>
                                             <goal>jandex</goal>
                                         </goals>
