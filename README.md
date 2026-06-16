@@ -1,5 +1,4 @@
-Fileupload
-----------
+# Fileupload
 
 [![Java CI](https://github.com/hazendaz/fileupload/actions/workflows/ci.yaml/badge.svg)](https://github.com/hazendaz/fileupload/actions/workflows/ci.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/hazendaz/fileupload/badge.svg?branch=master)](https://coveralls.io/github/hazendaz/fileupload?branch=master)
