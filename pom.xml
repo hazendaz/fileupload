@@ -58,7 +58,7 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 
         <bc.version>2.73.11</bc.version>
-        <checker-qual.version>4.2.0</checker-qual.version>
+        <checker-qual.version>4.2.1</checker-qual.version>
         <deltaspike.version>2.0.1</deltaspike.version>
         <dropwizard.version>5.0.2</dropwizard.version>
         <eclipselink.version>5.0.1</eclipselink.version>
