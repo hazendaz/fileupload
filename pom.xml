@@ -245,7 +245,7 @@
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>9.1.2.Final</version>
+                <version>9.1.3.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.jboss.logging</groupId>
@@ -690,7 +690,7 @@
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator-cdi</artifactId>
-            <version>9.1.2.Final</version>
+            <version>9.1.3.Final</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
