@@ -13,9 +13,9 @@
     <!-- sends logs to logback-beagle -->
     <consolePlugin />
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${${logs.dir:-target/logs}/fileUpload.log</file>
+        <file>${logs.dir:-target/logs}/fileUpload.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>${${logs.dir:-target/logs}/archive/fileUpload.%i.log.zip</fileNamePattern>
+            <fileNamePattern>${logs.dir:-target/logs}/archive/fileUpload.%i.log.zip</fileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>3</maxIndex>
         </rollingPolicy>
@@ -28,14 +28,14 @@
     </appender>
 
     <appender name="CACHE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${${logs.dir:-target/logs}/cache.log</file>
+        <file>${logs.dir:-target/logs}/cache.log</file>
         <append>true</append>
         <encoder>
             <charset>utf-8</charset>
             <pattern>%d{HH:mm:ss.SSS} %-5level {%thread} [%logger{40}] : %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${${logs.dir:-target/logs}/archive/cache-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${logs.dir:-target/logs}/archive/cache-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
             <maxHistory>10</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>20MB</maxFileSize>
@@ -44,14 +44,14 @@
     </appender>
 
     <appender name="HIBERNATE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${${logs.dir:-target/logs}/hibernate.log</file>
+        <file>${logs.dir:-target/logs}/hibernate.log</file>
         <append>true</append>
         <encoder>
             <charset>utf-8</charset>
             <pattern>%d{HH:mm:ss.SSS} %-5level {%thread} [%logger{40}] : %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${${logs.dir:-target/logs}/archive/hibernate-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${logs.dir:-target/logs}/archive/hibernate-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
             <maxHistory>10</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>20MB</maxFileSize>
@@ -60,14 +60,14 @@
     </appender>
 
     <appender name="JSF" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${${logs.dir:-target/logs}/jsf.log</file>
+        <file>${logs.dir:-target/logs}/jsf.log</file>
         <append>true</append>
         <encoder>
             <charset>utf-8</charset>
             <pattern>%d{HH:mm:ss.SSS} %-5level {%thread} [%logger{40}] : %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${${logs.dir:-target/logs}/archive/jsf-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${logs.dir:-target/logs}/archive/jsf-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
             <maxHistory>10</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>20MB</maxFileSize>
@@ -76,14 +76,14 @@
     </appender>
 
     <appender name="QUARTZ" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${${logs.dir:-target/logs}/quartz.log</file>
+        <file>${logs.dir:-target/logs}/quartz.log</file>
         <append>true</append>
         <encoder>
             <charset>utf-8</charset>
             <pattern>%d{HH:mm:ss.SSS} %-5level {%thread} [%logger{40}] : %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${${logs.dir:-target/logs}/archive/quartz-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${logs.dir:-target/logs}/archive/quartz-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
             <maxHistory>10</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>20MB</maxFileSize>
@@ -92,14 +92,14 @@
     </appender>
 
     <appender name="WELD" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${${logs.dir:-target/logs}/weld.log</file>
+        <file>${logs.dir:-target/logs}/weld.log</file>
         <append>true</append>
         <encoder>
             <charset>utf-8</charset>
             <pattern>%d{HH:mm:ss.SSS} %-5level {%thread} [%logger{40}] : %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${${logs.dir:-target/logs}/archive/weld-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
+            <fileNamePattern>${logs.dir:-target/logs}/archive/weld-%d{yyyyMMdd}-%i.log.zip</fileNamePattern>
             <maxHistory>10</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>20MB</maxFileSize>
