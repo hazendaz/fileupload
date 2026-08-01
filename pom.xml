@@ -78,7 +78,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>    
+            <dependency>
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bc-lts8on-bom</artifactId>
                 <version>${bc.version}</version>
@@ -437,7 +437,7 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-lts8on</artifactId>
-               <scope>compile</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
