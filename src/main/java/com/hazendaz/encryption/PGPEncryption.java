@@ -63,53 +63,57 @@ public class PGPEncryption {
 
             // create a file and write the string to it
             final Path outputfile = Files.createTempFile("pgp", null);
-            try (BufferedWriter writer = Files.newBufferedWriter(outputfile, StandardCharsets.UTF_8)) {
-                writer.write("the message I want to encrypt".toCharArray());
-            }
-
-            PGPEncryption.logger.info("Temp file created at ");
-            PGPEncryption.logger.info(outputfile.toAbsolutePath().toString());
-            PGPEncryption.logger.info(
-                    "Reading the temp file to make sure that the bits were written\n----------------------------");
-
-            try (BufferedReader isr = Files.newBufferedReader(outputfile, StandardCharsets.UTF_8)) {
-                String line = "";
-                while ((line = isr.readLine()) != null) {
-                    System.out.println(line + "\n");
+            final Path encryptedOutputFile = Path.of(outputfile.toAbsolutePath().toString() + ".asc");
+            try {
+                try (BufferedWriter writer = Files.newBufferedWriter(outputfile, StandardCharsets.UTF_8)) {
+                    writer.write("the message I want to encrypt".toCharArray());
                 }
-            }
+                PGPEncryption.logger.info("Temp file created at ");
+                PGPEncryption.logger.info(outputfile.toAbsolutePath().toString());
+                PGPEncryption.logger.info(
+                        "Reading the temp file to make sure that the bits were written\n----------------------------");
 
-            // read the key
-            // InputStream in = Files.newInputStream(publicKeyFilePath, StandardCharsets.UTF_8);
-            // PGPPublicKey key = readPublicKey(in);
-            final char password[] = { 't', 'e', 's', 't', 'm', 'e' };
-            final TestKeyGen testKeyGen = new TestKeyGen();
-            final PGPPublicKey key = testKeyGen.createPublicKey("someuser@email.com", password).getPublicKey();
-
-            // find out a little about the keys in the public key ring
-            PGPEncryption.logger.info("Key Strength = {}", key.getBitStrength());
-            PGPEncryption.logger.info("Algorithm = {}", key.getAlgorithm());
-
-            int count = 0;
-            for (final Iterator<?> iterator = key.getUserIDs(); iterator.hasNext();) {
-                count++;
-                PGPEncryption.logger.info((String) iterator.next());
-            }
-            System.out.println("Key Count = " + count);
-
-            // create an armored ascii file
-            try (OutputStream out = Files.newOutputStream(Path.of(outputfile.toAbsolutePath().toString() + ".asc"))) {
-                // encrypt the file
-                PGPEncryption.encryptFile(outputfile.toAbsolutePath().toString(), out, key);
-            }
-
-            PGPEncryption.logger.info("Reading the encrypted file\n----------------------------");
-            try (BufferedReader isr2 = Files.newBufferedReader(Path.of(outputfile.toAbsolutePath().toString() + ".asc"),
-                    StandardCharsets.UTF_8)) {
-                String line2 = "";
-                while ((line2 = isr2.readLine()) != null) {
-                    System.out.println(line2);
+                try (BufferedReader isr = Files.newBufferedReader(outputfile, StandardCharsets.UTF_8)) {
+                    String line = "";
+                    while ((line = isr.readLine()) != null) {
+                        System.out.println(line + "\n");
+                    }
                 }
+
+                // read the key
+                // InputStream in = Files.newInputStream(publicKeyFilePath, StandardCharsets.UTF_8);
+                // PGPPublicKey key = readPublicKey(in);
+                final char password[] = { 't', 'e', 's', 't', 'm', 'e' };
+                final TestKeyGen testKeyGen = new TestKeyGen();
+                final PGPPublicKey key = testKeyGen.createPublicKey("someuser@email.com", password).getPublicKey();
+
+                // find out a little about the keys in the public key ring
+                PGPEncryption.logger.info("Key Strength = {}", key.getBitStrength());
+                PGPEncryption.logger.info("Algorithm = {}", key.getAlgorithm());
+
+                int count = 0;
+                for (final Iterator<?> iterator = key.getUserIDs(); iterator.hasNext();) {
+                    count++;
+                    PGPEncryption.logger.info((String) iterator.next());
+                }
+                System.out.println("Key Count = " + count);
+
+                // create an armored ascii file
+                try (OutputStream out = Files.newOutputStream(encryptedOutputFile)) {
+                    // encrypt the file
+                    PGPEncryption.encryptFile(outputfile.toAbsolutePath().toString(), out, key);
+                }
+
+                PGPEncryption.logger.info("Reading the encrypted file\n----------------------------");
+                try (BufferedReader isr2 = Files.newBufferedReader(encryptedOutputFile, StandardCharsets.UTF_8)) {
+                    String line2 = "";
+                    while ((line2 = isr2.readLine()) != null) {
+                        System.out.println(line2);
+                    }
+                }
+            } finally {
+                Files.deleteIfExists(encryptedOutputFile);
+                Files.deleteIfExists(outputfile);
             }
 
         } catch (final PGPException e) {
