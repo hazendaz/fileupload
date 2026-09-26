@@ -145,8 +145,8 @@ public class AesTest {
      *             the exception
      */
     public String encode(final String plainText) throws Exception {
-        return Base64.getEncoder().encodeToString(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key,
-                this.iv));
+        return Base64.getEncoder()
+                .encodeToString(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key, this.iv));
     }
 
     /**
