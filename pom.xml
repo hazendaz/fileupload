@@ -302,6 +302,16 @@
             <artifactId>beanprovider</artifactId>
             <version>1.1.0</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>jakarta.enterprise</groupId>
+                    <artifactId>jakarta.enterprise.cdi-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jakarta.interceptor</groupId>
+                    <artifactId>jakarta.interceptor-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Must build resources lite to include here or release it first
