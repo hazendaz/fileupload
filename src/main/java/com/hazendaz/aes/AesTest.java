@@ -7,6 +7,7 @@
 package com.hazendaz.aes;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.engines.AESEngine;
@@ -14,7 +15,6 @@ import org.bouncycastle.crypto.modes.CBCBlockCipher;
 import org.bouncycastle.crypto.paddings.PaddedBufferedBlockCipher;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.params.ParametersWithIV;
-import org.bouncycastle.util.encoders.Base64;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -129,8 +129,7 @@ public class AesTest {
      *             the exception
      */
     public String decode(final String encodedText) throws Exception {
-        return new String(
-                AesTest.decrypt(Base64.decode(encodedText.getBytes(StandardCharsets.UTF_8)), this.key, this.iv),
+        return new String(AesTest.decrypt(Base64.getDecoder().decode(encodedText), this.key, this.iv),
                 StandardCharsets.UTF_8);
     }
 
@@ -146,8 +145,8 @@ public class AesTest {
      *             the exception
      */
     public String encode(final String plainText) throws Exception {
-        return new String(Base64.encode(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key, this.iv)),
-                StandardCharsets.UTF_8);
+        return Base64.getEncoder()
+                .encodeToString(AesTest.encrypt(plainText.getBytes(StandardCharsets.UTF_8), this.key, this.iv));
     }
 
     /**

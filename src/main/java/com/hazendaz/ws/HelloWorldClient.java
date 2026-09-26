@@ -8,6 +8,7 @@ package com.hazendaz.ws;
 
 import jakarta.xml.ws.Service;
 
+import java.net.URI;
 import java.net.URL;
 
 import javax.xml.namespace.QName;
@@ -38,7 +39,7 @@ public class HelloWorldClient {
      *             the exception
      */
     public static void main(final String[] args) throws Exception {
-        final URL url = new URL("https://localhost:8443/fileupload/hello?wsdl");
+        final URL url = URI.create("https://localhost:8443/fileupload/hello?wsdl").toURL();
         final QName qname = new QName("http://ws.hazendaz.com/", "HelloWorldImplService");
         final Service service = Service.create(url, qname);
         final HelloWorld hello = service.getPort(HelloWorld.class);

@@ -19,6 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.Security;
+import java.util.Base64;
 import java.util.Iterator;
 
 import org.bouncycastle.bcpg.CompressionAlgorithmTags;
@@ -45,7 +46,6 @@ import org.bouncycastle.openpgp.operator.bc.BcPGPDataEncryptorBuilder;
 import org.bouncycastle.openpgp.operator.bc.BcPGPDigestCalculatorProvider;
 import org.bouncycastle.openpgp.operator.bc.BcPublicKeyDataDecryptorFactory;
 import org.bouncycastle.openpgp.operator.bc.BcPublicKeyKeyEncryptionMethodGenerator;
-import org.bouncycastle.util.encoders.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -120,42 +120,45 @@ public class SingleSignOnTest {
                     .getPublicKey();
             SingleSignOnTest.logger.info("Creating a temp file...");
             // create a file and write the string to it
-            final File tempfile = File.createTempFile("pgp", null);
-            try (OutputStream fos = Files.newOutputStream(tempfile.toPath())) {
-                fos.write(data);
-            }
-            SingleSignOnTest.logger.info("Temp file created at ");
-            SingleSignOnTest.logger.info(tempfile.getAbsolutePath());
-            SingleSignOnTest.logger
-                    .info("Reading the temp file to make sure that the bits were written\n--------------");
-            try (BufferedReader isr = Files.newBufferedReader(tempfile.toPath(), StandardCharsets.UTF_8)) {
-                String line = "";
-                while ((line = isr.readLine()) != null) {
-                    SingleSignOnTest.logger.info(line + "\n");
+            final Path tempfile = Files.createTempFile("pgp", null);
+            try {
+                try (OutputStream fos = Files.newOutputStream(tempfile)) {
+                    fos.write(data);
                 }
+                SingleSignOnTest.logger.info("Temp file created at ");
+                SingleSignOnTest.logger.info(tempfile.toAbsolutePath().toString());
+                SingleSignOnTest.logger
+                        .info("Reading the temp file to make sure that the bits were written\n--------------");
+                try (BufferedReader isr = Files.newBufferedReader(tempfile, StandardCharsets.UTF_8)) {
+                    String line = "";
+                    while ((line = isr.readLine()) != null) {
+                        SingleSignOnTest.logger.info(line + "\n");
+                    }
+                }
+                // find out a little about the keys in the public key ring
+                System.out.println("Key Strength = " + key.getBitStrength());
+                System.out.println("Algorithm = " + key.getAlgorithm());
+                System.out.println("Bit strength = " + key.getBitStrength());
+                System.out.println("Version = " + key.getVersion());
+                System.out.println("Encryption key = " + key.isEncryptionKey() + ", Master key = " + key.isMasterKey());
+                int count = 0;
+                for (final Iterator<?> iterator = key.getUserIDs(); iterator.hasNext();) {
+                    count++;
+                    System.out.println((String) iterator.next());
+                }
+                SingleSignOnTest.logger.info("Key Count = " + count);
+                // create an armored ascii file
+                // FileOutputStream out = new FileOutputStream(outputfile);
+                // encrypt the file
+                // encryptFile(tempfile.getAbsolutePath(), out, key);
+                // Encrypt the data
+                final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                SingleSignOnTest._encrypt(tempfile.toAbsolutePath().toString(), baos, key);
+                System.out.println("encrypted text length=" + baos.size());
+                return baos.toByteArray();
+            } finally {
+                Files.deleteIfExists(tempfile);
             }
-            // find out a little about the keys in the public key ring
-            System.out.println("Key Strength = " + key.getBitStrength());
-            System.out.println("Algorithm = " + key.getAlgorithm());
-            System.out.println("Bit strength = " + key.getBitStrength());
-            System.out.println("Version = " + key.getVersion());
-            System.out.println("Encryption key = " + key.isEncryptionKey() + ", Master key = " + key.isMasterKey());
-            int count = 0;
-            for (final Iterator<?> iterator = key.getUserIDs(); iterator.hasNext();) {
-                count++;
-                System.out.println((String) iterator.next());
-            }
-            SingleSignOnTest.logger.info("Key Count = " + count);
-            // create an armored ascii file
-            // FileOutputStream out = new FileOutputStream(outputfile);
-            // encrypt the file
-            // encryptFile(tempfile.getAbsolutePath(), out, key);
-            // Encrypt the data
-            final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            SingleSignOnTest._encrypt(tempfile.getAbsolutePath(), baos, key);
-            System.out.println("encrypted text length=" + baos.size());
-            tempfile.delete();
-            return baos.toByteArray();
         } catch (final PGPException e) {
             SingleSignOnTest.logger.error(e.getUnderlyingException().toString());
             SingleSignOnTest.logger.error(e.toString());
@@ -212,13 +215,13 @@ public class SingleSignOnTest {
         SingleSignOnTest.logger.info("Encrypted: {}", encdata);
 
         // Encode the byte array to a string
-        final byte[] temp = Base64.encode(encdata);
+        final String temp = Base64.getEncoder().encodeToString(encdata);
         SingleSignOnTest.logger.info("Temp: {}", temp);
 
         // us
         byte[] newB = null;
         try {
-            newB = Base64.decode(temp);
+            newB = Base64.getDecoder().decode(temp);
         } catch (final Exception e) {
             SingleSignOnTest.logger.info("Exception: {}", e);
             return;
