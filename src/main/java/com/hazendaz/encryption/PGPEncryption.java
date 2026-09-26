@@ -11,7 +11,6 @@ import jakarta.inject.Inject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
@@ -63,17 +62,17 @@ public class PGPEncryption {
             PGPEncryption.logger.info("Creating a temp file...");
 
             // create a file and write the string to it
-            final File outputfile = File.createTempFile("pgp", null);
-            try (BufferedWriter writer = Files.newBufferedWriter(outputfile.toPath(), StandardCharsets.UTF_8)) {
+            final Path outputfile = Files.createTempFile("pgp", null);
+            try (BufferedWriter writer = Files.newBufferedWriter(outputfile, StandardCharsets.UTF_8)) {
                 writer.write("the message I want to encrypt".toCharArray());
             }
 
             PGPEncryption.logger.info("Temp file created at ");
-            PGPEncryption.logger.info(outputfile.getAbsolutePath());
+            PGPEncryption.logger.info(outputfile.toAbsolutePath().toString());
             PGPEncryption.logger.info(
                     "Reading the temp file to make sure that the bits were written\n----------------------------");
 
-            try (BufferedReader isr = Files.newBufferedReader(outputfile.toPath(), StandardCharsets.UTF_8)) {
+            try (BufferedReader isr = Files.newBufferedReader(outputfile, StandardCharsets.UTF_8)) {
                 String line = "";
                 while ((line = isr.readLine()) != null) {
                     System.out.println(line + "\n");
@@ -99,13 +98,13 @@ public class PGPEncryption {
             System.out.println("Key Count = " + count);
 
             // create an armored ascii file
-            try (OutputStream out = Files.newOutputStream(Path.of(outputfile.getAbsolutePath() + ".asc"))) {
+            try (OutputStream out = Files.newOutputStream(Path.of(outputfile.toAbsolutePath().toString() + ".asc"))) {
                 // encrypt the file
-                PGPEncryption.encryptFile(outputfile.getAbsolutePath(), out, key);
+                PGPEncryption.encryptFile(outputfile.toAbsolutePath().toString(), out, key);
             }
 
             PGPEncryption.logger.info("Reading the encrypted file\n----------------------------");
-            try (BufferedReader isr2 = Files.newBufferedReader(Path.of(outputfile.getAbsolutePath() + ".asc"),
+            try (BufferedReader isr2 = Files.newBufferedReader(Path.of(outputfile.toAbsolutePath().toString() + ".asc"),
                     StandardCharsets.UTF_8)) {
                 String line2 = "";
                 while ((line2 = isr2.readLine()) != null) {
