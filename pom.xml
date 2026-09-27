@@ -57,6 +57,9 @@
 
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 
+        <!-- Jacoco minimum code coverage -->
+        <jacoco.minimum.coverage>0.12</jacoco.minimum.coverage>
+
         <bc.version>2.73.13</bc.version>
         <checker-qual.version>4.2.3</checker-qual.version>
         <deltaspike.version>2.0.1</deltaspike.version>
