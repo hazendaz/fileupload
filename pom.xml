@@ -72,7 +72,7 @@
         <logback.version>1.6.4</logback.version>
         <rs-api.version>4.0.0</rs-api.version>
         <jackson.version>2.22.3</jackson.version>
-        <jetty.version>12.1.13</jetty.version>
+        <jetty.version>12.1.14</jetty.version>
         <slf4j.version>2.0.20</slf4j.version>
         <spring.version>7.0.9</spring.version>
 
