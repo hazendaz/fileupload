@@ -74,7 +74,7 @@
         <jackson.version>2.22.4</jackson.version>
         <jetty.version>12.1.14</jetty.version>
         <slf4j.version>2.0.20</slf4j.version>
-        <spring.version>7.0.9</spring.version>
+        <spring.version>7.0.10</spring.version>
 
         <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
     </properties>
