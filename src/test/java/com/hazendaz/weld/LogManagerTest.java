@@ -34,11 +34,9 @@ class LogManagerTest {
 
     /**
      * Gets the logger test.
-     *
-     * @return the logger test
      */
     @Test
-    void getLoggerTest() {
+    void loggerTest() {
         this.logger.info("logger worked");
     }
 

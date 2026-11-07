@@ -49,11 +49,9 @@ class FileUploadBeanTest {
 
     /**
      * Getters and setters should work for date and files.
-     *
-     * @return the ters and setters should work for date and files
      */
     @Test
-    void gettersAndSettersShouldWorkForDateAndFiles() {
+    void theGettersAndSettersShouldWorkForDateAndFiles() {
         final FileUploadBean bean = new FileUploadBean();
         final ArrayList<UploadedImage> files = new ArrayList<>();
         files.add(new UploadedImage());
@@ -68,11 +66,9 @@ class FileUploadBeanTest {
 
     /**
      * Gets the size should return zero when files is null.
-     *
-     * @return the size should return zero when files is null
      */
     @Test
-    void getSizeShouldReturnZeroWhenFilesIsNull() {
+    void sizeShouldReturnZeroWhenFilesIsNull() {
         final FileUploadBean bean = new FileUploadBean();
         bean.setFiles(null);
 
@@ -81,11 +77,9 @@ class FileUploadBeanTest {
 
     /**
      * Gets the now and time stamp should return current values.
-     *
-     * @return the now and time stamp should return current values
      */
     @Test
-    void getNowAndTimeStampShouldReturnCurrentValues() {
+    void nowAndTimeStampShouldReturnCurrentValues() {
         final FileUploadBean bean = new FileUploadBean();
 
         final String now = bean.getNow();

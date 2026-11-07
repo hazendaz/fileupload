@@ -30,11 +30,9 @@ class InventoryVendorListTest {
 
     /**
      * Gets the count should reflect vendor items size.
-     *
-     * @return the count should reflect vendor items size
      */
     @Test
-    void getCountShouldReflectVendorItemsSize() {
+    void countShouldReflectVendorItemsSize() {
         final InventoryVendorList list = new InventoryVendorList();
         final List<InventoryVendorItem> items = new ArrayList<>();
         items.add(new InventoryVendorItem());
@@ -46,11 +44,9 @@ class InventoryVendorListTest {
 
     /**
      * Gets the count should return zero when vendor items is null.
-     *
-     * @return the count should return zero when vendor items is null
      */
     @Test
-    void getCountShouldReturnZeroWhenVendorItemsIsNull() {
+    void countShouldReturnZeroWhenVendorItemsIsNull() {
         final InventoryVendorList list = new InventoryVendorList();
         list.setVendorItems(null);
 
